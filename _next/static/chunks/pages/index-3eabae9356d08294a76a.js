@@ -601,7 +601,7 @@
                               }),
                               (0, s.jsx)("br", {}),
                               (0, s.jsx)("span", {
-                                children: "that sells.",
+                                children: "that flows.",
                               }),
                             ],
                           }),
@@ -724,6 +724,20 @@
                 (0, s.jsxs)("main", {
                   className: "container",
                   children: [
+                    (0, s.jsxs)("p", {
+                      className: "about-text",
+                      children: [
+                        "“Design is not just what it looks like and feels like. Design is how it works.” - ",
+                        (0, s.jsx)("br", {}),
+                      ],
+                    }),
+                    (0, s.jsxs)("p", {
+                      className: "about-text",
+                      children: [
+                        "                                       ",
+                        (0, s.jsx)("br", {}),
+                      ],
+                    }),
                     (0, s.jsxs)("p", {
                       className: "about-text",
                       children: [
@@ -1060,19 +1074,28 @@
                             (0, s.jsxs)("h1", {
                               className: "heading-1",
                               children: [
-                                (0, s.jsx)("span", {
-                                  children: "Mmmm, a little brag ",
+                                (0, s.jsx)("a", {
+                                  href: "svg/resume.pdf",
+                                  rel: "noopener",
+                                  target: "_blank",
+                                  children: "Resume",
                                 }),
-                                " ",
+
                                 (0, s.jsx)("small", {
-                                  children: "\ud83d\ude0a",
+                                  children: "🗒️",
                                 }),
                               ],
                             }),
                             (0, s.jsx)("p", {
                               className: "paragraph paragraph__sub",
                               children:
-                                "What people are saying about my last portfolio",
+                                //                                 Collaborative,
+                                // trained in working with interdisciplinary teams.
+                                // Intensely interested in obtaining a Software
+                                // Developer position to work on enhancing the
+                                // product experience.
+
+                                "Collaborative, trained in working with interdisciplinary teams. Intensely interested in obtaining a Software Developer position to work on enhancing the product experience",
                             }),
                           ],
                         }),
@@ -1130,6 +1153,11 @@
                               src: "svg/MERN-Logo-4-pack.jpg",
                               alt: "adeola logo icon",
                             }),
+
+                            // (<a href="Document URL" attributes-list>
+                            //   {" "}
+                            //   Link Text{" "}
+                            // </a>)
 
                             (0, s.jsx)("img", {
                               className: "brand-logo__icon",
