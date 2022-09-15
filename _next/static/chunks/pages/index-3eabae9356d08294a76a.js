@@ -130,7 +130,7 @@
                       children: [
                         (0, s.jsx)("h4", {
                           className: "navigation-h4",
-                          children: "DONT BE A STRANGER",
+                          children: "LETS KNOW EACH OTHER",
                         }),
                         (0, s.jsxs)("div", {
                           className: "navigation-top__left--links",
@@ -200,29 +200,29 @@
                           className: "navigation-bottom__projects-card",
                           children: [
                             (0, s.jsx)("img", {
-                              src: "webp/alexxandria-nav.webp",
+                              // src: "webp/alexxandria-nav.webp",
                               alt: "alexxandria",
                             }),
                             (0, s.jsxs)("h2", {
                               children: [
-                                "Alexxandria",
+                                "Gearbeast-",
                                 (0, s.jsx)("br", {}),
-                                "Forque",
+                                "Clone",
                               ],
                             }),
                           ],
                         }),
                         (0, s.jsxs)("a", {
-                          href: "https://safarika-adeola.netlify.app/",
+                          href: "https://meek-trifle-a6cc12.netlify.app/",
                           target: "_blank",
                           rel: "noopener",
                           className: "navigation-bottom__projects-card",
                           children: [
                             (0, s.jsx)("img", {
-                              src: "webp/safarika-nav.webp",
+                              // src: "webp/safarika-nav.webp",
                               alt: "safarika",
                             }),
-                            (0, s.jsx)("h2", { children: "Safarika" }),
+                            (0, s.jsx)("h2", { children: "ASOS-Clone" }),
                           ],
                         }),
                         (0, s.jsxs)("a", {
@@ -232,7 +232,7 @@
                           className: "navigation-bottom__projects-card",
                           children: [
                             (0, s.jsx)("img", {
-                              src: "webp/adeola-1.webp",
+                              // src: "webp/adeola-1.webp",
                               alt: "adeola",
                             }),
                             (0, s.jsxs)("h2", {
@@ -400,25 +400,25 @@
                     displacementImage: e.dataset.displacement,
                   });
                 });
-              var e = document.querySelector(".cursor");
-              (window.onmousemove = function (a) {
-                e.setAttribute(
-                  "style",
-                  "top: ".concat(a.pageY, "px; left: ").concat(a.pageX, "px;")
-                );
-              }),
-                console.clear(),
-                console.log.apply(console, [
-                  "%c Designed and Developed by Aryan Dev %c %c\ud83d\ude80 %c\n",
-                  "color: #fff; background: #8000ff; padding:5px 0;",
-                  "color: #fff; background: #242424; padding:5px 0 5px 5px;",
-                  "background: #242424; padding:5px 0",
-                  "background: #242424; padding:5px 5px 5px 0",
-                ]),
-                console.log.apply(console, [
-                  "%c Thanks for stopping by, I\u2019m currently looking to a new team of creative designers and developers.\n",
-                  "color: #fff; background: #8000ff; padding:5px 0;",
-                ]);
+              // var e = document.querySelector(".cursor");
+              // (window.onmousemove = function (a) {
+              //   e.setAttribute(
+              //     "style",
+              //     "top: ".concat(a.pageY, "px; left: ").concat(a.pageX, "px;")
+              //   );
+              // }),
+              // console.clear(),
+              // console.log.apply(console, [
+              //   "%c Designed and Developed by Aryan Dev %c %c\ud83d\ude80 %c\n",
+              //   "color: #fff; background: #8000ff; padding:5px 0;",
+              //   "color: #fff; background: #242424; padding:5px 0 5px 5px;",
+              //   "background: #242424; padding:5px 0",
+              //   "background: #242424; padding:5px 5px 5px 0",
+              // ]),
+              //   console.log.apply(console, [
+              //     "%c Thanks for stopping by, I\u2019m currently looking to a new team of creative designers and developers.\n",
+              //     "color: #fff; background: #8000ff; padding:5px 0;",
+              //   ]);
             }
           }, []);
           return (0, s.jsx)(s.Fragment, {
@@ -429,10 +429,10 @@
               children: [
                 (0, s.jsxs)(l.default, {
                   children: [
-                    (0, s.jsx)("link", {
-                      rel: "icon",
-                      href: "svg/favicon.svg",
-                    }),
+                    // (0, s.jsx)("link", {
+                    //   rel: "icon",
+                    //   href: "svg/favicon.svg",
+                    // }),
                     (0, s.jsx)("link", {
                       href: "https://adeolaadeoti.xyz/",
                       rel: "canonical",
@@ -446,8 +446,7 @@
                       content: "#10101A",
                     }),
                     (0, s.jsx)("title", {
-                      children:
-                        "Aryan Dev \ud83d\ude80 \u2014 Full stack Devloper",
+                      children: "Aryan Dev 💫 Full stack Devloper",
                     }),
                     (0, s.jsx)("meta", {
                       name: "description",
@@ -516,7 +515,7 @@
                   "data-scroll-target": "#menu-target",
                   animate: {
                     top: "-100vh",
-                    transition: N(N({}, O), {}, { delay: 1 }),
+                    transition: N(N({}, O), {}, { delay: 1.2 }),
                   },
                   className: "preloader",
                   children: (0, s.jsxs)("div", {
@@ -593,6 +592,11 @@
                                 children: "I ",
                               }),
                               " ",
+                              (0, s.jsx)("img", {
+                                className: "brand-logo__icon",
+                                src: "svg/a.jpg",
+                                alt: "adeola logo icon",
+                              }),
                               (0, s.jsx)("br", {}),
                               (0, s.jsx)("span", { children: "build " }),
                               (0, s.jsxs)("span", {
@@ -601,7 +605,7 @@
                               }),
                               (0, s.jsx)("br", {}),
                               (0, s.jsx)("span", {
-                                children: "that flows.",
+                                children: "that trends.",
                               }),
                             ],
                           }),
@@ -682,6 +686,7 @@
                             ],
                           }),
                         }),
+
                         (0, s.jsxs)("div", {
                           className: "header__footer--right",
                           children: [
@@ -703,6 +708,7 @@
                             //   target: "_blank",
                             //   children: "\ud83d\udc26 TW",
                             // }),
+
                             (0, s.jsx)("a", {
                               href: "https://www.linkedin.com/in/aryan-dev/",
                               rel: "noopener",
@@ -721,16 +727,19 @@
                     }),
                   ],
                 }),
+
                 (0, s.jsxs)("main", {
                   className: "container",
                   children: [
                     (0, s.jsxs)("p", {
                       className: "about-text",
                       children: [
-                        "“Design is not just what it looks like and feels like. Design is how it works.” - ",
+                        "Hello Visitor! \ud83d\udc4b, my name is 'Aryan Dev' and I am a Full stack Devloper, passionate ",
                         (0, s.jsx)("br", {}),
+                        " about digital products that help people experience everyday life, not endure it.",
                       ],
                     }),
+
                     (0, s.jsxs)("p", {
                       className: "about-text",
                       children: [
@@ -741,9 +750,8 @@
                     (0, s.jsxs)("p", {
                       className: "about-text",
                       children: [
-                        "Hello Visitor! \ud83d\udc4b, my name is 'Aryan Dev' and I am a Full stack Devloper, passionate ",
+                        "“Design is not just what it looks like and feels like. Design is how it works.” - STEVE JOBS",
                         (0, s.jsx)("br", {}),
-                        " about digital products that help people experience everyday life, not endure it.",
                       ],
                     }),
 
@@ -769,6 +777,7 @@
                           children:
                             "Each project is unique. Here are some of my works.",
                         }),
+                        // *******************    PROJECT 1    ***************************
                         (0, s.jsxs)("div", {
                           className: "project-card",
                           children: [
@@ -786,11 +795,11 @@
                                 "webp/myDistorsionImage.webp",
                               children: [
                                 (0, s.jsx)("img", {
-                                  src: "webp/alexxandria-1.webp",
+                                  // src: "webp/alexxandria-1.webp",
                                   alt: "alexxandria model",
                                 }),
                                 (0, s.jsx)("img", {
-                                  src: "webp/alexxandria-2.webp",
+                                  // src: "webp/alexxandria-2.webp",
                                   alt: "alexxandria logo",
                                 }),
                               ],
@@ -805,15 +814,15 @@
                                   "data-scroll-class": "alexxandria-anim",
                                   className: "heading-2",
                                   children: [
-                                    "Alexxandria",
+                                    "Gearbest-",
                                     (0, s.jsx)("br", {}),
-                                    " Forque",
+                                    "Clone",
                                   ],
                                 }),
                                 (0, s.jsx)("a", {
                                   rel: "noopener",
                                   target: "_blank",
-                                  href: "https://alexxandria.vercel.app/",
+                                  href: "https://meek-trifle-a6cc12.netlify.app/",
                                   className: "project-card__link",
                                   children: "VISIT THE WEBSITE",
                                 }),
@@ -821,16 +830,9 @@
                                   className: "project-card__socials",
                                   children: [
                                     (0, s.jsx)("a", {
-                                      href: "#",
-                                      children: (0, s.jsx)("img", {
-                                        src: "svg/dribble.svg",
-                                        alt: "dribble icon",
-                                      }),
-                                    }),
-                                    (0, s.jsx)("a", {
                                       rel: "noopener",
                                       target: "_blank",
-                                      href: "https://github.com/Aaryan-Dev",
+                                      href: "https://github.com/Aaryan-Dev/mundane-wren-9309",
                                       children: (0, s.jsx)("img", {
                                         src: "svg/github.svg",
                                         alt: "github icon",
@@ -842,6 +844,7 @@
                             }),
                           ],
                         }),
+                        // **************   PROJECT 2   ************************************
                         (0, s.jsxs)("div", {
                           className: "project-card",
                           children: [
@@ -858,11 +861,11 @@
                                 "webp/myDistorsionImage.webp",
                               children: [
                                 (0, s.jsx)("img", {
-                                  src: "webp/safarika-1.webp",
+                                  // src: "webp/safarika-1.webp",
                                   alt: "safarika",
                                 }),
                                 (0, s.jsx)("img", {
-                                  src: "webp/safarika-2.webp",
+                                  // src: "webp/safarika-2.webp",
                                   alt: "safarika logo",
                                 }),
                               ],
@@ -876,12 +879,12 @@
                                   "data-scroll-repeat": !0,
                                   "data-scroll-class": "safarika-anim",
                                   className: "heading-2",
-                                  children: "Safarika",
+                                  children: "ASOS-Clone",
                                 }),
                                 (0, s.jsx)("a", {
                                   rel: "noopener",
                                   target: "_blank",
-                                  href: "https://safarika-adeola.netlify.app/",
+                                  href: "https://meek-trifle-a6cc12.netlify.app/",
                                   className: "project-card__link",
                                   children: "VISIT THE WEBSITE",
                                 }),
@@ -891,16 +894,7 @@
                                     (0, s.jsx)("a", {
                                       rel: "noopener",
                                       target: "_blank",
-                                      href: "https://dribbble.com/shots/12361426-Safarika-Adventure",
-                                      children: (0, s.jsx)("img", {
-                                        src: "svg/dribble.svg",
-                                        alt: "dribble icon",
-                                      }),
-                                    }),
-                                    (0, s.jsx)("a", {
-                                      rel: "noopener",
-                                      target: "_blank",
-                                      href: "https://github.com/Aaryan-Dev",
+                                      href: "https://github.com/arsalanshaikhh/asos.com-clone-Unit2",
                                       children: (0, s.jsx)("img", {
                                         src: "svg/github.svg",
                                         alt: "github icon",
@@ -912,6 +906,7 @@
                             }),
                           ],
                         }),
+                        // **************   PROJECT 3   ************************************
                         (0, s.jsxs)("div", {
                           className: "project-card",
                           children: [
@@ -923,17 +918,18 @@
                                   "NEXT JS, LOCOMOTIVE SCROLL, FRAMER MOTION",
                               }),
                             }),
+
                             (0, s.jsxs)("div", {
                               className: "project-card__middle",
                               "data-displacement":
                                 "webp/myDistorsionImage.webp",
                               children: [
                                 (0, s.jsx)("img", {
-                                  src: "webp/heatrow-1.webp",
+                                  // src: "webp/heatrow-1.webp",
                                   alt: "heatrow",
                                 }),
                                 (0, s.jsx)("img", {
-                                  src: "webp/heatrow-2.webp",
+                                  // src: "webp/heatrow-2.webp",
                                   alt: "heatrow logo",
                                 }),
                               ],
@@ -948,13 +944,13 @@
                                   "data-scroll-class": "heatrow-anim",
                                   className: "heading-2",
                                   children: [
-                                    "Heatrow",
+                                    "KickStarter-",
                                     (0, s.jsx)("br", {}),
-                                    " Estate",
+                                    "Clone",
                                   ],
                                 }),
                                 (0, s.jsx)("a", {
-                                  href: "https://heatrow.vercel.app/",
+                                  href: "https://meek-trifle-a6cc12.netlify.app/",
                                   rel: "noopener",
                                   target: "_blank",
                                   className: "project-card__link",
@@ -964,16 +960,9 @@
                                   className: "project-card__socials",
                                   children: [
                                     (0, s.jsx)("a", {
-                                      href: "#",
-                                      children: (0, s.jsx)("img", {
-                                        src: "svg/dribble.svg",
-                                        alt: "dribble icon",
-                                      }),
-                                    }),
-                                    (0, s.jsx)("a", {
                                       rel: "noopener",
                                       target: "_blank",
-                                      href: "https://github.com/Aaryan-Dev",
+                                      href: "https://github.com/Aaryan-Dev/mundane-wren-9309",
                                       children: (0, s.jsx)("img", {
                                         src: "svg/github.svg",
                                         alt: "github icon",
@@ -985,6 +974,7 @@
                             }),
                           ],
                         }),
+                        // **************   PROJECT 4   ************************************
                         (0, s.jsxs)("div", {
                           className: "project-card",
                           children: [
@@ -1001,11 +991,11 @@
                                 "webp/myDistorsionImage.webp",
                               children: [
                                 (0, s.jsx)("img", {
-                                  src: "webp/adeola-1.webp",
+                                  // src: "webp/adeola-1.webp",
                                   alt: "adeola model",
                                 }),
                                 (0, s.jsx)("img", {
-                                  src: "webp/adeola-2.webp",
+                                  // src: "webp/adeola-2.webp",
                                   alt: "adeola logo",
                                 }),
                               ],
@@ -1020,17 +1010,17 @@
                                   "data-scroll-class": "adeola-anim",
                                   className: "heading-2",
                                   children: [
-                                    "AdeolaAdeoti",
+                                    "Eggy-",
                                     (0, s.jsx)("br", {}),
-                                    " version 1",
+                                    "Clone",
                                   ],
                                 }),
                                 (0, s.jsx)("a", {
                                   rel: "noopener",
                                   target: "_blank",
-                                  href: "https://github.com/Aaryan-Dev",
+                                  href: "https://meek-trifle-a6cc12.netlify.app/",
                                   className: "project-card__link",
-                                  children: "VIEW SOURCE CODE",
+                                  children: "VIST THE WEBSITE",
                                 }),
                                 (0, s.jsxs)("div", {
                                   className: "project-card__socials",
@@ -1038,16 +1028,7 @@
                                     (0, s.jsx)("a", {
                                       rel: "noopener",
                                       target: "_blank",
-                                      href: "https://dribbble.com/shots/12338926-Adeola-Adeoti-Portfolio",
-                                      children: (0, s.jsx)("img", {
-                                        src: "svg/dribble.svg",
-                                        alt: "dribble icon",
-                                      }),
-                                    }),
-                                    (0, s.jsx)("a", {
-                                      rel: "noopener",
-                                      target: "_blank",
-                                      href: "https://github.com/Aaryan-Dev",
+                                      href: "https://github.com/Aaryan-Dev/mundane-wren-9309",
                                       children: (0, s.jsx)("img", {
                                         src: "svg/github.svg",
                                         alt: "github icon",
@@ -1128,6 +1109,7 @@
                         }),
                       ],
                     }),
+                    // ********************skills**********************
                     (0, s.jsxs)("section", {
                       className: "section-contact",
                       children: [
@@ -1136,7 +1118,7 @@
                           children: [
                             (0, s.jsx)("span", { children: "Skills " }),
                             " ",
-                            (0, s.jsx)("small", { children: "\ud83e\udd19" }),
+                            (0, s.jsx)("small", { children: "🙌" }),
                           ],
                         }),
                         (0, s.jsxs)("h2", {
@@ -1144,50 +1126,75 @@
                           children: [
                             (0, s.jsx)("img", {
                               className: "brand-logo__icon",
-                              src: "svg/front-end-web-development-600x353.jpg",
+                              src: "svg/skills/html-5.svg",
                               alt: "adeola logo icon",
                             }),
 
                             (0, s.jsx)("img", {
                               className: "brand-logo__icon",
-                              src: "svg/MERN-Logo-4-pack.jpg",
-                              alt: "adeola logo icon",
-                            }),
-
-                            // (<a href="Document URL" attributes-list>
-                            //   {" "}
-                            //   Link Text{" "}
-                            // </a>)
-
-                            (0, s.jsx)("img", {
-                              className: "brand-logo__icon",
-                              src: "svg/redux.png",
+                              src: "svg/skills/css3.svg",
                               alt: "adeola logo icon",
                             }),
 
                             (0, s.jsx)("img", {
                               className: "brand-logo__icon",
-                              src: "svg/git-github.png",
+                              src: "svg/skills/javascript.svg",
+                              alt: "adeola logo icon",
+                            }),
+
+                            (0, s.jsx)("img", {
+                              className: "brand-logo__icon",
+                              src: "svg/skills/reactjs.svg",
                               alt: "adeola logo icon",
                             }),
                             (0, s.jsx)("img", {
                               className: "brand-logo__icon",
-                              src: "svg/Data-structure-and-algorithms.png",
+                              src: "svg/skills/redux.svg",
+                              alt: "adeola logo icon",
+                            }),
+                            (0, s.jsx)("img", {
+                              className: "brand-logo__icon",
+                              src: "svg/skills/nodejs.svg",
+                              alt: "adeola logo icon",
+                            }),
+                            (0, s.jsx)("img", {
+                              className: "brand-logo__icon",
+                              src: "svg/skills/express-logo.png",
+                              alt: "adeola logo icon",
+                            }),
+                            (0, s.jsx)("img", {
+                              className: "brand-logo__icon",
+                              src: "svg/skills/mongodb.svg",
                               alt: "adeola logo icon",
                             }),
 
-                            // (0, s.jsx)("a", {
-                            //   href: "tel:+2349066383763",
-                            //   children: " call \ud83c\uddf3\ud83c\uddec \xa0",
-                            // }),
-                            // "or send me an",
-                            // (0, s.jsx)("a", {
-                            //   href: "mailto:adeolaonigegeara@gmail.com",
-                            //   rel: "noopener",
-                            //   target: "_blank",
-                            //   children: "\xa0 email \ud83d\udce7",
-                            // }),
-                            // ".",
+                            (0, s.jsx)("img", {
+                              className: "brand-logo__icon",
+                              src: "svg/skills/chakra-ui.png",
+                              alt: "adeola logo icon",
+                            }),
+                            (0, s.jsx)("img", {
+                              className: "brand-logo__icon",
+                              src: "svg/skills/Bootstrap_logo.png",
+                              alt: "adeola logo icon",
+                            }),
+                            (0, s.jsx)("img", {
+                              className: "brand-logo__icon",
+                              src: "svg/skills/git.svg",
+                              alt: "adeola logo icon",
+                            }),
+                            (0, s.jsx)("img", {
+                              className: "brand-logo__icon",
+                              src: "svg/skills/github.png",
+                              alt: "adeola logo icon",
+                            }),
+                            (0, s.jsx)("img", {
+                              className: "brand-logo__icon",
+                              src: "svg/skills/ds-logo.png",
+                              alt: "adeola logo icon",
+                            }),
+
+                            // ***********skills***************
                           ],
                         }),
                       ],
@@ -1199,11 +1206,19 @@
                           className: "heading-1",
                           children: [
                             (0, s.jsx)("span", {
-                              children: "Dont be a stranger!",
+                              children: "It's time to connect!",
                             }),
                             " ",
-                            (0, s.jsx)("small", { children: "\ud83d\udc4b" }),
+                            (0, s.jsx)("small", { children: "🙋‍♂️" }),
                           ],
+                        }),
+                        (0, s.jsx)("p", {
+                          className: "paragraph",
+                          children: "Give me a call +918409007521",
+                        }),
+                        (0, s.jsx)("p", {
+                          className: "paragraph",
+                          children: "or",
                         }),
                         (0, s.jsx)("p", {
                           className: "paragraph",
@@ -1243,6 +1258,10 @@
                             //   target: "_blank",
                             //   children: "\ud83d\udcf8 Instagram",
                             // }),
+                            (0, s.jsx)("p", {
+                              className: "paragraph",
+                              children: "Currently I am in, Bangalore",
+                            }),
                           ],
                         }),
                       ],

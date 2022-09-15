@@ -36,8 +36,9 @@ rect.ContributionCalendar-day[data-level='4'] {
     /* border: 1px solid #dddddd34; */
     border-radius: 3px;
     /* background-color: #1D75AB;s */
-    margin-right: 0px;
-    width: 80%;
+    /* margin-right: 0px; */
+    margin: auto;
+    width: 100%;
     padding-left: 20%;
     /* min-height: 243px; */
     /* backdrop-filter: blur(60px); */
@@ -142,17 +143,17 @@ rect.ContributionCalendar-day[data-level='4'] {
 }
 
 .text-muted{
-    color: #014487a2;
+    color: #0060c0db;
 }
 
 .left.text-muted {
     float: left;
     margin-left: 9px;
-    color: #f70101;
+    color: #f7010100;
 }
 
 .left.text-muted a {
-    color: #f40000;
+    color: #f4000000;
     text-decoration: none;
 }
 
@@ -212,4 +213,8 @@ text.ContributionCalendar-label {
     fill: #ccc;
     font-size: 11px;
 }
-/* contrib-column table-column */
+
+.js-calendar-graph-svg{
+   width: 100%;
+   /* height: 100%; */
+} 
