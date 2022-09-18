@@ -148,7 +148,7 @@
                             //   children: "\ud83d\udc26 TW",
                             // }),
                             (0, s.jsx)("a", {
-                              href: "https://www.linkedin.com/in/adeoladev",
+                              href: "",
                               rel: "noopener",
                               target: "_blank",
                               children: "\ud83d\udcbc LD",
@@ -171,7 +171,7 @@
                           children: "HAVE AN IDEA?",
                         }),
                         (0, s.jsx)("a", {
-                          href: "mailto:adeolaonigegeara@gmail.com",
+                          href: "mailto:aryandev1305@gmail.com",
                           target: "_blank",
                           rel: "nofollow noopener noreferrer",
                           children: "Tell me about it",
@@ -233,7 +233,7 @@
                           children: [
                             (0, s.jsx)("img", {
                               // src: "webp/adeola-1.webp",
-                              alt: "adeola",
+                              alt: "aryan",
                             }),
                             (0, s.jsxs)("h2", {
                               children: [
@@ -434,7 +434,7 @@
                     //   href: "svg/favicon.svg",
                     // }),
                     (0, s.jsx)("link", {
-                      href: "https://adeolaadeoti.xyz/",
+                      href: "https://aryandev.xyz/",
                       rel: "canonical",
                     }),
                     (0, s.jsx)("meta", {
@@ -450,8 +450,7 @@
                     }),
                     (0, s.jsx)("meta", {
                       name: "description",
-                      content:
-                        "I'm a self-taught Front End Developer and turning ideas into real life products is my calling.",
+                      content: "Aryan Dev 💫 — Full Stack Devloper",
                     }),
                     (0, s.jsx)("meta", {
                       property: "og:type",
@@ -472,8 +471,7 @@
                     }),
                     (0, s.jsx)("meta", {
                       property: "og:description",
-                      content:
-                        "I'm a self-taught Front End Developer and turning ideas into real life products is my calling.",
+                      content: "Aryan Dev 💫 — Full Stack Devloper",
                     }),
                     // (0, s.jsx)("meta", {
                     //   name: "twitter:title",
@@ -483,7 +481,7 @@
                     // (0, s.jsx)("meta", {
                     //   name: "twitter:description",
                     //   content:
-                    //     "I'm a self-taught Front End Developer and turning ideas into real life products is my calling.",
+                    //     "Aryan Dev 💫 — Full Stack Devloper",
                     // }),
                     // (0, s.jsx)("meta", {
                     //   name: "twitter:image",
@@ -526,8 +524,8 @@
                         animate: { x: 0, opacity: 1, transition: N({}, O) },
                         className: "preloader__left",
                         children: (0, s.jsx)("img", {
-                          src: "svg/adeola-logo-left.svg",
-                          alt: "adeola logo",
+                          // src: "svg/adeola-logo-left.svg",
+                          // alt: "adeola logo",
                         }),
                       }),
                       (0, s.jsxs)(o.E.div, {
@@ -609,11 +607,30 @@
                               }),
                             ],
                           }),
+
                           (0, s.jsx)("a", {
                             "data-scroll-to": !0,
                             className: "header__hero--cta",
                             href: "#sectionProjects",
                             children: "VIEW PROJECTS",
+                          }),
+                          (0, s.jsx)("a", {
+                            "data-scroll-to": !0,
+                            className: "header__hero--cta",
+                            href: "#getResume",
+                            children: "GET RESUME",
+                          }),
+                          (0, s.jsx)("a", {
+                            "data-scroll-to": !0,
+                            className: "header__hero--cta",
+                            href: "#seeSkills",
+                            children: "SEE SKILLS",
+                          }),
+                          (0, s.jsx)("a", {
+                            "data-scroll-to": !0,
+                            className: "header__hero--cta",
+                            href: "#contactMe",
+                            children: "CONTACT ME",
                           }),
                         ],
                       }),
@@ -728,33 +745,40 @@
                   ],
                 }),
 
-                (0, s.jsxs)("main", {
-                  className: "container",
+                (0, s.jsxs)("section", {
+                  "data-scroll": !0,
+                  "data-scroll-offset": "35%",
+                  "data-scroll-repeat": !0,
+                  "data-scroll-class": "section-reviews__bg",
+                  className: "section-reviews",
+
                   children: [
                     (0, s.jsxs)("p", {
                       className: "about-text",
                       children: [
-                        "Hello Visitor! \ud83d\udc4b, my name is 'Aryan Dev' and I am a Full stack Devloper, passionate ",
+                        "Hello Visitor! \ud83d\udc4b, my name is ",
+                        // (0, s.jsx)("br", {}),
+                        (0, s.jsxs)("span", {
+                          className: "header__hero--heading-gradient",
+                          children: ["'Aryan Dev'", " "],
+                        }),
+                        "and I am a Full stack Devloper, passionate about digital products that help people experience everyday life, not endure it.",
+                        " ",
+                        [
+                          "                                       ",
+                          (0, s.jsx)("br", {}),
+                        ],
                         (0, s.jsx)("br", {}),
-                        " about digital products that help people experience everyday life, not endure it.",
-                      ],
-                    }),
-
-                    (0, s.jsxs)("p", {
-                      className: "about-text",
-                      children: [
-                        "                                       ",
-                        (0, s.jsx)("br", {}),
-                      ],
-                    }),
-                    (0, s.jsxs)("p", {
-                      className: "about-text",
-                      children: [
                         "“Design is not just what it looks like and feels like. Design is how it works.” - STEVE JOBS",
                         (0, s.jsx)("br", {}),
                       ],
                     }),
+                  ],
+                }),
 
+                (0, s.jsxs)("main", {
+                  className: "container",
+                  children: [
                     (0, s.jsxs)("section", {
                       id: "sectionProjects",
                       className: "section-projects",
@@ -775,7 +799,7 @@
                         (0, s.jsx)("p", {
                           className: "paragraph",
                           children:
-                            "Each project is unique. Here are some of my works.",
+                            "Here are some of my works. Each project is a Clone.",
                         }),
                         // *******************    PROJECT 1    ***************************
                         (0, s.jsxs)("div", {
@@ -1047,6 +1071,7 @@
                       "data-scroll-offset": "35%",
                       "data-scroll-repeat": !0,
                       "data-scroll-class": "section-reviews__bg",
+                      id: "getResume",
                       className: "section-reviews",
                       children: [
                         (0, s.jsxs)("div", {
@@ -1110,7 +1135,13 @@
                       ],
                     }),
                     // ********************skills**********************
+
                     (0, s.jsxs)("section", {
+                      id: "seeSkills",
+                      "data-scroll": !0,
+                      "data-scroll-offset": "35%",
+                      "data-scroll-repeat": !0,
+                      "data-scroll-class": "section-reviews__bg",
                       className: "section-contact",
                       children: [
                         (0, s.jsxs)("h1", {
@@ -1128,68 +1159,110 @@
                               className: "brand-logo__icon",
                               src: "svg/skills/html-5.svg",
                               alt: "adeola logo icon",
+                              // width: "7%",
+                              // height: "150%",
                             }),
 
                             (0, s.jsx)("img", {
                               className: "brand-logo__icon",
                               src: "svg/skills/css3.svg",
                               alt: "adeola logo icon",
+                              // width: "7%",
+                              // height: "150%",
                             }),
 
                             (0, s.jsx)("img", {
                               className: "brand-logo__icon",
                               src: "svg/skills/javascript.svg",
                               alt: "adeola logo icon",
+                              // width: "7%",
+                              // height: "150%",
                             }),
 
                             (0, s.jsx)("img", {
                               className: "brand-logo__icon",
                               src: "svg/skills/reactjs.svg",
                               alt: "adeola logo icon",
+                              // width: "7%",
+                              // height: "150%",
                             }),
                             (0, s.jsx)("img", {
                               className: "brand-logo__icon",
                               src: "svg/skills/redux.svg",
                               alt: "adeola logo icon",
+                              // width: "7%",
+                              // height: "150%",
                             }),
                             (0, s.jsx)("img", {
                               className: "brand-logo__icon",
                               src: "svg/skills/nodejs.svg",
                               alt: "adeola logo icon",
+                              // width: "7%",
+                              // height: "150%",
                             }),
                             (0, s.jsx)("img", {
                               className: "brand-logo__icon",
                               src: "svg/skills/express-logo.png",
                               alt: "adeola logo icon",
+                              // width: "7%",
+                              // height: "150%",
                             }),
                             (0, s.jsx)("img", {
                               className: "brand-logo__icon",
                               src: "svg/skills/mongodb.svg",
                               alt: "adeola logo icon",
+                              // width: "7%",
+                              // height: "150%",
+                            }),
+
+                            (0, s.jsx)("img", {
+                              className: "brand-logo__icon",
+                              src: "svg/skills/Cypress.png",
+                              alt: "adeola logo icon",
+                              // width: "7%",
+                              // height: "150%",
+                            }),
+
+                            (0, s.jsx)("img", {
+                              className: "brand-logo__icon",
+                              src: "svg/skills/typeScript.png",
+                              alt: "adeola logo icon",
+                              // width: "7%",
+                              // height: "150%",
                             }),
 
                             (0, s.jsx)("img", {
                               className: "brand-logo__icon",
                               src: "svg/skills/chakra-ui.png",
                               alt: "adeola logo icon",
+                              // width: "7%",
+                              // height: "150%",
                             }),
                             (0, s.jsx)("img", {
                               className: "brand-logo__icon",
                               src: "svg/skills/Bootstrap_logo.png",
                               alt: "adeola logo icon",
+                              // width: "7%",
+                              // height: "150%",
                             }),
                             (0, s.jsx)("img", {
                               className: "brand-logo__icon",
                               src: "svg/skills/git.svg",
                               alt: "adeola logo icon",
+                              // width: "7%",
+                              // height: "150%",
                             }),
                             (0, s.jsx)("img", {
                               className: "brand-logo__icon",
                               src: "svg/skills/github.png",
                               alt: "adeola logo icon",
+                              // width: "7%",
+                              // height: "150%",
                             }),
                             (0, s.jsx)("img", {
                               className: "brand-logo__icon",
+                              // width: "7%",
+                              // height: "150%",
                               src: "svg/skills/ds-logo.png",
                               alt: "adeola logo icon",
                             }),
@@ -1199,8 +1272,11 @@
                         }),
                       ],
                     }),
+
                     (0, s.jsxs)("section", {
                       className: "section-socials",
+                      id: "contactMe",
+
                       children: [
                         (0, s.jsxs)("h1", {
                           className: "heading-1",
@@ -1247,7 +1323,7 @@
                             //   children: "\ud83d\udc26 Twitter",
                             // }),
                             (0, s.jsx)("a", {
-                              href: "https://www.linkedin.com/in/adeoladev",
+                              href: "https://www.linkedin.com/in/aryan-dev/",
                               rel: "noopener",
                               target: "_blank",
                               children: "\ud83d\udcbc LinkedIn",

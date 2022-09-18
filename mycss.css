@@ -1,14 +1,16 @@
 :root {
-    --color-calendar-graph-day-bg: #000000;
-    --color-calendar-graph-day-L1-bg: #49ff43;
-    --color-calendar-graph-day-L2-bg: #2daf2d;
-    --color-calendar-graph-day-L3-bg: #014e18;
-    --color-calendar-graph-day-L4-bg: #0a4208;
+    /* --color-calendar-graph-day-bg: #000000; */
+    --color-calendar-graph-day-bg: #0000184c;
+    --color-calendar-graph-day-L1-bg: #036200;
+    --color-calendar-graph-day-L2-bg: #009800;
+    --color-calendar-graph-day-L3-bg: #00c437;
+    --color-calendar-graph-day-L4-bg: #0dff00;
 }
 
 
 rect.ContributionCalendar-day[data-level='0'] {
     fill: var(--color-calendar-graph-day-bg);
+    font-size: 40px;
 }
 
 rect.ContributionCalendar-day[data-level='1'] {
@@ -36,15 +38,15 @@ rect.ContributionCalendar-day[data-level='4'] {
     /* border: 1px solid #dddddd34; */
     border-radius: 3px;
     /* background-color: #1D75AB;s */
-    /* margin-right: 0px; */
-    margin: auto;
+    padding-left: 25%;
+    margin-right: 0px;
+    margin: 0px;
     width: 100%;
-    padding-left: 20%;
     /* min-height: 243px; */
     /* backdrop-filter: blur(60px); */
-    height: 10px;
+    height: 15px;
     text-align: center;
-    margin: 0 auto;
+    margin: auto 0;
 }
 
 .calendar-graph text.wday,
@@ -215,6 +217,7 @@ text.ContributionCalendar-label {
 }
 
 .js-calendar-graph-svg{
-   width: 100%;
+    margin-right: 0px;
+   width: 80%;
    /* height: 100%; */
 } 
