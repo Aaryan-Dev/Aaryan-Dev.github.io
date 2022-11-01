@@ -74,20 +74,27 @@ position: fixed;
 }
 
 #ava{
-    margin-top: 1%;
+    margin-top: 0%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     align-content: center;
+    padding-left: 10%;
+   
 }
 
-#main{
 
-    display: grid;
+main{
+ 
+    display: flex;
     place-items: center;
     /* min-height: 100vh; */
     position: relative;
 
+}
+
+#eyes, #eyes img{
+    position: absolute;
 }
 
 
@@ -188,8 +195,9 @@ background: linear-gradient(-45deg, #ffffff, #000000, #282828, #575757);
 
 #well {
 
-    border: 1px solid black;
+    /* border: 1px solid black; */
     height: 3000px;
-    padding: 16px;
+    padding-top: 3%;
+    /* position: fixed; */
 
 }
