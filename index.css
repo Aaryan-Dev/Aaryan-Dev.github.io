@@ -80,15 +80,18 @@ position: fixed;
     align-items: center;
     align-content: center;
     padding-left: 10%;
-   
 }
+   
+#anchor{
 
+    opacity: 0.5;
+
+}
 
 main{
  
     display: flex;
     place-items: center;
-    /* min-height: 100vh; */
     position: relative;
 
 }
