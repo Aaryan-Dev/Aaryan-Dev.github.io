@@ -66,6 +66,30 @@ position: fixed;
 }
 
 
+#nav{
+
+    display: flex;
+    flex-direction: column;
+
+}
+
+#ava{
+    margin-top: 1%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+#main{
+
+    display: grid;
+    place-items: center;
+    /* min-height: 100vh; */
+    position: relative;
+
+}
+
 
 #navbar{
     display: flex;
@@ -127,12 +151,6 @@ background: linear-gradient(-45deg, #ffffff, #000000, #282828, #575757);
 
 
 
-#main{
-
-    height: 3000px;
-    padding: 16px;
-
-}
 
 
 
@@ -168,3 +186,10 @@ background: linear-gradient(-45deg, #ffffff, #000000, #282828, #575757);
 
 
 
+#well {
+
+    border: 1px solid black;
+    height: 3000px;
+    padding: 16px;
+
+}
