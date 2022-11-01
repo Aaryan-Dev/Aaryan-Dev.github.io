@@ -45,3 +45,49 @@ function defa() {
     document.querySelectorAll(".into")[i].style.opacity = 1;
   }
 }
+
+document.querySelector("#well").addEventListener("mouseover", embed);
+
+function embed() {
+  document.querySelector("#ava").style.margin = "0%";
+  document.querySelector("#ava").style.transition = "all 2s";
+}
+
+document.querySelectorAll(".into")[0].addEventListener("mouseover", remove);
+document.querySelectorAll(".into")[1].addEventListener("mouseover", remove);
+document.querySelectorAll(".into")[2].addEventListener("mouseover", remove);
+document.querySelectorAll(".into")[3].addEventListener("mouseover", remove);
+
+function remove() {
+  document.querySelector("#ava").style.margin = "-8%";
+  document.querySelector("#ava").style.transition = "all 500ms";
+}
+
+function angle(cx, cy, ex, ey) {
+  const dy = ey - cy;
+  const dx = ex - cx;
+
+  const rad = Math.atan2(dy, dx);
+  const deg = (rad * 180) / Math.PI;
+  return deg;
+}
+
+document.addEventListener("mousemove", (e) => {
+  const mouseX = e.clientX;
+  const mouseY = e.clientY;
+
+  const anchor = document.getElementById("anchor");
+  const rekt = anchor.getBoundingClientRect();
+  const anchorX = rekt.left + rekt.width / 2;
+  const anchorY = rekt.top + rekt.height / 2;
+
+  const angleDeg = angle(mouseX, mouseY, anchorX, anchorY);
+
+  // console.log(angleDeg);
+
+  const eyes = document.querySelectorAll(".eye");
+
+  eyes.forEach((eye) => {
+    eye.style.transform = `rotate(${90 + angleDeg}deg)`;
+  });
+});
