@@ -51,6 +51,7 @@ document.querySelector("#well").addEventListener("mouseover", embed);
 function embed() {
   document.querySelector("#ava").style.margin = "0%";
   document.querySelector("#ava").style.justifyContent = "center";
+  document.querySelector("#ava").style.transition = "all 600ms";
 }
 
 document.querySelectorAll(".into")[0].addEventListener("mouseover", remove);
@@ -62,7 +63,7 @@ document.querySelectorAll(".into")[4].addEventListener("mouseover", remove);
 function remove() {
   document.querySelector("#ava").style.margin = "-8%";
   document.querySelector("#ava").style.justifyContent = "flex-start";
-  document.querySelector("#ava").style.transition = "all 500ms";
+  document.querySelector("#ava").style.transition = "all 200ms";
 }
 
 function angle(cx, cy, ex, ey) {
@@ -98,3 +99,19 @@ document.addEventListener("mousemove", (e) => {
     })`;
   });
 });
+
+// **************
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    console.log(entry);
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+    } else {
+      entry.target.classList.remove("show");
+    }
+  });
+});
+
+const hiddenElements = document.querySelectorAll(".hidden");
+hiddenElements.forEach((el) => observer.observe(el));
