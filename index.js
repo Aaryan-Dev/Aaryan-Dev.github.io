@@ -23,7 +23,7 @@ for (let i = 0; i < link.length; i++) {
 }
 
 function mouseOver(i) {
-  for (let j = 0; j < 4; j++) {
+  for (let j = 0; j < 5; j++) {
     if (j !== i) {
       document.querySelectorAll(".into")[j].style.opacity = 0;
       document.querySelectorAll(".into")[j].style.transition = "all 2s";
@@ -50,16 +50,18 @@ document.querySelector("#well").addEventListener("mouseover", embed);
 
 function embed() {
   document.querySelector("#ava").style.margin = "0%";
-  document.querySelector("#ava").style.transition = "all 2s";
+  document.querySelector("#ava").style.justifyContent = "center";
 }
 
 document.querySelectorAll(".into")[0].addEventListener("mouseover", remove);
 document.querySelectorAll(".into")[1].addEventListener("mouseover", remove);
 document.querySelectorAll(".into")[2].addEventListener("mouseover", remove);
 document.querySelectorAll(".into")[3].addEventListener("mouseover", remove);
+document.querySelectorAll(".into")[4].addEventListener("mouseover", remove);
 
 function remove() {
   document.querySelector("#ava").style.margin = "-8%";
+  document.querySelector("#ava").style.justifyContent = "flex-start";
   document.querySelector("#ava").style.transition = "all 500ms";
 }
 
@@ -76,6 +78,8 @@ document.addEventListener("mousemove", (e) => {
   const mouseX = e.clientX;
   const mouseY = e.clientY;
 
+  const res = document.getElementById("res");
+
   const anchor = document.getElementById("anchor");
   const rekt = anchor.getBoundingClientRect();
   const anchorX = rekt.left + rekt.width / 2;
@@ -89,5 +93,28 @@ document.addEventListener("mousemove", (e) => {
 
   eyes.forEach((eye) => {
     eye.style.transform = `rotate(${90 + angleDeg}deg)`;
+    res.style.color = `rgba(${128}, ${angleDeg + 270}, ${angleDeg + 560}, ${
+      angleDeg + 680
+    })`;
   });
+});
+// *********************
+
+window.addEventListener("mousemove", function (e) {
+  var to_append = document.getElementsByClassName("loader-container")[0];
+  var all = document.getElementsByClassName("loader-container");
+
+  var parent_div = document.createElement("div");
+  parent_div.className = "loader-container";
+  var inner_div = document.createElement("div");
+  inner_div.className = "loader";
+  parent_div.appendChild(inner_div);
+  var d = document.body.appendChild(parent_div);
+
+  parent_div.style.left = e.clientX - 50 + "px";
+  parent_div.style.top = e.clientY - 50 + "px";
+
+  if (document.getElementsByClassName("loader-container").length > 50) {
+    document.body.removeChild(to_append);
+  }
 });
