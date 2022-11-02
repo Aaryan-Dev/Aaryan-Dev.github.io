@@ -9,7 +9,6 @@
 
     margin: auto;
     display: flex;
-    backdrop-filter: blur(80px);
 }
 
 #quote {
@@ -19,6 +18,11 @@
     justify-content: center;
     align-items: center;
     align-content: center;
+}
+
+#font {
+
+    font-weight: 200;
 }
 
 #quote>p {
@@ -71,6 +75,9 @@ position: fixed;
 
     display: flex;
     flex-direction: column;
+    border-left: 10px solid rgb(0, 0, 0);
+    border-top: 15px solid rgb(0, 0, 0);
+
 
 }
 
@@ -84,7 +91,7 @@ position: fixed;
 }
 
 #anchor{
-    background-color: rgba(255, 255, 255, 0.683); 
+    background-color: rgba(255, 255, 255, 0.9); 
     backdrop-filter: blur(2px);
     padding: 0.8%;
     border-radius: 10%;
@@ -111,7 +118,7 @@ main{
 }
 
 #bar{
-    width: 61.4%;
+    width: 61.5%;
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -121,7 +128,7 @@ main{
 .into{
     margin: auto;
     width: 25%;
-    background-color: rgba(255, 255, 255, 0.717);
+    background-color: rgba(255, 255, 255, 0.852);
  padding-left:1%;
     padding-bottom: 1%;
 font-family: 'Poor Story', cursive;
@@ -133,7 +140,7 @@ backdrop-filter: blur(2px);
 #resume{
 
     color: white;
-    background-color: rgb(38, 38, 38);
+    background-color: rgb(0, 0, 0);
 
 }
 
@@ -229,6 +236,7 @@ background: linear-gradient(-45deg,  #00000090, #2c2c2cb0,  #ffffffb0, #525252b0
     padding-top: 3%;
   display: flex;
   flex-direction: column;    
+  border-left:10px solid rgb(0, 0, 0) ;
 
 }
 
@@ -243,8 +251,20 @@ background: linear-gradient(-45deg,  #00000090, #2c2c2cb0,  #ffffffb0, #525252b0
 
 .show{
     filter: blur(0);
-    opacity: 1;
     transform: translateX(0);
+    opacity: 1;
+}
+
+
+
+.fade{
+    margin-top: 100px;
+    opacity: 0;
+    transition: 1s;
+}
+.fadein{
+    margin-top: 0;
+    opacity: 1;
 }
 
 
@@ -253,7 +273,7 @@ background: linear-gradient(-45deg,  #00000090, #2c2c2cb0,  #ffffffb0, #525252b0
     color: white;
     display: flex;
    justify-content: space-between;
-    border-radius: 10% 0 0 0;
+    border-radius: 50% 0 0 0;
     background-color: rgb(0, 0, 0);
 }
 
@@ -289,28 +309,14 @@ background: linear-gradient(-45deg,  #00000090, #2c2c2cb0,  #ffffffb0, #525252b0
 #contactme {
     border: 1px solid rgb(12, 0, 62);
 }
+
+#github{
+    display: flex;
     
+}
+
+
     
-
-.delay:nth-child(1){
-
-    transition-delay: 100s;
-
-}
-.delay:nth-child(2){
-
-    transition-delay: 2000s;
-
-}
-
-#grade{
-
-    font-size: 12px;
-        background: -webkit-linear-gradient(#eee, #333);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-
-}
 
 .give{
 
@@ -318,6 +324,8 @@ background: linear-gradient(-45deg,  #00000090, #2c2c2cb0,  #ffffffb0, #525252b0
     color: black;
 
 }
+
+
 
 #trend {
     background-size: contain;
@@ -337,7 +345,7 @@ background: linear-gradient(-45deg,  #00000090, #2c2c2cb0,  #ffffffb0, #525252b0
             rgba(0, 0, 0, 0) 55%,
             rgba(0, 0, 0, 0) 100%);
     color: transparent;
-    animation: shine 3s infinite;
+    animation: shine 2s infinite;
     background-size: 200%;
 }
 
@@ -371,3 +379,5 @@ background: linear-gradient(-45deg,  #00000090, #2c2c2cb0,  #ffffffb0, #525252b0
     font-family: "Open sans";
     font-weight: 700;
 }
+
+/* ************************* */
