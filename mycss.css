@@ -37,7 +37,6 @@ rect.ContributionCalendar-day[data-level='4'] {
     font-family: Helvetica, arial;
     border-radius: 3px;
     margin-right: 0px;
-    margin: 0px;
     width: 100%;
     height: 15px;
     text-align: center;
@@ -83,11 +82,12 @@ rect.ContributionCalendar-day[data-level='4'] {
 }
 
 .contrib-column {
-    /* padding: 15px 0; */
+    background-color:#a12ed378;
+    padding: 15px 0;
     padding: 2% 0%;
     text-align: center;
-    border-left: 1px solid rgba(221, 221, 221, 0.215);
-    border-top: 1px solid rgba(221, 221, 221, 0.233);
+    border-left: 1px solid rgba(0, 0, 0, 0.274);
+    border-top: 1px solid rgba(0, 0, 0, 0.281);
     font-size: 70%;
 }
 
@@ -109,7 +109,7 @@ rect.ContributionCalendar-day[data-level='4'] {
     line-height: 1.3em;
     font-size: 120%;
     display: block;
-    color: #1D75AB;
+    color: #8c1dab;
     font-weight: 800;
 
 }
@@ -117,7 +117,7 @@ rect.ContributionCalendar-day[data-level='4'] {
 .calendar img.spinner {
     width: 70px;
     margin-top: 50px;
-    /* min-height: 70px; */
+    min-height: 70px;
     height: 700px;
 }
 
@@ -128,7 +128,7 @@ rect.ContributionCalendar-day[data-level='4'] {
 }
 
 .monospace a {
-    color: #1D75AB;
+    color: #791dab;
     text-decoration: none;
 }
 
@@ -142,7 +142,7 @@ rect.ContributionCalendar-day[data-level='4'] {
 }
 
 .text-muted {
-    color: #0060c0db;
+    color: #9000c0db;
 }
 
 .left.text-muted {
@@ -219,6 +219,6 @@ text.ContributionCalendar-label {
     
 }
 .contrib-column:hover{
-    background-color:#2eb7d378;
+    background-color:#f07efa42;
 
 }
