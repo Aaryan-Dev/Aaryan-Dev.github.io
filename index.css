@@ -76,7 +76,6 @@ position: fixed;
     display: flex;
     flex-direction: column;
     border-left: 10px solid rgb(0, 0, 0);
-    border-top: 15px solid rgb(0, 0, 0);
 
 
 }
@@ -212,10 +211,10 @@ background: linear-gradient(-45deg,  #00000090, #2c2c2cb0,  #ffffffb0, #525252b0
 }
 
 /* Track */
-/* ::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 5px grey;
-    border-radius: 10px;
-} */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0);
+    width: 0px;
+}
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
@@ -240,6 +239,11 @@ background: linear-gradient(-45deg,  #00000090, #2c2c2cb0,  #ffffffb0, #525252b0
 
 }
 
+#just{
+
+    border: 10px solid black;
+margin-bottom: 0.1%;
+}
 
 .hidden{
 
