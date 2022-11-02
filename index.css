@@ -83,6 +83,7 @@ position: fixed;
 #ava{
     margin-top: 0%;
     display: flex;
+    margin-top: -20%;
     justify-content: center;
     align-items: center;
     align-content: center;
@@ -205,6 +206,41 @@ background: linear-gradient(-45deg,  #00000090, #2c2c2cb0,  #ffffffb0, #525252b0
 }
 
 
+/* ********************************** */
+.upbtn {
+    color: rgb(255, 255, 255);
+    border: none;
+}
+
+.updown-content {
+    display: none;
+    position: absolute;
+    font-size: 10px;
+    background-color: #ffffff00;
+    border: 0.2px solid rgba(0, 0, 0, 0);
+    width: 10%;
+    z-index: 1;
+}
+.updown-content a {
+    color: rgb(255, 255, 255);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+
+.updown-content a:hover {
+    cursor: default;
+background-color: #ffffff00;
+    border: 0.2px solid rgba(0, 0, 0, 0);
+}
+
+.updown:hover .updown-content {
+    cursor: none;
+    display: block;
+}
+
+
 /* width */
 ::-webkit-scrollbar {
     width: 5px;
@@ -227,12 +263,16 @@ background: linear-gradient(-45deg,  #00000090, #2c2c2cb0,  #ffffffb0, #525252b0
     background: #33003b;
 }
 
+#hard{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
 
 
 #well {
-
-    height: 3000px;
-    padding-top: 3%;
   display: flex;
   flex-direction: column;    
   border-left:10px solid rgb(0, 0, 0) ;
@@ -305,8 +345,76 @@ background: linear-gradient(-45deg,  #00000090, #2c2c2cb0,  #ffffffb0, #525252b0
 }
 
 #myskills {
-    border: 1px solid rgb(83, 2, 2);
+    /* border: 1px solid rgb(83, 2, 2); */
+    margin-top: 248px;
+    display: flex;
+    flex-direction: column;
+    /* height: 600px; */
+    background-color: black;
+    padding-top:2% ;
+    padding-bottom: 2%;
+
 }
+
+
+#pogo{
+  margin: auto;
+  display: flex;
+  width: 100%;
+  /* border: 1px solid rgb(18, 57, 16); */
+}
+
+#pogo>div:nth-child(2){
+    margin-left: 1%;
+    font-size: 30px;
+}
+
+#sogo{
+    display: flex;
+    margin-left: 10%;
+}
+
+#sogo>img{
+    margin-left: 10%;
+}
+
+#list{
+    /* border: 1px solid rgb(32, 24, 176); */
+    width: 80%;
+    margin: auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    height: 90%;
+    gap: 30px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr) ;
+    grid-template-rows: 20px ;
+    place-items: center;
+
+}
+
+#list>div {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 20%;
+   align-content: center;
+    /* border: 1px solid orange; */
+}
+
+#list>div>div:nth-child(1) {
+display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    align-content: center;
+}
+
+/* #list>div>img{
+
+    width: 100%;
+
+} */
 
 
 #contactme {
@@ -315,6 +423,7 @@ background: linear-gradient(-45deg,  #00000090, #2c2c2cb0,  #ffffffb0, #525252b0
 
 #github{
     display: flex;
+
     
 }
 
@@ -326,6 +435,49 @@ background: linear-gradient(-45deg,  #00000090, #2c2c2cb0,  #ffffffb0, #525252b0
     text-decoration: none;
     color: black;
 
+}
+
+/* .frend{
+    position: fixed;
+        top: 0;
+        width: 100%;
+} */
+
+.sticky::before {
+    content: attr(data-heading);
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 28.5px;
+    width: 100%;
+    background: linear-gradient(45deg,
+            rgba(255, 255, 255, 0) 45%,
+            rgba(0, 0, 0, 0.8) 50%,
+            rgba(0, 0, 0, 0) 55%,
+            rgba(0, 0, 0, 0) 100%);
+    color: transparent;
+    animation: shine 2s infinite;
+    background-size: 200%;
+}
+
+@-webkit-keyframes shine {
+    0% {
+        background-position: -100%;
+    }
+
+    100% {
+        background-position: 100%;
+    }
+}
+
+@keyframes shine {
+    0% {
+        background-position: -100%;
+    }
+
+    100% {
+        background-position: 100%;
+    }
 }
 
 
@@ -348,7 +500,7 @@ background: linear-gradient(-45deg,  #00000090, #2c2c2cb0,  #ffffffb0, #525252b0
             rgba(0, 0, 0, 0) 55%,
             rgba(0, 0, 0, 0) 100%);
     color: transparent;
-    animation: shine 2s infinite;
+    animation: shine 4s infinite;
     background-size: 200%;
 }
 
