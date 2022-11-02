@@ -36,6 +36,7 @@ position: fixed;
 }
 
 .stickybar{
+
     width: 61.4%; 
      display: flex; 
 
@@ -113,18 +114,20 @@ main{
     display: flex;
     justify-content: flex-end;
     align-items: center;
-}
 
+}
 
 .into{
     margin: auto;
     width: 25%;
+    background-color: rgba(255, 255, 255, 0.717);
  padding-left:1%;
     padding-bottom: 1%;
-
-    backdrop-filter: blur(2px);
-
+font-family: 'Poor Story', cursive;
+backdrop-filter: blur(2px);
 }
+
+
 
 #resume{
 
@@ -137,7 +140,7 @@ main{
 cursor: pointer;
 color: white;
 transition: 1s;
-background: linear-gradient(-45deg, #ffffff, #000000, #282828, #575757);
+background: linear-gradient(-45deg,  #00000090, #2c2c2cb0,  #ffffffb0, #525252b0);
     background-size: 400% 400%;
     animation: gradient 4s ease infinite;
 
@@ -195,17 +198,6 @@ background: linear-gradient(-45deg, #ffffff, #000000, #282828, #575757);
 }
 
 
-
-#well {
-
-    /* border: 1px solid black; */
-    height: 3000px;
-    padding-top: 3%;
-    /* position: fixed; */
-
-}
-
-
 /* width */
 ::-webkit-scrollbar {
     width: 10px;
@@ -230,5 +222,58 @@ background: linear-gradient(-45deg, #ffffff, #000000, #282828, #575757);
 
 
 
-/* ***************** */
+#well {
+
+    height: 3000px;
+    padding-top: 3%;
+  display: flex;
+  flex-direction: column;    
+
+}
+
+
+#aboutme{
+    padding: 5% 5%;
+    border: 1px solid black;
+    color: white;
+    display: flex;
+   justify-content: space-between;
+    border-radius: 10% 0 0 0;
+    background-color: rgb(0, 0, 0);
+}
+
+/* #pro{
+    
+} */
+
+#pro>img{
+    border-radius: 20% 0 0 0;
+}
+
+#line{
+    width: 70%;
+
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+
+}
+
+
+
+#myprojects {
+    border: 1px solid rgb(73, 16, 85);
+}
+
+#myskills {
+    border: 1px solid rgb(83, 2, 2);
+}
+
+
+#contactme {
+    border: 1px solid rgb(12, 0, 62);
+}
+    
+    
 
