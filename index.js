@@ -51,7 +51,7 @@ document.querySelector("#well").addEventListener("mouseover", embed);
 function embed() {
   document.querySelector("#ava").style.margin = "0%";
   document.querySelector("#ava").style.justifyContent = "center";
-  document.querySelector("#ava").style.transition = "all 600ms";
+  document.querySelector("#ava").style.transition = "all 0ms";
 }
 
 document.querySelectorAll(".into")[0].addEventListener("mouseover", remove);
@@ -61,9 +61,9 @@ document.querySelectorAll(".into")[3].addEventListener("mouseover", remove);
 document.querySelectorAll(".into")[4].addEventListener("mouseover", remove);
 
 function remove() {
-  document.querySelector("#ava").style.margin = "-8%";
+  document.querySelector("#ava").style.margin = "-20%";
   document.querySelector("#ava").style.justifyContent = "flex-start";
-  document.querySelector("#ava").style.transition = "all 200ms";
+  document.querySelector("#ava").style.transition = "all 0ms";
 }
 
 function angle(cx, cy, ex, ey) {
@@ -115,3 +115,17 @@ const observer = new IntersectionObserver((entries) => {
 
 const hiddenElements = document.querySelectorAll(".hidden");
 hiddenElements.forEach((el) => observer.observe(el));
+
+const fade = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    console.log(entry);
+    if (entry.isIntersecting) {
+      entry.target.classList.add("fadein");
+    } else {
+      // entry.target.classList.remove("fadein");
+    }
+  });
+});
+
+const fadeElements = document.querySelectorAll(".fade");
+fadeElements.forEach((el) => fade.observe(el));
