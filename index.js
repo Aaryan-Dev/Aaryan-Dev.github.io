@@ -26,7 +26,7 @@ function mouseOver(i) {
   for (let j = 0; j < 5; j++) {
     if (j !== i) {
       document.querySelectorAll(".into")[j].style.opacity = 0;
-      document.querySelectorAll(".into")[j].style.transition = "all 2s";
+      document.querySelectorAll(".into")[j].style.transition = "all 0s";
     } else {
       document.querySelectorAll(".into")[i].style.opacity = 1;
     }
