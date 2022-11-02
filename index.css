@@ -90,7 +90,7 @@ position: fixed;
 }
 
 #anchor{
-    background-color: rgba(255, 255, 255, 0.9); 
+    background-color: rgba(255, 255, 255, 0.872); 
     backdrop-filter: blur(2px);
     padding: 0.8%;
     border-radius: 10%;
@@ -127,7 +127,7 @@ main{
 .into{
     margin: auto;
     width: 25%;
-    background-color: rgba(255, 255, 255, 0.852);
+    background-color: rgb(255, 255, 255);
  padding-left:1%;
     padding-bottom: 1%;
 font-family: 'Poor Story', cursive;
@@ -242,7 +242,6 @@ background: linear-gradient(-45deg,  #00000090, #2c2c2cb0,  #ffffffb0, #525252b0
 #just{
 
     border: 10px solid black;
-margin-bottom: 0.1%;
 }
 
 .hidden{
@@ -376,12 +375,22 @@ margin-bottom: 0.1%;
 #trend {
     top: 50%;
     left: 50%;
-    transform: translate(0%, 0%);
+    /* transform: translate(0%, 0%); */
     /* position: absolute; */
     /* font-size: 20vw; */
     margin: 0;
     font-family: "Open sans";
     font-weight: 700;
 }
+
+#rend {
+    top: 50%;
+    left: 50%;
+    margin: 0;
+    font-family: "Open sans";
+    font-weight: 700;
+}
+
+
 
 /* ************************* */
