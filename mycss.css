@@ -1,8 +1,8 @@
 :root {
     /* --color-calendar-graph-day-bg: #000000; */
-    --color-calendar-graph-day-bg: #dedede;
-    --color-calendar-graph-day-L1-bg: hsl(278, 100%, 21%);
-    --color-calendar-graph-day-L2-bg: hsl(277, 100%, 20%);
+    --color-calendar-graph-day-bg: #00000014;
+    --color-calendar-graph-day-L1-bg: hsl(271, 100%, 20%);
+    --color-calendar-graph-day-L2-bg: hsl(277, 100%, 38%);
     --color-calendar-graph-day-L3-bg: hsl(277, 100%, 37%);
     --color-calendar-graph-day-L4-bg: hsl(276, 100%, 50%);
 }
