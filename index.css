@@ -76,10 +76,11 @@ position: fixed;
 #ava{
     margin-top: 0%;
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
+    /* justify-content: flex-start; */
     align-items: center;
     align-content: center;
-    padding-left: 10%;
+    padding-top: 1%;
 }
    
 #anchor{
@@ -90,7 +91,7 @@ position: fixed;
 
 main{
  
-    display: flex;
+    display: grid;
     place-items: center;
     position: relative;
 
@@ -118,8 +119,7 @@ main{
 .into{
     margin: auto;
     width: 25%;
-    padding-left:7%;
-    padding-right: 7%;
+ padding-left:1%;
     padding-bottom: 1%;
 
     backdrop-filter: blur(2px);
@@ -204,3 +204,31 @@ background: linear-gradient(-45deg, #ffffff, #000000, #282828, #575757);
     /* position: fixed; */
 
 }
+
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+/* ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+} */
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgb(27, 27, 27);
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #33003b;
+}
+
+
+
+/* ***************** */
+
