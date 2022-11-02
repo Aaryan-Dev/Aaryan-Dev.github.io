@@ -78,16 +78,17 @@ position: fixed;
     margin-top: 0%;
     display: flex;
     justify-content: center;
-    /* justify-content: flex-start; */
     align-items: center;
     align-content: center;
     padding-top: 1%;
 }
-   
+
 #anchor{
-
-    opacity: 0.5;
-
+    background-color: rgba(255, 255, 255, 0.683); 
+    backdrop-filter: blur(2px);
+    padding: 0.8%;
+    border-radius: 10%;
+    
 }
 
 main{
@@ -232,9 +233,23 @@ background: linear-gradient(-45deg,  #00000090, #2c2c2cb0,  #ffffffb0, #525252b0
 }
 
 
+.hidden{
+
+    opacity: 0;
+    transition: 1s;
+    filter: blur(5px);
+    transform: translateX(-100%);
+}
+
+.show{
+    filter: blur(0);
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
 #aboutme{
     padding: 5% 5%;
-    border: 1px solid black;
     color: white;
     display: flex;
    justify-content: space-between;
@@ -277,3 +292,82 @@ background: linear-gradient(-45deg,  #00000090, #2c2c2cb0,  #ffffffb0, #525252b0
     
     
 
+.delay:nth-child(1){
+
+    transition-delay: 100s;
+
+}
+.delay:nth-child(2){
+
+    transition-delay: 2000s;
+
+}
+
+#grade{
+
+    font-size: 12px;
+        background: -webkit-linear-gradient(#eee, #333);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+
+}
+
+.give{
+
+    text-decoration: none;
+    color: black;
+
+}
+
+#trend {
+    background-size: contain;
+    text-align: center;
+    color: rgb(255, 255, 255);
+}
+
+#trend::before {
+    content: attr(data-heading);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background: linear-gradient(45deg,
+            rgba(0, 0, 0, 0) 45%,
+            rgba(255, 255, 255, 0.8) 50%,
+            rgba(0, 0, 0, 0) 55%,
+            rgba(0, 0, 0, 0) 100%);
+    color: transparent;
+    animation: shine 3s infinite;
+    background-size: 200%;
+}
+
+@-webkit-keyframes shine {
+    0% {
+        background-position: -100%;
+    }
+
+    100% {
+        background-position: 100%;
+    }
+}
+
+@keyframes shine {
+    0% {
+        background-position: -100%;
+    }
+
+    100% {
+        background-position: 100%;
+    }
+}
+
+#trend {
+    top: 50%;
+    left: 50%;
+    transform: translate(0%, 0%);
+    /* position: absolute; */
+    /* font-size: 20vw; */
+    margin: 0;
+    font-family: "Open sans";
+    font-weight: 700;
+}
