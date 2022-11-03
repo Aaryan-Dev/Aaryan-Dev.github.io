@@ -255,7 +255,6 @@ background-color: #ffffff00;
 /* Handle */
 ::-webkit-scrollbar-thumb {
     background: rgb(27, 27, 27);
-    border-radius: 10px;
 }
 
 /* Handle on hover */
@@ -417,9 +416,6 @@ display: flex;
 } */
 
 
-#contactme {
-    border: 1px solid rgb(12, 0, 62);
-}
 
 #github{
     display: flex;
@@ -542,7 +538,3 @@ display: flex;
     font-family: "Open sans";
     font-weight: 700;
 }
-
-
-
-/* ************************* */
