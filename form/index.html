@@ -21,7 +21,7 @@
 
     <link rel="stylesheet" href="css/style.css" />
   </head>
-  <body class="no">
+  <body id="pogic" class="no">
     <section class="ftco-section no">
       <div class="container">
         <div class="row justify-content-center">
@@ -35,13 +35,13 @@
               <div class="row no-gutters">
                 <div class="col-md-6 d-flex align-items-stretch">
                   <div class="contact-wrap w-100 p-md-5 p-4 py-5">
-                    <h3 class="mb-4">Let's Connect! 😶‍🌫️</h3>
+                    <h3 id="sent" class="mb-4">Let's Connect!</h3>
                     <div id="form-message-warning" class="mb-4"></div>
                     <div id="form-message-success" class="mb-4">
                       Your message was sent, thank you!
                     </div>
                     <form
-                      onsubmit="sendEmail(); reset(); return false;"
+                      onsubmit="sendEmail(); return false;"
                       method="POST"
                       id="contactForm"
                       name="contactForm"
@@ -96,6 +96,7 @@
                         <div class="col-md-12">
                           <div class="form-group">
                             <input
+                              id="logic"
                               type="submit"
                               value="Send Message"
                               class="btn btn-primary"
@@ -217,7 +218,28 @@
 <script src="../index.js"></script>
 <script src="https://smtpjs.com/v3/smtp.js"></script>
 
+<script src="./main.js"></script>
 <script>
+  document.getElementById("pogic").addEventListener("mouseover", verify);
+
+  function verify() {
+    document.getElementById("logic").style.cursor = "not-allowed";
+    document.getElementById("logic").disabled = true;
+    if (
+      document.getElementById("subject").value !== "" &&
+      document.getElementById("email").value !== "" &&
+      document.getElementById("name").value !== "" &&
+      document.getElementById("message").value !== "" &&
+      document.getElementById("subject").value !== undefined &&
+      document.getElementById("email").value !== undefined &&
+      document.getElementById("name").value !== undefined &&
+      document.getElementById("message").value !== undefined
+    ) {
+      document.getElementById("logic").disabled = false;
+      document.getElementById("logic").style.cursor = "pointer";
+    }
+  }
+
   function sendEmail() {
     Email.send({
       Host: "smtp.elasticemail.com",
@@ -233,6 +255,12 @@
         document.getElementById("name").value +
         "<br> Query- " +
         document.getElementById("message").value,
-    }).then((message) => alert(message));
+    }).then((message) => {
+      if (message === "OK") {
+        document.getElementById("contactForm").remove();
+        document.getElementById("sent").innerText = "message sent!";
+        document.getElementById("sent").style.color = "orange";
+      }
+    });
   }
 </script>
