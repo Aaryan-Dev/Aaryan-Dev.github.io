@@ -49,9 +49,9 @@ function defa() {
 document.querySelector("#well").addEventListener("mouseover", embed);
 
 function embed() {
-  document.querySelector("#ava").style.marginTop = "0%";
-  document.querySelector("#ava").style.justifyContent = "center";
-  document.querySelector("#ava").style.transition = "all 1s";
+  document.querySelector("main").style.margin = "0%";
+  document.querySelector("main").style.justifyContent = "center";
+  document.querySelector("main").style.transition = "all 1s";
 }
 
 document.querySelectorAll(".into")[0].addEventListener("mouseover", remove);
@@ -61,9 +61,9 @@ document.querySelectorAll(".into")[3].addEventListener("mouseover", remove);
 document.querySelectorAll(".into")[4].addEventListener("mouseover", remove);
 
 function remove() {
-  document.querySelector("#ava").style.margin = "-20%";
-  // document.querySelector("#ava").style.justifyContent = "flex-start";
-  document.querySelector("#ava").style.transition = "all 0ms";
+  document.querySelector("main").style.marginTop = "-100%";
+  document.querySelector("main").style.justifyContent = "flex-start";
+  document.querySelector("main").style.transition = "all 0ms";
 }
 
 function angle(cx, cy, ex, ey) {
