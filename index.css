@@ -1,9 +1,17 @@
+html {
+    scroll-behavior: smooth;
+}
+
 *{
     padding: 0px;
     margin: 0px;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    scroll-behavior: smooth;
 }
 
+body{
+    scroll-behavior: smooth;
+}
 
 #header{
 
@@ -91,9 +99,8 @@ position: fixed;
 }
 
 #anchor{
-    background-color: rgba(255, 255, 255, 0.872); 
-    backdrop-filter: blur(2px);
-    padding: 0.8%;
+    background-color: rgb(255, 255, 255); 
+box-shadow: rgb(240, 46, 169) 0px 5px 0px 0px    ;
     border-radius: 10%;
     
 }
@@ -244,22 +251,24 @@ background-color: #ffffff00;
 /* width */
 ::-webkit-scrollbar {
     width: 5px;
+    height: 0px;
+    background-color: rgb(0, 0, 0);
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0);
+    /* box-shadow: inset 0 0 5px rgba(0, 0, 0, 0); */
     width: 0px;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: rgb(27, 27, 27);
+    background: rgb(69, 0, 90);
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-    background: #33003b;
+    background: #680078;
 }
 
 #hard{
