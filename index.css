@@ -90,7 +90,7 @@ position: fixed;
 
 #ava{
     display: flex;
-    margin-top: -20%;
+    
     justify-content: center;
     align-items: center;
     align-content: center;
@@ -99,13 +99,13 @@ position: fixed;
 
 #anchor{
     background-color: rgb(255, 255, 255); 
-box-shadow: rgb(195, 0, 255) 0px 5px 0px 0px    ;
+    box-shadow: rgb(195, 0, 255) 0px 5px 0px 0px    ;
     border-radius: 10%;
     
 }
 
 main{
- 
+    margin-top: -100%;
     display: grid;
     place-items: center;
     position: relative;
@@ -267,8 +267,7 @@ background-color: #ffffff00;
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-    border: 1px solid white;
-    background: #ffffff00;
+   border: 1px solid black;
 }
 
 #hard{
