@@ -49,7 +49,7 @@ function defa() {
 document.querySelector("#well").addEventListener("mouseover", embed);
 
 function embed() {
-  document.querySelector("#ava").style.margin = "0%";
+  document.querySelector("#ava").style.marginTop = "0%";
   document.querySelector("#ava").style.justifyContent = "center";
   document.querySelector("#ava").style.transition = "all 1s";
 }
@@ -62,7 +62,7 @@ document.querySelectorAll(".into")[4].addEventListener("mouseover", remove);
 
 function remove() {
   document.querySelector("#ava").style.margin = "-20%";
-  document.querySelector("#ava").style.justifyContent = "flex-start";
+  // document.querySelector("#ava").style.justifyContent = "flex-start";
   document.querySelector("#ava").style.transition = "all 0ms";
 }
 
