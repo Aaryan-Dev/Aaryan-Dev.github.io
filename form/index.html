@@ -256,11 +256,12 @@
         "<br> Query- " +
         document.getElementById("message").value,
     }).then((message) => {
-      if (message === "OK") {
-        document.getElementById("contactForm").remove();
-        document.getElementById("sent").innerText = "message sent!";
-        document.getElementById("sent").style.color = "orange";
-      }
+      // alert(message);
+      // if (message === "OK") {
+      document.getElementById("contactForm").remove();
+      document.getElementById("sent").innerText = "Message sent! ☑️";
+      document.getElementById("sent").style.color = "orange";
+      // }
     });
   }
 </script>
