@@ -100,7 +100,7 @@ position: fixed;
 
 #anchor{
     background-color: rgb(255, 255, 255); 
-box-shadow: rgb(240, 46, 169) 0px 5px 0px 0px    ;
+box-shadow: rgb(195, 0, 255) 0px 5px 0px 0px    ;
     border-radius: 10%;
     
 }
@@ -263,12 +263,13 @@ background-color: #ffffff00;
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: rgb(69, 0, 90);
+    background: rgb(195, 0, 255);
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-    background: #680078;
+    border: 1px solid white;
+    background: #ffffff00;
 }
 
 #hard{
