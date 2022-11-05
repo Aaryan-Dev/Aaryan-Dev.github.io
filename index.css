@@ -143,6 +143,19 @@ backdrop-filter: blur(2px);
 }
 
 
+#langs{
+
+    background-color: black;
+    /* display: flex;
+    flex-direction: column; */
+}
+
+#langs>img{
+    width: 20%;
+}
+/* dlofihdiofj */
+
+
 
 #resume{
 
