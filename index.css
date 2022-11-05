@@ -337,6 +337,7 @@ background-color: #ffffff00;
 
 #aboutme{
     padding: 5% 5%;
+    height: 300px;
     color: white;
     display: flex;
    justify-content: space-between;
