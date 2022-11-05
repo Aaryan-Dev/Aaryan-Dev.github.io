@@ -569,14 +569,18 @@ display: flex;
 #some{
     display: grid;
 grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+grid-template-rows: 500px;
+place-items: center;
+;
 }
 
 #some>div{
     display: flex;
     margin: 1%;
-  
-    justify-content: space-between;
+width: 80%;
+    justify-content:center;
+    align-items: center;
+    align-content: center;
 }
 
 #some>div>div>div {
@@ -593,7 +597,7 @@ grid-template-columns: repeat(2, 1fr);
     align-content: center;
     background-color: black;
     border-radius: 5%;
-    width: 80%;
+    width: 100%;
 }
 
 #ex>img{
@@ -643,7 +647,7 @@ grid-template-columns: repeat(2, 1fr);
 }
 
 #dem>a {
-    color: black;
+    color: rgb(255, 255, 255);
 margin: 3%;
 
 }
