@@ -14,7 +14,6 @@ body{
 }
 
 #header{
-
     margin: auto;
     display: flex;
 }
@@ -285,15 +284,11 @@ background-color: #ffffff00;
 #well {
   display: flex;
   flex-direction: column;    
-  /* border-left:10px solid rgb(0, 0, 0) ; */
+  border-left:10px solid rgb(0, 0, 0) ;
+  border-bottom:10px solid rgb(0, 0, 0) ;
+  border-radius: 10% 10%;
 
 }
-
-#just{
-
-    border: 4px solid black;
-}
-
 .hidden{
 
     opacity: 0;
@@ -467,11 +462,6 @@ display: flex;
 
 
 
-#trend {
-    background-size: contain;
-    text-align: center;
-    color: rgb(255, 255, 255);
-}
 
 #trend::before {
     content: attr(data-heading);
@@ -513,7 +503,12 @@ display: flex;
 #trend {
     top: 50%;
     left: 50%;
-    /* transform: translate(0%, 0%); */
+    transform: translate(0%, 0%);
+  
+            background-size: contain;
+            text-align: center;
+            color: rgb(255, 255, 255);
+      
     /* position: absolute; */
     /* font-size: 20vw; */
     margin: 0;
