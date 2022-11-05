@@ -148,6 +148,8 @@ backdrop-filter: blur(2px);
     background-color: black;
     display: flex;
     justify-content: center;
+    align-items: center;
+    align-content: center;
     padding-bottom: 1%;
     
 }
@@ -358,21 +360,30 @@ background-color: #ffffff00;
     justify-content: center;
     align-items: center;
     align-content: center;
+    
+}
+
+#heck{
+    
+        display: flex; 
+}
+
+#heck>div>div>a{
+color: white;
+    margin-left: 10px;
 
 }
 
-
-
 #myprojects {
-    border: 1px solid rgb(73, 16, 85);
+    border: 10px solid rgb(0, 0, 0);
+    border-left: 80px solid rgb(0, 0, 0);
+    border-right: 80px solid rgb(0, 0, 0);
+    margin-top: 270px;
 }
 
 #myskills {
-    /* border: 1px solid rgb(83, 2, 2); */
-    margin-top: 248px;
     display: flex;
     flex-direction: column;
-    /* height: 600px; */
     background-color: black;
     padding-top:2% ;
     padding-bottom: 2%;
