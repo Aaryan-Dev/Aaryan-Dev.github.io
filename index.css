@@ -191,7 +191,7 @@ background: linear-gradient(-45deg,  #00000090, #2c2c2cb0,  #ffffffb0, #525252b0
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #f1f1f1;
+    background-color: #ffffff;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
