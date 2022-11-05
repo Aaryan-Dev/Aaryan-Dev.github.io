@@ -65,7 +65,7 @@ position: fixed;
 
 #name{
     
-    width: 38.5%;
+    width: 30.5%;
     display: flex;
 }
 
@@ -92,7 +92,6 @@ position: fixed;
 
 #ava{
     display: flex;
-    
     justify-content: center;
     align-items: center;
     align-content: center;
@@ -111,8 +110,8 @@ main{
     display: grid;
     place-items: center;
     position: relative;
-
 }
+
 
 #eyes, #eyes img{
     position: absolute;
@@ -136,6 +135,7 @@ main{
 
 .into{
     margin: auto;
+    font-size: 12px;
     width: 25%;
     background-color: rgb(255, 255, 255);
  padding-left:1%;
@@ -291,7 +291,7 @@ background-color: #ffffff00;
 
 #just{
 
-    border: 10px solid black;
+    border: 4px solid black;
 }
 
 .hidden{
@@ -323,6 +323,7 @@ background-color: #ffffff00;
 
 #aboutme{
     padding: 5% 5%;
+    height: 400px;
     color: white;
     display: flex;
    justify-content: space-between;
@@ -330,12 +331,10 @@ background-color: #ffffff00;
     background-color: rgb(0, 0, 0);
 }
 
-/* #pro{
-    
-} */
 
 #pro>img{
     border-radius: 20% 0 0 0;
+    width: 80%;
 }
 
 #line{
@@ -444,28 +443,7 @@ display: flex;
 
 }
 
-/* .frend{
-    position: fixed;
-        top: 0;
-        width: 100%;
-} */
 
-#eyes::before {
-    content: attr(data-heading);
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 28.5px;
-    width: 100%;
-    background: linear-gradient(45deg,
-            rgba(0, 0, 0, 0) 45%,
-                rgba(255, 255, 255, 0.8) 50%,
-                rgba(0, 0, 0, 0) 55%,
-                rgba(0, 0, 0, 0) 100%);
-    color: transparent;
-    animation: shine 2s infinite;
-    background-size: 200%;
-}
 
 @-webkit-keyframes shine {
     0% {
@@ -501,6 +479,7 @@ display: flex;
     left: 0;
     top: 0;
     width: 100%;
+    /* height: 20px; */
     background: linear-gradient(45deg,
             rgba(0, 0, 0, 0) 45%,
             rgba(255, 255, 255, 0.8) 50%,
