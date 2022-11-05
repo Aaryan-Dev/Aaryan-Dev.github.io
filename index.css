@@ -327,9 +327,9 @@ background-color: #ffffff00;
 
 
 .fade{
-    margin-top: 100px;
+    /* margin-top: -20px; */
     opacity: 0;
-    transition: 1s;
+    transition: 0.5s;
 }
 .fadein{
     margin-top: 0;
@@ -374,12 +374,7 @@ color: white;
 
 }
 
-#myprojects {
-    border: 10px solid rgb(0, 0, 0);
-    border-left: 80px solid rgb(0, 0, 0);
-    border-right: 80px solid rgb(0, 0, 0);
-    margin-top: 270px;
-}
+
 
 #myskills {
     display: flex;
@@ -552,4 +547,11 @@ display: flex;
     margin: 0;
     font-family: "Open sans";
     font-weight: 700;
+}
+
+#myprojects {
+    border: 10px solid rgb(0, 0, 0);
+    border-left: 80px solid rgb(0, 0, 0);
+    border-right: 80px solid rgb(0, 0, 0);
+    margin-top: 270px;
 }
