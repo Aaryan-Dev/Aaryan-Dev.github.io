@@ -619,7 +619,7 @@ grid-template-columns: repeat(2, 1fr);
     color: rgba(255, 255, 255, 0.479);
 }
 #title{
-    color: crimson;
+    text-decoration:overline
 }
 
 #disc{
