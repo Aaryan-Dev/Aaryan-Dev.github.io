@@ -44,14 +44,12 @@ body{
 position: fixed;
     top: 0;
     width: 100%;
-    /* transition: 5s; */
 }
 
 .stickybar{
     
     width: 61.4%; 
     display: flex; 
-    /* transition: 5s; */
 
         justify-content: flex-end;
         align-items: center;
