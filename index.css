@@ -123,8 +123,8 @@ main{
 
 #navbar{
     display: flex;
-    justify-content: flex-end;
-
+    justify-content: center;
+    
 }
 
 #bar{
@@ -132,10 +132,11 @@ main{
     display: flex;
     justify-content: flex-end;
     align-items: center;
-
+    
 }
 
 .into{
+    border: 1px solid rgb(224, 224, 224);
     margin: auto;
     font-size: 18px;
     width: 25%;
@@ -573,7 +574,6 @@ display: flex;
 #some{
     display: grid;
 grid-template-columns: repeat(2, 1fr);
-grid-template-rows: 500px;
 place-items: center;
 ;
 }
