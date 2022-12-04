@@ -73,7 +73,6 @@ body{
                                 }
                                                           #aboutme {
                                                               padding: 5% 5%;
-                                                              height: 300px;
                                                               color: white;
                                                               display: flex;
                                                               flex-direction: column;
@@ -85,7 +84,15 @@ body{
                                                               margin: 5%;
                                                           }
                             
+                                                          #pro{
+                                                            display: flex;
+                                                            justify-content: center;
+                                                            align-items: center;
+                                                            align-items: center;
+                                                          }
+
                                                           #pro>img {
+                                                            margin: auto;
                                                               border-radius: 20% 0 0 0;
                                                               margin: 5%;
                                                               width: 50%;
@@ -93,13 +100,19 @@ body{
                             
                                                           #line {
                                                               margin: 5%;
-                                                              width: 70%;
+                                                              width: 90%;
                                                               display: flex;
                                                               justify-content: center;
                                                               align-items: center;
                                                               align-content: center;
                             
                                                           }
+
+                                 #heck {
+                                     display: flex;
+                                     justify-content: center;
+                
+                                 }
 }
 
 @media only screen and (min-width: 320px) and (max-width: 767px) {
@@ -169,9 +182,14 @@ main {
     display: flex;
 }
 
+#heck {
+    display: flex;
+    justify-content: center;
+
+}
+
    #aboutme {
        padding: 5% 5%;
-       height: 300px;
        color: white;
        display: flex;
        flex-direction: column;
@@ -182,24 +200,30 @@ main {
        background-color: rgb(0, 0, 0);
    }
    
-   #pro>img {
-       border-radius: 20% 0 0 0;
-       width: 50%;
-   }
+ #pro {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     align-content: center;
+ }
 
-   #line {
-       width: 70%;
-
-       display: flex;
-       justify-content: center;
-       align-items: center;
-       align-content: center;
-
-   }
+ #pro>img {
+     border-radius: 20% 0 0 0;
+     width: 70%;
+     margin: 2%;
+    }
+    
+    #line {
+        width: 70%;
+   margin-bottom: 20%;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     align-content: center;
    
 }
 
-
+}
 @media only screen and (min-width: 767px) {
     #list {
             /* border: 1px solid rgb(32, 24, 176); */
@@ -268,12 +292,17 @@ main {
 
 #aboutme {
     padding: 5% 5%;
-    height: 300px;
     color: white;
     display: flex;
     justify-content: space-between;
     border-radius: 50% 0 0 0;
     background-color: rgb(0, 0, 0);
+}
+#pro{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
 }
 
 #pro>img {
@@ -556,7 +585,7 @@ background-color: #ffffff00;
   flex-direction: column;    
   border-left:10px solid rgb(0, 0, 0) ;
   border-bottom:10px solid rgb(0, 0, 0) ;
-  border-radius: 10% 10%;
+  border-radius: 7% 7%;
 
 }
 .hidden{
