@@ -3,16 +3,16 @@ window.onscroll = function () {
 };
 
 var header = document.getElementById("navbar");
-var bar = document.getElementById("bar");
+// var bar = document.getElementById("bar");
 var sticky = header.offsetTop;
 
 function myFunction() {
   if (window.pageYOffset > sticky) {
     header.classList.add("sticky");
-    bar.classList.add("stickybar");
+    // bar.classList.add("stickybar");
   } else {
     header.classList.remove("sticky");
-    bar.classList.remove("stickybar");
+    // bar.classList.remove("stickybar");
   }
 }
 
