@@ -13,6 +13,79 @@ body{
     scroll-behavior: smooth;
 }
 
+
+@media only screen and (min-width: 0px) and (max-width: 320px) {
+#list {
+        /* border: 1px solid rgb(32, 24, 176); */
+        width: 80%;
+        margin: auto;
+        margin-top: 40px;
+        margin-bottom: 40px;
+        height: 90%;
+        gap: 30px;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: 5px;
+        place-items: center;
+
+    }
+        #some {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            place-items: center;
+            ;
+        }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+#list {
+        /* border: 1px solid rgb(32, 24, 176); */
+        width: 80%;
+        margin: auto;
+        margin-top: 40px;
+        margin-bottom: 40px;
+        height: 90%;
+        gap: 30px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 10px;
+        place-items: center;
+
+    }
+
+        #some {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            place-items: center;
+            ;
+        }
+}
+
+
+@media only screen and (min-width: 767px) {
+    #list {
+            /* border: 1px solid rgb(32, 24, 176); */
+            width: 80%;
+            margin: auto;
+            margin-top: 40px;
+            margin-bottom: 40px;
+            height: 90%;
+            gap: 30px;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            grid-template-rows: 20px;
+            place-items: center;
+    
+        }
+
+                #some {
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    place-items: center;
+                    ;
+                }
+}
+
 #header{
     margin: auto;
     display: flex;
@@ -412,26 +485,13 @@ color: white;
     margin-left: 10%;
 }
 
-#list{
-    /* border: 1px solid rgb(32, 24, 176); */
-    width: 80%;
-    margin: auto;
-    margin-top: 40px;
-    margin-bottom: 40px;
-    height: 90%;
-    gap: 30px;
-    display: grid;
-    grid-template-columns: repeat(5, 1fr) ;
-    grid-template-rows: 20px ;
-    place-items: center;
 
-}
 
 #list>div {
    display: flex;
    justify-content: center;
    align-items: center;
-   width: 20%;
+   width: 30%;
    align-content: center;
     /* border: 1px solid orange; */
 }
@@ -573,17 +633,12 @@ display: flex;
     margin: 1%;
 }
 
-#some{
-    display: grid;
-grid-template-columns: repeat(2, 1fr);
-place-items: center;
-;
-}
+
 
 #some>div{
     display: flex;
     margin: 1%;
-width: 80%;
+width: 90%;
     justify-content:center;
     align-items: center;
     align-content: center;
