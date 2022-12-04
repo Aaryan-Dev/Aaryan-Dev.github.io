@@ -45,6 +45,16 @@ body{
                     display: flex;
                     flex-direction: column;
                 }
+
+                                #name>img {
+                
+                                    width: 40%;
+                                    display: flex;
+                                }
+
+                                /* #hard>img{
+                                    width: 100%;
+                                } */
 }
 
 @media only screen and (min-width: 320px) and (max-width: 767px) {
@@ -79,6 +89,12 @@ body{
                     display: flex;
                     flex-direction: column;
                 }
+
+                                #name>img {
+                
+                                    width: 70%;
+                                    display: flex;
+                                }
 }
 
 
@@ -114,6 +130,12 @@ body{
                                     display: flex;
                                     flex-direction: column;
                                 }
+
+                                                                #name>img {
+                                
+                                                                    width: 100%;
+                                                                    display: flex;
+                                                                }
 }
 
 #header{
@@ -169,11 +191,7 @@ position: fixed;
     
     
 
-#name{
-    
-    width: 30.5%;
-    display: flex;
-}
+
 
 #name>img{
     margin: auto;
