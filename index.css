@@ -40,6 +40,12 @@ body{
 }
 
 
+#mine{
+    color: black;
+    background-color: white;
+
+}
+
 .sticky {
 position: fixed;
     top: 0;
