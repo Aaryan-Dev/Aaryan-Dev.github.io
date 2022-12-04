@@ -59,6 +59,14 @@ body{
                                                               place-items: center;
                                                               padding-bottom: 1%;
                                                           }
+                #ava {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    align-content: center;
+                    margin-top: -1000%;
+                    padding-top: 1%;
+                }
 }
 
 @media only screen and (min-width: 320px) and (max-width: 767px) {
@@ -107,6 +115,22 @@ body{
                                                                     place-items: center;
                                                                     padding-bottom: 1%;
                                                                 }
+#ava {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin-top: -1000%;
+    padding-top: 1%;
+}
+
+main {
+    margin-top: -100%;
+    display: grid;
+    place-items: center;
+    position: relative;
+}
+                
 }
 
 
@@ -155,6 +179,20 @@ body{
     grid-template-columns: repeat(3, 1fr) ;
     place-items: center;
     padding-bottom: 1%;
+}
+
+#ava {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    padding-top: 1%;
+}
+main {
+    margin-top: -100%;
+    display: grid;
+    place-items: center;
+    position: relative;
 }
                                                                 
 }
@@ -235,26 +273,13 @@ position: fixed;
 
 }
 
-#ava{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-    padding-top: 1%;
-}
+
 
 #anchor{
     background-color: rgb(255, 255, 255); 
     box-shadow: rgb(195, 0, 255) 0px 5px 0px 0px;
     border-radius: 10%;
     
-}
-
-main{
-    margin-top: -100%;
-    display: grid;
-    place-items: center;
-    position: relative;
 }
 
 
