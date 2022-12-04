@@ -37,7 +37,7 @@ const but = document.querySelectorAll('[class="no"]');
 
 for (let i = 0; i < but.length; i++) {
   but[i].addEventListener("mouseover", defa);
-  console.log(but[i]);
+  // console.log(but[i]);
 }
 
 function defa() {
@@ -104,7 +104,7 @@ document.addEventListener("mousemove", (e) => {
 
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
-    console.log(entry);
+    // console.log(entry);
     if (entry.isIntersecting) {
       entry.target.classList.add("show");
     } else {
@@ -118,7 +118,7 @@ hiddenElements.forEach((el) => observer.observe(el));
 
 const fade = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
-    console.log(entry);
+    // console.log(entry);
     if (entry.isIntersecting) {
       entry.target.classList.add("fadein");
     } else {
