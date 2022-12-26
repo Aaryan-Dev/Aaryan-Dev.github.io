@@ -16,6 +16,8 @@ body {
 
 @media only screen and (min-width: 0px) and (max-width: 320px) {
 
+  
+
   .modal-content {
       background-color: #00000000;
       margin: auto;
