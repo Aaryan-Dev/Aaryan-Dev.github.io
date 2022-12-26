@@ -162,3 +162,13 @@ window.onclick = function (event) {
     modal.style.display = "none";
   }
 };
+
+function myToggle() {
+  navigator.clipboard.writeText(
+    "https://drive.google.com/file/d/1J702XqJfj8BlrsoC78V8JZX-knTO2wBv/view?usp=share_link"
+  );
+
+  var tooltip = document.getElementById("myTooltip");
+  tooltip.innerHTML = "Link copied ✔️";
+  tooltip.style.background = "white";
+}
