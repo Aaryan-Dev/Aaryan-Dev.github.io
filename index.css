@@ -15,6 +15,15 @@ body {
 }
 
 @media only screen and (min-width: 0px) and (max-width: 320px) {
+
+  .modal-content {
+      background-color: #00000000;
+      margin: auto;
+      padding: 0px;
+      border: 0px solid rgb(0, 0, 0);
+      width: 90%;
+    }
+
   #list {
     /* border: 1px solid rgb(32, 24, 176); */
     width: 80%;
@@ -121,6 +130,15 @@ body {
 }
 
 @media only screen and (min-width: 320px) and (max-width: 767px) {
+
+  .modal-content {
+      background-color: #00000000;
+      margin: auto;
+      padding: 0px;
+      border: 0px solid rgb(0, 0, 0);
+      width: 90%;
+    }
+
   #list {
     /* border: 1px solid rgb(32, 24, 176); */
     width: 80%;
@@ -234,6 +252,14 @@ body {
   }
 }
 @media only screen and (min-width: 767px) {
+  /* Modal Content */
+    .modal-content {
+      background-color: #00000000;
+      margin: auto;
+      padding: 0px;
+      border: 0px solid rgb(0, 0, 0);
+      width: 60%;
+    }
   #list {
     /* border: 1px solid rgb(32, 24, 176); */
     width: 80%;
@@ -839,14 +865,14 @@ body {
   /* Black w/ opacity */
 }
 
-/* Modal Content */
+/* Modal Content
 .modal-content {
   background-color: #00000000;
   margin: auto;
   padding: 0px;
   border: 0px solid rgb(0, 0, 0);
   width: 60%;
-}
+} */
 
 /* The Close Button */
 .close {
