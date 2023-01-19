@@ -15,16 +15,13 @@ body {
 }
 
 @media only screen and (min-width: 0px) and (max-width: 320px) {
-
-  
-
   .modal-content {
-      background-color: #00000000;
-      margin: auto;
-      padding: 0px;
-      border: 0px solid rgb(0, 0, 0);
-      width: 90%;
-    }
+    background-color: #00000000;
+    margin: auto;
+    padding: 0px;
+    border: 0px solid rgb(0, 0, 0);
+    width: 90%;
+  }
 
   #list {
     /* border: 1px solid rgb(32, 24, 176); */
@@ -119,10 +116,10 @@ body {
   }
 
   #bar {
-      width: 100%;
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
   }
 
   #heck {
@@ -132,14 +129,13 @@ body {
 }
 
 @media only screen and (min-width: 320px) and (max-width: 767px) {
-
   .modal-content {
-      background-color: #00000000;
-      margin: auto;
-      padding: 0px;
-      border: 0px solid rgb(0, 0, 0);
-      width: 90%;
-    }
+    background-color: #00000000;
+    margin: auto;
+    padding: 0px;
+    border: 0px solid rgb(0, 0, 0);
+    width: 90%;
+  }
 
   #list {
     /* border: 1px solid rgb(32, 24, 176); */
@@ -222,10 +218,10 @@ body {
   }
 
   #bar {
-      width: 100%;
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
   }
 
   #pro {
@@ -255,13 +251,13 @@ body {
 }
 @media only screen and (min-width: 767px) {
   /* Modal Content */
-    .modal-content {
-      background-color: #00000000;
-      margin: auto;
-      padding: 0px;
-      border: 0px solid rgb(0, 0, 0);
-      width: 60%;
-    }
+  .modal-content {
+    background-color: #00000000;
+    margin: auto;
+    padding: 0px;
+    border: 0px solid rgb(0, 0, 0);
+    width: 60%;
+  }
   #list {
     /* border: 1px solid rgb(32, 24, 176); */
     width: 80%;
@@ -293,10 +289,10 @@ body {
   }
 
   #bar {
-      width: 100%;
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
   }
 
   #name > img {
@@ -426,14 +422,12 @@ body {
   justify-content: center;
 }
 
-
-
 .into {
   border: 1px solid rgb(212, 212, 212);
   margin: auto;
   font-size: 120%;
   text-align: center;
-  padding:  0.2%;
+  padding: 0.2%;
   width: 45%;
   background-color: rgb(255, 255, 255);
   box-shadow: rgba(175, 46, 240, 0.4) 0px 2px, rgba(175, 46, 240, 0.3) 0px 5px;
@@ -843,7 +837,6 @@ body {
   margin: 3%;
 }
 
-
 /* The Modal (background) */
 .modal {
   display: none;
@@ -899,7 +892,7 @@ body {
 .tooltip .tooltiptext {
   visibility: hidden;
   width: 140px;
- 
+
   text-align: center;
   border-radius: 6px;
   padding: 5px;
@@ -910,7 +903,6 @@ body {
   opacity: 0;
   transition: opacity 0.3s;
 }
-
 
 .tooltip:hover .tooltiptext {
   visibility: visible;
