@@ -236,7 +236,17 @@
     }
 
     /* ---------- Hero ---------- */
-    .hero { padding: 56px 0 44px; }
+    .hero {
+      padding: 56px 0 44px;
+      display: grid;
+      grid-template-columns: 1.6fr 1fr;
+      gap: 40px;
+      align-items: start;
+    }
+    .hero-side { min-width: 0; }
+    @media (max-width: 880px) {
+      .hero { grid-template-columns: 1fr; gap: 32px; }
+    }
 
     .hero-eyebrows {
       display: flex; flex-wrap: wrap; gap: 8px;
@@ -528,6 +538,7 @@
 
   <main>
     <section class="hero section-shell" id="top">
+      <div class="hero-main">
       <h1 class="reveal">Aryan <span class="accent">Dev</span></h1>
       <p class="role reveal">Technical AI-Native Product Engineer</p>
 
@@ -579,6 +590,8 @@
           Get in touch
         </a>
       </div>
+      </div>
+      <div class="hero-side"></div>
     </section>
 
     <section class="content-grid section-shell hairline-top">
