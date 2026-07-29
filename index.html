@@ -76,6 +76,8 @@
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
       overflow-x: hidden;
+      -webkit-user-select: text;
+      user-select: text;
     }
 
     ::selection { background: rgba(184, 146, 106, 0.35); color: #fff; }
@@ -95,6 +97,8 @@
       fill: none; stroke: currentColor; stroke-width: 1.6;
       stroke-linecap: round; stroke-linejoin: round;
       flex-shrink: 0;
+      pointer-events: none;
+      user-select: none;
     }
 
     /* ---------- Ambient background ---------- */
@@ -326,7 +330,7 @@
     .project-links .btn { width: 100%; }
     .project-links-row { display: flex; flex-wrap: nowrap; gap: 10px; }
     .project-links-row .btn { flex: 1; min-width: 0; }
-    .icon-18 { width: 18px; height: 18px; flex-shrink: 0; }
+    .icon-18 { width: 18px; height: 18px; flex-shrink: 0; pointer-events: none; user-select: none; }
     .npm-badge { border-radius: 4px; display: block; }
 
     .powered-by {
