@@ -244,6 +244,58 @@
       align-items: start;
     }
     .hero-side { min-width: 0; }
+
+    /* ---------- Latest Personal Project (mirrors earzbook-landing's own
+       StoreButtons.tsx / PoweredByOpenClaw.tsx component styling) ---------- */
+    .project-card {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .project-brand {
+      display: inline-flex;
+      align-items: center;
+      width: fit-content;
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      color: #fff;
+      transition: color 0.15s ease;
+    }
+    .project-brand:hover { color: var(--accent-tint); }
+    .project-desc { font-size: 13.5px; line-height: 1.65; color: var(--fg-tertiary); }
+    .project-links { display: flex; flex-direction: column; gap: 10px; }
+    .project-links .btn { width: 100%; }
+    .project-links-row { display: flex; flex-wrap: nowrap; gap: 10px; }
+    .project-links-row .btn { flex: 1; min-width: 0; }
+    .icon-18 { width: 18px; height: 18px; flex-shrink: 0; }
+    .npm-badge { border-radius: 4px; display: block; }
+
+    .powered-by {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      width: fit-content;
+      align-self: center;
+      border-radius: 22px;
+      border: 1px solid var(--hairline);
+      background: rgba(255, 255, 255, 0.03);
+      padding: 6px 12px;
+      transition: border-color 0.2s ease, background 0.2s ease;
+    }
+    .powered-by:hover { border-color: var(--hairline2); background: rgba(255, 255, 255, 0.06); }
+    .powered-by-label {
+      font-size: 11px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--fg-muted);
+    }
+    .powered-by-logo { height: 20px; width: 20px; opacity: 0.9; transition: opacity 0.2s ease; }
+    .powered-by:hover .powered-by-logo { opacity: 1; }
+    .powered-by-brand { font-size: 12px; font-weight: 600; color: #fff; }
+
     @media (max-width: 880px) {
       .hero { grid-template-columns: 1fr; gap: 32px; }
     }
@@ -587,11 +639,57 @@
         </a>
         <a class="btn btn-ghost" href="https://mail.google.com/mail/?view=cm&fs=1&to=aryandev1305@gmail.com" target="_blank" rel="noopener">
           <svg class="icon" viewBox="0 0 24 24"><rect x="3" y="5.5" width="18" height="13" rx="2"/><path d="m4 7 8 6 8-6"/></svg>
-          Get in touch
+          Email
         </a>
       </div>
       </div>
-      <div class="hero-side"></div>
+      <div class="hero-side">
+        <div class="block">
+          <h2 class="section-label reveal">Latest Independent Project</h2>
+          <div class="project-card card-surface reveal">
+            <a class="project-brand" href="https://earzbook.com/" target="_blank" rel="noopener">Earzbook.com</a>
+
+            <p class="project-desc">Earzbook transcribes everything you watch and listen to — live — and hands it to your own OpenClaw agent to search, summarize, and act on.</p>
+
+            <div class="project-links">
+              <a class="btn btn-primary btn-sm" href="https://play.google.com/store/apps/details?id=com.earzbook" target="_blank" rel="noopener">
+                <svg class="icon-18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M6 15a6 6 0 0 1 12 0z"></path>
+                  <path d="M6 15v3a1.5 1.5 0 0 0 1.5 1.5h9A1.5 1.5 0 0 0 18 18v-3"></path>
+                  <path d="M8 9 6.5 6.5M16 9l1.5-2.5"></path>
+                  <path d="M4.5 15v3.5M19.5 15v3.5M9.5 19.5V22M14.5 19.5V22"></path>
+                  <circle cx="9.5" cy="11.5" r="0.6" fill="currentColor" stroke="none"></circle>
+                  <circle cx="14.5" cy="11.5" r="0.6" fill="currentColor" stroke="none"></circle>
+                </svg>
+                Android app
+              </a>
+              <div class="project-links-row">
+                <a class="btn btn-ghost btn-sm" href="https://chromewebstore.google.com/detail/earzbook-hear-beyond-word/ngafmplnfibagfeailjopndgdpignjjg" target="_blank" rel="noopener">
+                  <svg class="icon-18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <circle cx="12" cy="12" r="9"></circle>
+                    <circle cx="12" cy="12" r="3.4"></circle>
+                    <path d="M12 8.6h8.6M8.9 13.9 4.6 6.5M15.1 13.9l-4.3 7.4"></path>
+                  </svg>
+                  Chrome
+                </a>
+                <a class="btn btn-ghost btn-sm" href="https://www.npmjs.com/package/@earzbook/openclaw" target="_blank" rel="noopener">
+                  <svg class="icon-18 npm-badge" viewBox="0 0 24 24" aria-hidden="true">
+                    <rect width="24" height="24" rx="4" fill="#CB3837" />
+                    <path d="M5.13 5.323l13.837.019-.009 13.836h-3.464l.01-10.382h-3.456L12.04 19.17H5.113z" fill="#ffffff" />
+                  </svg>
+                  NPM
+                </a>
+              </div>
+            </div>
+
+            <a class="powered-by" href="https://openclaw.ai/" target="_blank" rel="noopener">
+              <span class="powered-by-label">Powered by</span>
+              <img class="powered-by-logo" src="assets/openclaw-white.png" alt="OpenClaw" />
+              <span class="powered-by-brand">OpenClaw</span>
+            </a>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section class="content-grid section-shell hairline-top">
