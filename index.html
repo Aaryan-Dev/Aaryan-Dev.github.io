@@ -285,6 +285,7 @@
     .project-brand {
       display: inline-flex;
       align-items: center;
+      gap: 6px;
       width: fit-content;
       font-size: 15px;
       font-weight: 700;
@@ -293,6 +294,7 @@
       transition: color 0.15s ease;
     }
     .project-brand:hover { color: var(--accent-tint); }
+    .project-brand .icon { width: 14px; height: 14px; color: var(--fg-muted); }
     .project-desc { font-size: 13.5px; line-height: 1.65; color: var(--fg-tertiary); }
 
     /* Mirrors FeatureGrid.tsx's icon-badge + title + body cards, as a compact list. */
@@ -692,7 +694,10 @@
         <div class="block">
           <h2 class="section-label glow reveal">Latest Solo Project</h2>
           <div class="project-card card-surface reveal">
-            <a class="project-brand" href="https://earzbook.com/" target="_blank" rel="noopener">Earzbook.com</a>
+            <a class="project-brand" href="https://earzbook.com/" target="_blank" rel="noopener">
+              Earzbook.com
+              <svg class="icon" viewBox="0 0 24 24"><path d="M9.5 14.5 14.5 9.5"></path><path d="M11 7.5 13 5.5a3.5 3.5 0 0 1 5 5l-2 2M13 16.5l-2 2a3.5 3.5 0 0 1-5-5l2-2"></path></svg>
+            </a>
 
             <p class="project-desc">Earzbook transcribes everything you watch and listen to — live — and hands it to your own <strong>OpenClaw</strong> agent to search, summarize, and act on.</p>
 
