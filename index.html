@@ -265,6 +265,25 @@
     }
     .project-brand:hover { color: var(--accent-tint); }
     .project-desc { font-size: 13.5px; line-height: 1.65; color: var(--fg-tertiary); }
+
+    /* Mirrors FeatureGrid.tsx's icon-badge + title + body cards, as a compact list. */
+    .project-features { display: flex; flex-direction: column; gap: 14px; }
+    .project-feature { display: flex; align-items: flex-start; gap: 12px; }
+    .project-feature-icon {
+      flex-shrink: 0;
+      width: 32px;
+      height: 32px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(184, 146, 106, 0.15);
+      color: var(--accent-tint);
+    }
+    .project-feature-icon svg { width: 15px; height: 15px; }
+    .project-feature h4 { font-size: 13.5px; font-weight: 600; color: #fff; }
+    .project-feature p { margin-top: 2px; font-size: 12px; line-height: 1.5; color: var(--fg-muted); }
+
     .project-links { display: flex; flex-direction: column; gap: 10px; }
     .project-links .btn { width: 100%; }
     .project-links-row { display: flex; flex-wrap: nowrap; gap: 10px; }
@@ -303,14 +322,6 @@
 
     @media (max-width: 880px) {
       .hero { grid-template-columns: 1fr; gap: 32px; }
-    }
-
-    .hero-eyebrows {
-      display: flex; flex-wrap: wrap; gap: 8px;
-      margin-bottom: 22px;
-    }
-    .hero-eyebrows .eyebrow-dot {
-      width: 6px; height: 6px; border-radius: 50%; background: var(--accent);
     }
 
     .hero h1 {
@@ -650,11 +661,52 @@
       </div>
       <div class="hero-side">
         <div class="block">
-          <h2 class="section-label reveal">Building in Public</h2>
+          <h2 class="section-label reveal">Latest Solo Project</h2>
           <div class="project-card card-surface reveal">
             <a class="project-brand" href="https://earzbook.com/" target="_blank" rel="noopener">Earzbook.com</a>
 
-            <p class="project-desc">Earzbook transcribes everything you watch and listen to — live — and hands it to your own OpenClaw agent to search, summarize, and act on.</p>
+            <p class="project-desc">Earzbook transcribes everything you watch and listen to — live — and hands it to your own <strong>OpenClaw</strong> agent to search, summarize, and act on.</p>
+
+            <div class="project-features">
+              <div class="project-feature">
+                <span class="project-feature-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect x="4.5" y="10.5" width="15" height="10" rx="2"></rect>
+                    <path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"></path>
+                    <path d="M12 14.5v2.5"></path>
+                  </svg>
+                </span>
+                <div>
+                  <h4>Encrypted by design</h4>
+                  <p>Per-user envelope encryption means a database breach reads nothing of yours.</p>
+                </div>
+              </div>
+              <div class="project-feature">
+                <span class="project-feature-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect x="6" y="6" width="12" height="12" rx="2"></rect>
+                    <rect x="9.5" y="9.5" width="5" height="5" rx="1"></rect>
+                    <path d="M9 3v2M15 3v2M9 19v2M15 19v2M3 9h2M3 15h2M19 9h2M19 15h2"></path>
+                  </svg>
+                </span>
+                <div>
+                  <h4>Your agent, your machine</h4>
+                  <p><strong>OpenClaw</strong> runs on your own AI keys — your data isn't shipped off to be processed.</p>
+                </div>
+              </div>
+              <div class="project-feature">
+                <span class="project-feature-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <circle cx="11" cy="11" r="6.5"></circle>
+                    <path d="m16 16 4.5 4.5"></path>
+                  </svg>
+                </span>
+                <div>
+                  <h4>Semantic search</h4>
+                  <p>Ask by meaning, not keywords — "what did I hear about diffusion models?"</p>
+                </div>
+              </div>
+            </div>
 
             <div class="project-links">
               <a class="btn btn-primary btn-sm" href="https://play.google.com/store/apps/details?id=com.earzbook" target="_blank" rel="noopener">
