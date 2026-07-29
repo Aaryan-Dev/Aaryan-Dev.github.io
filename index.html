@@ -235,34 +235,31 @@
       background: var(--accent);
     }
 
-    /* Ambient glow that breathes and drifts behind "Latest Solo Project" —
-       the one continuously-animated element on the page, so it reads as a
-       quiet highlight rather than the static/hover glows used elsewhere. */
-    .section-label.glow {
-      position: relative;
-      z-index: 0;
-    }
-    .section-label.glow::after {
-      content: '';
+    /* Ambient layer inside the card itself — a warm top-edge glow plus a
+       canvas of slowly drifting "ear" motes, ported from earzbook-landing's
+       own AmbientBackground.tsx. Sits at z-index:-1 *inside* the card's own
+       stacking context, so it paints above the card's solid background but
+       below its actual text/links content — visible, but never in the way. */
+    .project-card { position: relative; overflow: hidden; z-index: 0; }
+    .project-ambient {
       position: absolute;
-      inset: -16px -22px;
+      inset: 0;
       z-index: -1;
-      border-radius: 999px;
-      background: radial-gradient(60% 60% at 30% 50%,
-        rgba(184, 146, 106, 0.55) 0%,
-        rgba(212, 180, 140, 0.22) 45%,
-        rgba(184, 146, 106, 0) 75%);
-      filter: blur(13px);
       pointer-events: none;
-      animation: project-glow-pulse 4.5s ease-in-out infinite;
+      overflow: hidden;
+      border-radius: inherit;
     }
-    @keyframes project-glow-pulse {
-      0%, 100% { opacity: 0.5; transform: scale(0.92) translateX(0); }
-      50% { opacity: 1; transform: scale(1.1) translateX(5px); }
+    .project-ambient-glow {
+      position: absolute;
+      inset-inline: 0;
+      top: 0;
+      height: 60%;
+      background: radial-gradient(70% 100% at 50% 0%,
+        rgba(184, 146, 106, 0.3) 0%,
+        rgba(184, 146, 106, 0.1) 45%,
+        rgba(184, 146, 106, 0) 75%);
     }
-    @media (prefers-reduced-motion: reduce) {
-      .section-label.glow::after { animation: none; opacity: 0.7; }
-    }
+    .project-ambient-canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
 
     /* ---------- Hero ---------- */
     .hero {
@@ -692,8 +689,13 @@
       </div>
       <div class="hero-side">
         <div class="block">
-          <h2 class="section-label glow reveal">Latest Solo Project</h2>
+          <h2 class="section-label reveal">Latest Solo Project</h2>
           <div class="project-card card-surface reveal">
+            <div class="project-ambient" aria-hidden="true">
+              <div class="project-ambient-glow"></div>
+              <canvas class="project-ambient-canvas" id="project-ambient-canvas"></canvas>
+            </div>
+
             <a class="project-brand" href="https://earzbook.com/" target="_blank" rel="noopener">
               Earzbook.com
               <svg class="icon" viewBox="0 0 24 24"><path d="M9.5 14.5 14.5 9.5"></path><path d="M11 7.5 13 5.5a3.5 3.5 0 0 1 5 5l-2 2M13 16.5l-2 2a3.5 3.5 0 0 1-5-5l2-2"></path></svg>
@@ -1105,6 +1107,153 @@
       });
       window.addEventListener('load', schedule);
       if (document.fonts && document.fonts.ready) document.fonts.ready.then(schedule);
+    })();
+
+    (function () {
+      // Drifting "ear" motes — a scaled-down port of earzbook-landing's own
+      // AmbientBackground.tsx (same sprite shape, same upward drift/sway/
+      // pulse behavior), confined to the project card instead of a full page.
+      var canvas = document.getElementById('project-ambient-canvas');
+      var card = canvas && canvas.closest('.project-card');
+      if (!canvas || !card) return;
+      var ctx = canvas.getContext('2d');
+      if (!ctx) return;
+
+      var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      var SPRITE_W = 74, SPRITE_H = 64;
+      var SPRITE_RATIO = SPRITE_W / SPRITE_H;
+
+      function addEar(g, baseX, baseY, angle, len, w) {
+        g.save();
+        g.translate(baseX, baseY);
+        g.rotate(angle);
+        g.moveTo(0, 0);
+        g.bezierCurveTo(w, -len * 0.26, w, -len * 0.66, w * 0.6, -len * 0.9);
+        g.quadraticCurveTo(0, -len * 1.1, -w * 0.6, -len * 0.9);
+        g.bezierCurveTo(-w, -len * 0.66, -w, -len * 0.26, 0, 0);
+        g.restore();
+      }
+
+      function makeEarPair(rgb) {
+        var c = document.createElement('canvas');
+        c.width = SPRITE_W;
+        c.height = SPRITE_H;
+        var g = c.getContext('2d');
+        var baseX = SPRITE_W / 2;
+        var baseY = SPRITE_H * 0.82;
+        var len = SPRITE_H * 0.72;
+        var w = 9.5;
+        var gap = 5;
+        g.beginPath();
+        addEar(g, baseX - gap, baseY, -0.52, len, w);
+        addEar(g, baseX + gap, baseY, 0.52, len, w);
+        g.clip();
+        var grad = g.createRadialGradient(baseX, SPRITE_H * 0.42, 0, baseX, SPRITE_H * 0.42, SPRITE_H * 0.6);
+        grad.addColorStop(0, 'rgba(' + rgb + ',0.95)');
+        grad.addColorStop(0.55, 'rgba(' + rgb + ',0.42)');
+        grad.addColorStop(1, 'rgba(' + rgb + ',0)');
+        g.fillStyle = grad;
+        g.fillRect(0, 0, SPRITE_W, SPRITE_H);
+        return c;
+      }
+
+      var petalTan = makeEarPair('212,180,140');
+      var petalWhite = makeEarPair('255,255,255');
+
+      var width = 0, height = 0, ears = [], raf = 0, last = 0, running = false, onScreen = true;
+
+      function rand(a, b) { return a + Math.random() * (b - a); }
+
+      function build() {
+        var rect = card.getBoundingClientRect();
+        width = Math.max(1, rect.width);
+        height = Math.max(1, rect.height);
+        var dpr = Math.min(window.devicePixelRatio || 1, 2);
+        canvas.width = Math.round(width * dpr);
+        canvas.height = Math.round(height * dpr);
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+        var count = Math.max(8, Math.min(22, Math.round((width * height) / 9000)));
+        ears = [];
+        for (var i = 0; i < count; i++) {
+          ears.push({
+            x: Math.random() * width,
+            y: Math.random() * height,
+            size: rand(10, 22),
+            vx: rand(-3, 3),
+            vy: rand(-10, -4),
+            rot: rand(-0.22, 0.22),
+            tan: Math.random() < 0.66,
+            baseAlpha: rand(0.12, 0.38),
+            phase: Math.random() * Math.PI * 2,
+            phaseSpeed: rand(0.4, 1.0)
+          });
+        }
+      }
+
+      function draw(dt) {
+        var i, e, m;
+        for (i = 0; i < ears.length; i++) {
+          e = ears[i];
+          e.x += e.vx * dt;
+          e.y += e.vy * dt;
+          e.phase += e.phaseSpeed * dt;
+          m = e.size;
+          if (e.x < -m) e.x = width + m; else if (e.x > width + m) e.x = -m;
+          if (e.y < -m) e.y = height + m; else if (e.y > height + m) e.y = -m;
+        }
+
+        ctx.clearRect(0, 0, width, height);
+        for (i = 0; i < ears.length; i++) {
+          e = ears[i];
+          var h = e.size;
+          var w = h * SPRITE_RATIO;
+          ctx.save();
+          ctx.translate(e.x, e.y);
+          ctx.rotate(e.rot + 0.14 * Math.sin(e.phase));
+          ctx.globalAlpha = Math.max(0, e.baseAlpha * (0.55 + 0.45 * Math.sin(e.phase)));
+          ctx.drawImage(e.tan ? petalTan : petalWhite, -w / 2, -h / 2, w, h);
+          ctx.restore();
+        }
+      }
+
+      function frame(ts) {
+        if (!running) return;
+        var dt = last ? Math.min((ts - last) / 1000, 0.05) : 0.016;
+        last = ts;
+        draw(dt);
+        raf = requestAnimationFrame(frame);
+      }
+      function start() {
+        if (running || reduced) return;
+        running = true;
+        last = 0;
+        raf = requestAnimationFrame(frame);
+      }
+      function stop() {
+        running = false;
+        if (raf) cancelAnimationFrame(raf);
+        raf = 0;
+      }
+
+      build();
+      draw(0);
+
+      var io = new IntersectionObserver(function (entries) {
+        onScreen = entries[0] ? entries[0].isIntersecting : true;
+        if (onScreen && !document.hidden) start(); else stop();
+      }, { threshold: 0 });
+      io.observe(card);
+
+      document.addEventListener('visibilitychange', function () {
+        if (document.hidden) stop(); else if (onScreen) start();
+      });
+
+      var ro = new ResizeObserver(function () { build(); draw(0); });
+      ro.observe(card);
+
+      if (!reduced) start();
     })();
   </script>
 </body>
