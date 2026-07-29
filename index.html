@@ -58,6 +58,7 @@
       --fg-muted: #888888;
       --header-h: 64px;
       --content-max: 1120px;
+      --shell-pad: clamp(16px, 4vw, 20px);
     }
 
     * { box-sizing: border-box; }
@@ -137,7 +138,7 @@
       width: 100%;
       max-width: var(--content-max);
       margin: 0 auto;
-      padding: 0;
+      padding: 0 var(--shell-pad);
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -145,7 +146,7 @@
     }
 
     .nav-brand-h1 {
-      font-size: 40px;
+      font-size: clamp(1.375rem, 5.5vw, 2.5rem);
       font-weight: 800;
       line-height: 1;
       letter-spacing: -0.5px;
@@ -155,6 +156,15 @@
     }
 
     .nav-actions { display: flex; align-items: center; gap: 10px; }
+
+    @media (max-width: 640px) {
+      .nav-shell { gap: 10px; }
+      .nav-actions { gap: 8px; }
+    }
+    @media (max-width: 380px) {
+      .nav-actions .btn-label { display: none; }
+      .nav-actions .btn { padding: 8px; }
+    }
 
     /* ---------- Buttons ---------- */
     .btn {
@@ -184,13 +194,16 @@
     .btn-ghost:hover { background: rgba(255,255,255,0.06); border-color: var(--hairline2); color: var(--fg); }
 
     .btn-sm { padding: 8px 14px; font-size: 13px; }
+    @media (max-width: 640px) {
+      .btn-sm { padding: 6px 10px; font-size: 12px; }
+    }
 
     /* ---------- Layout shells ---------- */
     .section-shell {
       width: 100%;
       max-width: var(--content-max);
       margin: 0 auto;
-      padding: 0 20px;
+      padding: 0 var(--shell-pad);
     }
 
     .hairline-top { position: relative; }
@@ -220,6 +233,8 @@
       font-weight: 500;
       color: var(--fg-secondary);
       transition: all 0.2s ease;
+      max-width: 100%;
+      overflow-wrap: anywhere;
     }
     a.eyebrow:hover, .eyebrow[data-href]:hover { border-color: var(--hairline2); background: rgba(255,255,255,0.06); color: #fff; }
     .eyebrow[data-href] { cursor: pointer; }
@@ -280,7 +295,8 @@
 
     /* ---------- Hero ---------- */
     .hero {
-      padding: 56px 0 44px;
+      padding-top: 56px;
+      padding-bottom: 44px;
       display: grid;
       grid-template-columns: 1.6fr 1fr;
       gap: 40px;
@@ -371,6 +387,9 @@
     @media (max-width: 880px) {
       .hero { grid-template-columns: 1fr; gap: 32px; }
     }
+    @media (max-width: 640px) {
+      .hero { padding-top: 36px; padding-bottom: 32px; }
+    }
 
     .hero .role {
       font-size: clamp(1.05rem, 2vw, 1.3rem);
@@ -405,7 +424,8 @@
     /* ---------- Content grid ---------- */
     .content-grid {
       position: relative;
-      padding: 12px 0 80px;
+      padding-top: 12px;
+      padding-bottom: 80px;
       display: grid;
       grid-template-columns: 1.6fr 1fr;
       gap: 40px;
@@ -448,12 +468,19 @@
     @media (max-width: 880px) {
       .content-grid { grid-template-columns: 1fr; gap: 48px; }
     }
+    @media (max-width: 640px) {
+      .content-grid { padding-top: 8px; padding-bottom: 56px; }
+    }
 
     .stack { display: flex; flex-direction: column; gap: 40px; }
     .block {
       display: flex;
       flex-direction: column;
       gap: 16px;
+    }
+    @media (max-width: 640px) {
+      .stack { gap: 28px; }
+      .block { gap: 12px; }
     }
 
     /* ---------- Experience cards ---------- */
@@ -488,6 +515,11 @@
     }
     .exp-linkedin:hover { color: var(--accent-tint); }
     .exp-linkedin .icon { width: 22px; height: 22px; }
+    @media (max-width: 640px) {
+      .exp-card,
+      .project-card { padding: 18px 18px 40px; }
+      .exp-head-title h3 { font-size: 16px; }
+    }
     .exp-location {
       display: inline-flex; align-items: center; gap: 5px;
       font-size: 12px; font-weight: 500; color: var(--fg-muted);
@@ -560,6 +592,10 @@
       animation: doc-shake 0.6s ease-in-out infinite;
       transform-origin: 50% 85%;
     }
+    .exp-role .doc-link:hover .icon,
+    .list-entry .doc-link:hover .icon {
+      animation: none;
+    }
     @media (prefers-reduced-motion: reduce) {
       .exp-role:hover .doc-link .icon,
       .list-entry:hover .doc-link .icon { animation: none; }
@@ -585,9 +621,14 @@
       background: rgba(184,146,106,0.08);
       border: 1px solid rgba(184,146,106,0.22);
       border-radius: 22px;
+      overflow-wrap: break-word;
       transition: all 0.15s ease;
     }
     .skill-pill:hover { background: rgba(184,146,106,0.14); border-color: rgba(184,146,106,0.4); }
+    @media (max-width: 640px) {
+      .aside-card { padding: 18px; }
+      .skill-pill { padding: 5px 10px; font-size: 12.5px; }
+    }
 
     .skill-other { font-size: 13px; line-height: 1.6; color: var(--fg-muted); }
     .skill-other b { color: var(--fg-tertiary); font-weight: 600; }
@@ -601,6 +642,7 @@
       gap: 4px;
     }
     .list-entry:first-child { padding-top: 0; border-top: none; }
+    .list-entry:has(.doc-link) { cursor: pointer; }
     .list-entry h4 { font-size: 14px; font-weight: 600; color: #fff; line-height: 1.4; }
     .list-entry .sub { font-size: 13px; color: var(--fg-tertiary); }
     .list-entry .meta { font-size: 12px; color: var(--fg-muted); }
@@ -608,6 +650,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      flex-wrap: wrap;
       gap: 10px;
     }
     .edu-meta-row .meta { white-space: nowrap; }
@@ -640,13 +683,13 @@
     <div class="nav-shell">
       <h1 class="reveal in nav-brand-h1">Aryan Dev</h1>
       <div class="nav-actions">
-        <a class="btn btn-ghost btn-sm" href="https://mail.google.com/mail/?view=cm&fs=1&to=aryandev1305@gmail.com" target="_blank" rel="noopener">
+        <a class="btn btn-ghost btn-sm" href="https://mail.google.com/mail/?view=cm&fs=1&to=aryandev1305@gmail.com" target="_blank" rel="noopener" aria-label="Email">
           <svg class="icon" viewBox="0 0 24 24"><rect x="3" y="5.5" width="18" height="13" rx="2"/><path d="m4 7 8 6 8-6"/></svg>
-          Email
+          <span class="btn-label">Email</span>
         </a>
-        <a class="btn btn-primary btn-sm" href="assets/Aaryan_Dev_Resume.pdf" target="_blank" rel="noopener">
+        <a class="btn btn-primary btn-sm" href="assets/Aaryan_Dev_Resume.pdf" target="_blank" rel="noopener" aria-label="Download resume">
           <svg class="icon" viewBox="0 0 24 24"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M4 19h16"/></svg>
-          Resume
+          <span class="btn-label">Resume</span>
         </a>
       </div>
     </div>
@@ -965,7 +1008,7 @@
           </article>
         </div>
 
-        <div class="block">
+        <div class="block" id="patent-block">
           <h2 class="section-label reveal">Filed Patent</h2>
           <article class="patent-card card-surface reveal">
             <h3>A Smart Identity Card for Logging Attendance and a Method Thereof</h3>
@@ -1329,6 +1372,17 @@
       });
     });
 
+    document.querySelectorAll('.list-entry').forEach(function (entry) {
+      var doc = entry.querySelector('.doc-link');
+      if (!doc) return;
+      entry.addEventListener('click', function (e) {
+        if (e.target.closest('a')) return;
+        var sel = window.getSelection();
+        if (sel && sel.toString().length > 0) return;
+        window.open(doc.href, '_blank', 'noopener');
+      });
+    });
+
     document.querySelectorAll('.eyebrow[data-href]').forEach(function (tag) {
       tag.addEventListener('click', function () {
         var sel = window.getSelection();
@@ -1336,6 +1390,30 @@
         window.open(tag.dataset.href, '_blank', 'noopener');
       });
     });
+
+    (function () {
+      // Below the tablet/phone collapse breakpoint (single-column layout),
+      // "Filed Patent" moves to the very end, after Skills/Education/
+      // Certifications — on desktop's two-column layout it stays in its
+      // normal spot right under Experience.
+      var patentBlock = document.getElementById('patent-block');
+      var mainStack = patentBlock ? patentBlock.parentElement : null;
+      var asideStack = document.querySelector('aside.stack');
+      if (!patentBlock || !mainStack || !asideStack) return;
+
+      function reflow() {
+        var narrow = window.matchMedia('(max-width: 880px)').matches;
+        var target = narrow ? asideStack : mainStack;
+        if (patentBlock.parentElement !== target) target.appendChild(patentBlock);
+      }
+
+      reflow();
+      var resizeTimer;
+      window.addEventListener('resize', function () {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(reflow, 120);
+      });
+    })();
   </script>
 </body>
 </html>
