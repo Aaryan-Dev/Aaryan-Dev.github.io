@@ -137,22 +137,17 @@
       gap: 16px;
     }
 
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 28px;
-      font-size: 14px;
-      font-weight: 500;
-      color: var(--fg-muted);
+    .nav-brand-h1 {
+      font-size: 40px;
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: -0.5px;
+      color: #fff;
+      -webkit-text-stroke: 1.5px var(--accent-tint);
+      text-stroke: 1.5px var(--accent-tint);
     }
-    .nav-links a { transition: color 0.15s ease; }
-    .nav-links a:hover { color: var(--fg); }
 
     .nav-actions { display: flex; align-items: center; gap: 10px; }
-
-    @media (max-width: 720px) {
-      .nav-links { display: none; }
-    }
 
     /* ---------- Buttons ---------- */
     .btn {
@@ -366,16 +361,6 @@
       .hero { grid-template-columns: 1fr; gap: 32px; }
     }
 
-    .hero h1 {
-      font-size: clamp(2.4rem, 5.4vw, 3.6rem);
-      font-weight: 800;
-      line-height: 1.05;
-      letter-spacing: -0.5px;
-      color: #fff;
-      -webkit-text-stroke: 1.5px var(--accent-tint);
-      text-stroke: 1.5px var(--accent-tint);
-    }
-
     .hero .role {
       margin-top: 10px;
       font-size: clamp(1.05rem, 2vw, 1.3rem);
@@ -460,12 +445,6 @@
       display: flex;
       flex-direction: column;
       gap: 16px;
-    }
-
-    .block.section-flash .exp-card,
-    .block.section-flash .aside-card,
-    .block.section-flash .patent-card {
-      border-color: rgba(184,146,106,0.5);
     }
 
     /* ---------- Experience cards ---------- */
@@ -630,10 +609,7 @@
 
   <header class="site-header">
     <div class="nav-shell">
-      <nav class="nav-links">
-        <a href="#experience">Experience</a>
-        <a href="#education">Education</a>
-      </nav>
+      <h1 class="reveal in nav-brand-h1">Aryan Dev</h1>
       <div class="nav-actions">
         <a class="btn btn-ghost btn-sm" href="https://mail.google.com/mail/?view=cm&fs=1&to=aryandev1305@gmail.com" target="_blank" rel="noopener">
           <svg class="icon" viewBox="0 0 24 24"><rect x="3" y="5.5" width="18" height="13" rx="2"/><path d="m4 7 8 6 8-6"/></svg>
@@ -650,7 +626,6 @@
   <main>
     <section class="hero section-shell" id="top">
       <div class="hero-main">
-      <h1 class="reveal">Aryan Dev</h1>
       <p class="role reveal">Technical AI-Native Product Engineer</p>
 
       <p class="summary reveal">
@@ -1023,17 +998,6 @@
     } else {
       revealEls.forEach(function (el) { el.classList.add('in'); });
     }
-
-    document.querySelectorAll('.nav-links a[href^="#"]').forEach(function (link) {
-      link.addEventListener('click', function () {
-        var target = document.getElementById(link.getAttribute('href').slice(1));
-        if (!target) return;
-        setTimeout(function () {
-          target.classList.add('section-flash');
-          setTimeout(function () { target.classList.remove('section-flash'); }, 1300);
-        }, 350);
-      });
-    });
 
     (function () {
       // Single curve through the real career timeline, oldest to newest,
