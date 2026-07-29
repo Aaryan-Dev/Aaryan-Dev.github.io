@@ -289,12 +289,47 @@
 
     /* ---------- Content grid ---------- */
     .content-grid {
+      position: relative;
       padding: 12px 0 80px;
       display: grid;
       grid-template-columns: 1.6fr 1fr;
       gap: 40px;
       align-items: start;
     }
+
+    /* Single continuous curve threading through the career timeline in true
+       chronological order (oldest to newest), independent of card order —
+       cards stay newest-first, but the arrow runs Bajaj Finance → BTech →
+       Masai → GrayQuest → Bachelor's → Leeloo, ending at "now". Positioned
+       by JS since it has to cross the two-column grid gap dynamically. */
+    .timeline-svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      pointer-events: none;
+      overflow: visible;
+    }
+    .timeline-path {
+      fill: none;
+      stroke: url(#timeline-gradient);
+      stroke-width: 2.25;
+      stroke-linecap: round;
+      opacity: 0;
+      transition: opacity 0.6s ease;
+    }
+    .timeline-svg.is-ready .timeline-path { opacity: 1; }
+    .timeline-node {
+      fill: var(--accent-tint);
+      stroke: none;
+    }
+    @media (max-width: 880px) {
+      .timeline-svg { display: none; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .timeline-path { transition: none; opacity: 1; }
+    }
+
     @media (max-width: 880px) {
       .content-grid { grid-template-columns: 1fr; gap: 48px; }
     }
@@ -541,11 +576,23 @@
     </section>
 
     <section class="content-grid section-shell hairline-top">
+      <svg class="timeline-svg" id="timeline-svg" aria-hidden="true" focusable="false">
+        <defs>
+          <linearGradient id="timeline-gradient" x1="0" y1="1" x2="0" y2="0">
+            <stop offset="0%" stop-color="#b8926a" stop-opacity="0.1" />
+            <stop offset="100%" stop-color="#d4b48c" stop-opacity="0.95" />
+          </linearGradient>
+          <marker id="timeline-arrowhead" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+            <path d="M0,0 L10,5 L0,10 z" fill="#d4b48c" />
+          </marker>
+        </defs>
+        <path id="timeline-path" class="timeline-path" marker-end="url(#timeline-arrowhead)" />
+      </svg>
       <div class="stack">
         <div class="block" id="experience">
           <h2 class="section-label reveal">Experience</h2>
 
-          <article class="exp-card card-surface reveal">
+          <article class="exp-card card-surface reveal" id="tl-leeloo">
             <div class="exp-head">
               <div class="exp-head-title">
                 <h3>
@@ -576,7 +623,7 @@
             </div>
           </article>
 
-          <article class="exp-card card-surface reveal">
+          <article class="exp-card card-surface reveal" id="tl-grayquest">
             <div class="exp-head">
               <div class="exp-head-title">
                 <h3>
@@ -614,7 +661,7 @@
             </div>
           </article>
 
-          <article class="exp-card card-surface reveal">
+          <article class="exp-card card-surface reveal" id="tl-bajaj">
             <div class="exp-head">
               <div class="exp-head-title">
                 <h3>
@@ -681,7 +728,7 @@
         <div class="block" id="education">
           <h2 class="section-label reveal">Education</h2>
           <div class="aside-card card-surface reveal">
-            <div class="list-entry">
+            <div class="list-entry" id="tl-bachelor">
               <h4>Bachelor of Computer Application — Distance Learning</h4>
               <p class="sub">Mangalayatan University</p>
               <p class="meta">January 2023 – 2026</p>
@@ -690,7 +737,7 @@
                 Aligarh · Remote
               </span>
             </div>
-            <div class="list-entry">
+            <div class="list-entry" id="tl-masai">
               <h4>Full-Stack Web Development — Full-time</h4>
               <p class="sub">Masai School</p>
               <p class="meta">April 2022 – December 2022</p>
@@ -699,7 +746,7 @@
                 Bangalore · Remote
               </span>
             </div>
-            <div class="list-entry">
+            <div class="list-entry" id="tl-btech">
               <h4>BTech - CSE — Dropped Out</h4>
               <p class="sub">Sambhram Institute of Technology, VTU affiliated</p>
               <p class="meta">January 2022 – April 2022</p>
@@ -755,6 +802,99 @@
         }, 350);
       });
     });
+
+    (function () {
+      // Single curve through the real career timeline, oldest to newest,
+      // independent of card order (cards stay newest-first). Positions are
+      // measured live since the path has to cross the two-column grid gap.
+      var container = document.querySelector('.content-grid');
+      var svg = document.getElementById('timeline-svg');
+      var pathEl = document.getElementById('timeline-path');
+      if (!container || !svg || !pathEl) return;
+
+      var SVG_NS = 'http://www.w3.org/2000/svg';
+      var ORDER = ['tl-bajaj', 'tl-btech', 'tl-masai', 'tl-grayquest', 'tl-bachelor', 'tl-leeloo'];
+      var GUTTER = 14;
+      var nodes = [];
+
+      function catmullRomPath(pts) {
+        var d = 'M' + pts[0].x.toFixed(1) + ',' + pts[0].y.toFixed(1);
+        for (var i = 0; i < pts.length - 1; i++) {
+          var p0 = pts[i - 1] || pts[i];
+          var p1 = pts[i];
+          var p2 = pts[i + 1];
+          var p3 = pts[i + 2] || p2;
+          var c1x = p1.x + (p2.x - p0.x) / 6;
+          var c1y = p1.y + (p2.y - p0.y) / 6;
+          var c2x = p2.x - (p3.x - p1.x) / 6;
+          var c2y = p2.y - (p3.y - p1.y) / 6;
+          d += ' C' + c1x.toFixed(1) + ',' + c1y.toFixed(1) + ' ' + c2x.toFixed(1) + ',' + c2y.toFixed(1) + ' ' + p2.x.toFixed(1) + ',' + p2.y.toFixed(1);
+        }
+        return d;
+      }
+
+      function clearNodes() {
+        nodes.forEach(function (n) { n.remove(); });
+        nodes = [];
+      }
+
+      function build() {
+        if (window.matchMedia('(max-width: 880px)').matches) {
+          svg.classList.remove('is-ready');
+          pathEl.setAttribute('d', '');
+          clearNodes();
+          return;
+        }
+
+        var cRect = container.getBoundingClientRect();
+        var pts = [];
+
+        ORDER.forEach(function (id) {
+          var el = document.getElementById(id);
+          if (!el) return;
+          var isAside = !!el.closest('aside');
+          var r = el.getBoundingClientRect();
+          pts.push({
+            x: (isAside ? r.left - GUTTER : r.right + GUTTER) - cRect.left,
+            y: r.top + r.height / 2 - cRect.top
+          });
+        });
+
+        if (pts.length < 2) return;
+
+        svg.setAttribute('width', cRect.width);
+        svg.setAttribute('height', cRect.height);
+        svg.setAttribute('viewBox', '0 0 ' + cRect.width + ' ' + cRect.height);
+        pathEl.setAttribute('d', catmullRomPath(pts));
+
+        clearNodes();
+        pts.forEach(function (p, i) {
+          if (i === pts.length - 1) return;
+          var c = document.createElementNS(SVG_NS, 'circle');
+          c.setAttribute('cx', p.x.toFixed(1));
+          c.setAttribute('cy', p.y.toFixed(1));
+          c.setAttribute('r', 3.5);
+          c.setAttribute('class', 'timeline-node');
+          svg.appendChild(c);
+          nodes.push(c);
+        });
+
+        requestAnimationFrame(function () { svg.classList.add('is-ready'); });
+      }
+
+      function schedule() { requestAnimationFrame(build); }
+
+      schedule();
+      [80, 350, 700, 1400].forEach(function (ms) { setTimeout(schedule, ms); });
+
+      var resizeTimer;
+      window.addEventListener('resize', function () {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(schedule, 120);
+      });
+      window.addEventListener('load', schedule);
+      if (document.fonts && document.fonts.ready) document.fonts.ready.then(schedule);
+    })();
   </script>
 </body>
 </html>
