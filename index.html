@@ -327,6 +327,7 @@
     .project-links .btn { width: 100%; }
     .project-links-row { display: flex; flex-wrap: nowrap; gap: 10px; }
     .project-links-row .btn { flex: 1; min-width: 0; }
+    .project-links-row .btn-ghost { border-color: transparent; }
     .icon-18 { width: 18px; height: 18px; flex-shrink: 0; pointer-events: none; user-select: none; }
     .npm-badge { border-radius: 4px; display: block; }
 
@@ -337,12 +338,12 @@
       width: fit-content;
       align-self: center;
       border-radius: 22px;
-      border: 1px solid var(--hairline);
+      border: none;
       background: rgba(255, 255, 255, 0.03);
       padding: 6px 12px;
-      transition: border-color 0.2s ease, background 0.2s ease;
+      transition: background 0.2s ease;
     }
-    .powered-by:hover { border-color: var(--hairline2); background: rgba(255, 255, 255, 0.06); }
+    .powered-by:hover { background: rgba(255, 255, 255, 0.06); }
     .powered-by-label {
       font-size: 11px;
       font-weight: 500;
