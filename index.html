@@ -291,7 +291,7 @@
     /* ---------- Latest Personal Project (mirrors earzbook-landing's own
        StoreButtons.tsx / PoweredByOpenClaw.tsx component styling) ---------- */
     .project-card {
-      padding: 24px;
+      padding: 24px 24px 46px;
       display: flex;
       flex-direction: column;
       gap: 16px;
@@ -458,7 +458,8 @@
 
     /* ---------- Experience cards ---------- */
     .exp-card {
-      padding: 24px;
+      position: relative;
+      padding: 24px 24px 46px;
       display: flex;
       flex-direction: column;
       gap: 18px;
@@ -477,7 +478,14 @@
     .exp-domain { font-size: 13px; color: var(--fg-muted); transition: color 0.15s ease; }
     a.exp-domain:hover { color: var(--accent-tint); }
     .exp-head-right { display: flex; align-items: center; gap: 10px; }
-    .exp-linkedin { display: inline-flex; color: var(--fg-muted); transition: color 0.15s ease; }
+    .exp-linkedin {
+      position: absolute;
+      right: 20px;
+      bottom: 16px;
+      display: inline-flex;
+      color: var(--fg-muted);
+      transition: color 0.15s ease;
+    }
     .exp-linkedin:hover { color: var(--accent-tint); }
     .exp-linkedin .icon { width: 22px; height: 22px; }
     .exp-location {
@@ -491,7 +499,7 @@
     .exp-roles { display: flex; flex-direction: column; }
     .exp-role {
       position: relative;
-      padding: 16px 0 40px;
+      padding: 16px 0;
       border-top: 1px solid var(--hairline);
       display: flex;
       flex-direction: column;
@@ -533,13 +541,12 @@
     }
 
     .doc-link {
-      position: absolute;
-      right: 0;
-      bottom: 6px;
       display: inline-flex;
+      vertical-align: middle;
+      margin-left: 8px;
       color: var(--accent-tint);
     }
-    .doc-link .icon { width: 28px; height: 28px; }
+    .doc-link .icon { width: 18px; height: 18px; }
 
     @keyframes doc-shake {
       0%, 100% { transform: rotate(0deg); }
@@ -593,7 +600,6 @@
       flex-direction: column;
       gap: 4px;
     }
-    .list-entry:has(.doc-link) { padding-bottom: 36px; }
     .list-entry:first-child { padding-top: 0; border-top: none; }
     .list-entry h4 { font-size: 14px; font-weight: 600; color: #fff; line-height: 1.4; }
     .list-entry .sub { font-size: 13px; color: var(--fg-tertiary); }
@@ -717,9 +723,6 @@
               </a>
               <div class="exp-head-right">
                 <a class="exp-domain" href="https://earzbook.com/" target="_blank" rel="noopener">earzbook.com</a>
-                <a class="exp-linkedin" href="https://www.linkedin.com/company/earzbook/about" target="_blank" rel="noopener" aria-label="Earzbook on LinkedIn">
-                  <svg class="icon" viewBox="0 0 24 24" stroke-width="1.4"><rect x="3.5" y="3.5" width="17" height="17" rx="2.5"/><path d="M8 10.5v6M8 7.8v.02M12.2 16.5v-3.6c0-1.2.8-2 1.9-2s1.9.9 1.9 2.2v3.4"/></svg>
-                </a>
               </div>
             </div>
 
@@ -802,6 +805,10 @@
               <img class="powered-by-logo" src="assets/openclaw-white.png" alt="OpenClaw" />
               <span class="powered-by-brand">OpenClaw</span>
             </a>
+
+            <a class="exp-linkedin" href="https://www.linkedin.com/company/earzbook/about" target="_blank" rel="noopener" aria-label="Earzbook on LinkedIn">
+              <svg class="icon" viewBox="0 0 24 24" stroke-width="1.4"><rect x="3.5" y="3.5" width="17" height="17" rx="2.5"/><path d="M8 10.5v6M8 7.8v.02M12.2 16.5v-3.6c0-1.2.8-2 1.9-2s1.9.9 1.9 2.2v3.4"/></svg>
+            </a>
           </div>
         </div>
       </div>
@@ -840,27 +847,29 @@
               </div>
               <div class="exp-head-right">
                 <a class="exp-domain" href="https://leeloo.io" target="_blank" rel="noopener">leeloo.io</a>
-                <a class="exp-linkedin" href="https://www.linkedin.com/company/leeloo-io/about/" target="_blank" rel="noopener" aria-label="Leeloo on LinkedIn">
-                  <svg class="icon" viewBox="0 0 24 24" stroke-width="1.4"><rect x="3.5" y="3.5" width="17" height="17" rx="2.5"/><path d="M8 10.5v6M8 7.8v.02M12.2 16.5v-3.6c0-1.2.8-2 1.9-2s1.9.9 1.9 2.2v3.4"/></svg>
-                </a>
               </div>
             </div>
             <p class="exp-tagline">Sovereign AI implementation. We design, build and deploy AI systems for regulated industries.</p>
             <div class="exp-roles">
               <div class="exp-role">
                 <div class="exp-role-head">
-                  <h4>AI Systems Engineer SDE - 2</h4>
+                  <h4>
+                    AI Systems Engineer SDE - 2
+                    <a class="doc-link" href="https://drive.google.com/file/d/1p9AlOxZbZW9fiTRdX3qTNt4j0HFeoaMN/view?usp=sharing" target="_blank" rel="noopener" aria-label="View supporting document" title="View supporting document">
+                      <svg class="icon" viewBox="0 0 24 24"><path d="M6.5 2.75h8.5l5 5V19.5a1.75 1.75 0 0 1-1.75 1.75H6.5a1.75 1.75 0 0 1-1.75-1.75V4.5A1.75 1.75 0 0 1 6.5 2.75Z"/><path d="M15 2.75V7a1 1 0 0 0 1 1h4"/><path d="M8.5 12.5h7M8.5 15.5h7M8.5 9.5h3.5"/></svg>
+                    </a>
+                  </h4>
                   <span class="exp-date">February 2025 – Present</span>
                 </div>
                 <ul>
                   <li>Architected and deployed sovereign AI systems for regulated industries, ensuring compliance and data residency.</li>
                   <li>Built agentic workflows and LLM-powered pipelines, collaborating with product and engineering stakeholders.</li>
                 </ul>
-                <a class="doc-link" href="https://drive.google.com/file/d/1p9AlOxZbZW9fiTRdX3qTNt4j0HFeoaMN/view?usp=sharing" target="_blank" rel="noopener" aria-label="View supporting document" title="View supporting document">
-                  <svg class="icon" viewBox="0 0 24 24"><path d="M6.5 2.75h8.5l5 5V19.5a1.75 1.75 0 0 1-1.75 1.75H6.5a1.75 1.75 0 0 1-1.75-1.75V4.5A1.75 1.75 0 0 1 6.5 2.75Z"/><path d="M15 2.75V7a1 1 0 0 0 1 1h4"/><path d="M8.5 12.5h7M8.5 15.5h7M8.5 9.5h3.5"/></svg>
-                </a>
               </div>
             </div>
+            <a class="exp-linkedin" href="https://www.linkedin.com/company/leeloo-io/about/" target="_blank" rel="noopener" aria-label="Leeloo on LinkedIn">
+              <svg class="icon" viewBox="0 0 24 24" stroke-width="1.4"><rect x="3.5" y="3.5" width="17" height="17" rx="2.5"/><path d="M8 10.5v6M8 7.8v.02M12.2 16.5v-3.6c0-1.2.8-2 1.9-2s1.9.9 1.9 2.2v3.4"/></svg>
+            </a>
           </article>
 
           <article class="exp-card card-surface reveal" id="tl-grayquest">
@@ -879,37 +888,41 @@
               </div>
               <div class="exp-head-right">
                 <a class="exp-domain" href="https://grayquest.com" target="_blank" rel="noopener">grayquest.com</a>
-                <a class="exp-linkedin" href="https://www.linkedin.com/company/grayquest/about/" target="_blank" rel="noopener" aria-label="GrayQuest on LinkedIn">
-                  <svg class="icon" viewBox="0 0 24 24" stroke-width="1.4"><rect x="3.5" y="3.5" width="17" height="17" rx="2.5"/><path d="M8 10.5v6M8 7.8v.02M12.2 16.5v-3.6c0-1.2.8-2 1.9-2s1.9.9 1.9 2.2v3.4"/></svg>
-                </a>
               </div>
             </div>
             <div class="exp-roles">
               <div class="exp-role">
                 <div class="exp-role-head">
-                  <h4>Frontend Engineer SDE – 1</h4>
+                  <h4>
+                    Frontend Engineer SDE – 1
+                    <a class="doc-link" href="https://drive.google.com/file/d/1KIRykO8RmUxHE5oxaRqMtcOkoXzup5m6/view?usp=sharing" target="_blank" rel="noopener" aria-label="View supporting document" title="View supporting document">
+                      <svg class="icon" viewBox="0 0 24 24"><path d="M6.5 2.75h8.5l5 5V19.5a1.75 1.75 0 0 1-1.75 1.75H6.5a1.75 1.75 0 0 1-1.75-1.75V4.5A1.75 1.75 0 0 1 6.5 2.75Z"/><path d="M15 2.75V7a1 1 0 0 0 1 1h4"/><path d="M8.5 12.5h7M8.5 15.5h7M8.5 9.5h3.5"/></svg>
+                    </a>
+                  </h4>
                   <span class="exp-date">October 2024 – February 2025</span>
                 </div>
                 <ul>
                   <li>Optimized projects, gave context to QA teams &amp; communicated requirements completion timelines to product managers.</li>
                 </ul>
-                <a class="doc-link" href="https://drive.google.com/file/d/1KIRykO8RmUxHE5oxaRqMtcOkoXzup5m6/view?usp=sharing" target="_blank" rel="noopener" aria-label="View supporting document" title="View supporting document">
-                  <svg class="icon" viewBox="0 0 24 24"><path d="M6.5 2.75h8.5l5 5V19.5a1.75 1.75 0 0 1-1.75 1.75H6.5a1.75 1.75 0 0 1-1.75-1.75V4.5A1.75 1.75 0 0 1 6.5 2.75Z"/><path d="M15 2.75V7a1 1 0 0 0 1 1h4"/><path d="M8.5 12.5h7M8.5 15.5h7M8.5 9.5h3.5"/></svg>
-                </a>
               </div>
               <div class="exp-role">
                 <div class="exp-role-head">
-                  <h4>Frontend Engineer SDE – 0</h4>
+                  <h4>
+                    Frontend Engineer SDE – 0
+                    <a class="doc-link" href="https://drive.google.com/file/d/1kYYR-IMLTrayGWywd1c6lGdNqX0qbA9h/view?usp=sharing" target="_blank" rel="noopener" aria-label="View supporting document" title="View supporting document">
+                      <svg class="icon" viewBox="0 0 24 24"><path d="M6.5 2.75h8.5l5 5V19.5a1.75 1.75 0 0 1-1.75 1.75H6.5a1.75 1.75 0 0 1-1.75-1.75V4.5A1.75 1.75 0 0 1 6.5 2.75Z"/><path d="M15 2.75V7a1 1 0 0 0 1 1h4"/><path d="M8.5 12.5h7M8.5 15.5h7M8.5 9.5h3.5"/></svg>
+                    </a>
+                  </h4>
                   <span class="exp-date">January 2023 – September 2024</span>
                 </div>
                 <ul>
                   <li>Built multiple web portals customer-facing, internal &amp; ERP-SDK, while suggesting relevant design changes.</li>
                 </ul>
-                <a class="doc-link" href="https://drive.google.com/file/d/1kYYR-IMLTrayGWywd1c6lGdNqX0qbA9h/view?usp=sharing" target="_blank" rel="noopener" aria-label="View supporting document" title="View supporting document">
-                  <svg class="icon" viewBox="0 0 24 24"><path d="M6.5 2.75h8.5l5 5V19.5a1.75 1.75 0 0 1-1.75 1.75H6.5a1.75 1.75 0 0 1-1.75-1.75V4.5A1.75 1.75 0 0 1 6.5 2.75Z"/><path d="M15 2.75V7a1 1 0 0 0 1 1h4"/><path d="M8.5 12.5h7M8.5 15.5h7M8.5 9.5h3.5"/></svg>
-                </a>
               </div>
             </div>
+            <a class="exp-linkedin" href="https://www.linkedin.com/company/grayquest/about/" target="_blank" rel="noopener" aria-label="GrayQuest on LinkedIn">
+              <svg class="icon" viewBox="0 0 24 24" stroke-width="1.4"><rect x="3.5" y="3.5" width="17" height="17" rx="2.5"/><path d="M8 10.5v6M8 7.8v.02M12.2 16.5v-3.6c0-1.2.8-2 1.9-2s1.9.9 1.9 2.2v3.4"/></svg>
+            </a>
           </article>
 
           <article class="exp-card card-surface reveal" id="tl-bajaj">
@@ -928,25 +941,27 @@
               </div>
               <div class="exp-head-right">
                 <a class="exp-domain" href="https://www.bajajfinserv.in" target="_blank" rel="noopener">bajajfinserv.in</a>
-                <a class="exp-linkedin" href="https://www.linkedin.com/company/bajaj-finserv-lending/about/" target="_blank" rel="noopener" aria-label="Bajaj Finance on LinkedIn">
-                  <svg class="icon" viewBox="0 0 24 24" stroke-width="1.4"><rect x="3.5" y="3.5" width="17" height="17" rx="2.5"/><path d="M8 10.5v6M8 7.8v.02M12.2 16.5v-3.6c0-1.2.8-2 1.9-2s1.9.9 1.9 2.2v3.4"/></svg>
-                </a>
               </div>
             </div>
             <div class="exp-roles">
               <div class="exp-role">
                 <div class="exp-role-head">
-                  <h4>Proprietor / Accountant</h4>
+                  <h4>
+                    Proprietor / Accountant
+                    <a class="doc-link" href="https://drive.google.com/file/d/1k1-15d4ggnm87RJMfqpyCOfhMOrMc16t/view?usp=sharing" target="_blank" rel="noopener" aria-label="View supporting document" title="View supporting document">
+                      <svg class="icon" viewBox="0 0 24 24"><path d="M6.5 2.75h8.5l5 5V19.5a1.75 1.75 0 0 1-1.75 1.75H6.5a1.75 1.75 0 0 1-1.75-1.75V4.5A1.75 1.75 0 0 1 6.5 2.75Z"/><path d="M15 2.75V7a1 1 0 0 0 1 1h4"/><path d="M8.5 12.5h7M8.5 15.5h7M8.5 9.5h3.5"/></svg>
+                    </a>
+                  </h4>
                   <span class="exp-date">July 2021 – December 2021</span>
                 </div>
                 <ul>
                   <li>Managed finance and facilitated income among the employees.</li>
                 </ul>
-                <a class="doc-link" href="https://drive.google.com/file/d/1k1-15d4ggnm87RJMfqpyCOfhMOrMc16t/view?usp=sharing" target="_blank" rel="noopener" aria-label="View supporting document" title="View supporting document">
-                  <svg class="icon" viewBox="0 0 24 24"><path d="M6.5 2.75h8.5l5 5V19.5a1.75 1.75 0 0 1-1.75 1.75H6.5a1.75 1.75 0 0 1-1.75-1.75V4.5A1.75 1.75 0 0 1 6.5 2.75Z"/><path d="M15 2.75V7a1 1 0 0 0 1 1h4"/><path d="M8.5 12.5h7M8.5 15.5h7M8.5 9.5h3.5"/></svg>
-                </a>
               </div>
             </div>
+            <a class="exp-linkedin" href="https://www.linkedin.com/company/bajaj-finserv-lending/about/" target="_blank" rel="noopener" aria-label="Bajaj Finance on LinkedIn">
+              <svg class="icon" viewBox="0 0 24 24" stroke-width="1.4"><rect x="3.5" y="3.5" width="17" height="17" rx="2.5"/><path d="M8 10.5v6M8 7.8v.02M12.2 16.5v-3.6c0-1.2.8-2 1.9-2s1.9.9 1.9 2.2v3.4"/></svg>
+            </a>
           </article>
         </div>
 
@@ -1023,18 +1038,22 @@
           <h2 class="section-label reveal">Certifications</h2>
           <div class="aside-card card-surface reveal">
             <div class="list-entry">
-              <h4>GrayQuest's AI Hackathon Event</h4>
+              <h4>
+                GrayQuest's AI Hackathon Event
+                <a class="doc-link" href="https://drive.google.com/file/d/1LSElvctj8AG_JtfQC6PDHJ_ec-ZjcCUY/view?usp=sharing" target="_blank" rel="noopener" aria-label="View certificate" title="View certificate">
+                  <svg class="icon" viewBox="0 0 24 24"><path d="M6.5 2.75h8.5l5 5V19.5a1.75 1.75 0 0 1-1.75 1.75H6.5a1.75 1.75 0 0 1-1.75-1.75V4.5A1.75 1.75 0 0 1 6.5 2.75Z"/><path d="M15 2.75V7a1 1 0 0 0 1 1h4"/><path d="M8.5 12.5h7M8.5 15.5h7M8.5 9.5h3.5"/></svg>
+                </a>
+              </h4>
               <p class="sub">Certificate of participation</p>
-              <a class="doc-link" href="https://drive.google.com/file/d/1LSElvctj8AG_JtfQC6PDHJ_ec-ZjcCUY/view?usp=sharing" target="_blank" rel="noopener" aria-label="View certificate" title="View certificate">
-                <svg class="icon" viewBox="0 0 24 24"><path d="M6.5 2.75h8.5l5 5V19.5a1.75 1.75 0 0 1-1.75 1.75H6.5a1.75 1.75 0 0 1-1.75-1.75V4.5A1.75 1.75 0 0 1 6.5 2.75Z"/><path d="M15 2.75V7a1 1 0 0 0 1 1h4"/><path d="M8.5 12.5h7M8.5 15.5h7M8.5 9.5h3.5"/></svg>
-              </a>
             </div>
             <div class="list-entry">
-              <h4>National Skill Development Corporation</h4>
+              <h4>
+                National Skill Development Corporation
+                <a class="doc-link" href="https://drive.google.com/file/d/1Lsx7CQsYAhegV72b-meW_4kkCMZZHy4N/view?usp=sharing" target="_blank" rel="noopener" aria-label="View certificate" title="View certificate">
+                  <svg class="icon" viewBox="0 0 24 24"><path d="M6.5 2.75h8.5l5 5V19.5a1.75 1.75 0 0 1-1.75 1.75H6.5a1.75 1.75 0 0 1-1.75-1.75V4.5A1.75 1.75 0 0 1 6.5 2.75Z"/><path d="M15 2.75V7a1 1 0 0 0 1 1h4"/><path d="M8.5 12.5h7M8.5 15.5h7M8.5 9.5h3.5"/></svg>
+                </a>
+              </h4>
               <p class="sub">Certificate in Full-Stack Web Development</p>
-              <a class="doc-link" href="https://drive.google.com/file/d/1Lsx7CQsYAhegV72b-meW_4kkCMZZHy4N/view?usp=sharing" target="_blank" rel="noopener" aria-label="View certificate" title="View certificate">
-                <svg class="icon" viewBox="0 0 24 24"><path d="M6.5 2.75h8.5l5 5V19.5a1.75 1.75 0 0 1-1.75 1.75H6.5a1.75 1.75 0 0 1-1.75-1.75V4.5A1.75 1.75 0 0 1 6.5 2.75Z"/><path d="M15 2.75V7a1 1 0 0 0 1 1h4"/><path d="M8.5 12.5h7M8.5 15.5h7M8.5 9.5h3.5"/></svg>
-              </a>
             </div>
           </div>
         </div>
