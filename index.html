@@ -855,7 +855,7 @@
           var isAside = !!el.closest('aside');
           var r = el.getBoundingClientRect();
           pts.push({
-            x: (isAside ? r.left - GUTTER : r.right + GUTTER) - cRect.left,
+            x: (isAside ? r.left - GUTTER : r.right) - cRect.left,
             y: r.top + r.height / 2 - cRect.top
           });
         });
