@@ -490,7 +490,8 @@
 
     .exp-roles { display: flex; flex-direction: column; }
     .exp-role {
-      padding: 16px 0;
+      position: relative;
+      padding: 16px 0 34px;
       border-top: 1px solid var(--hairline);
       display: flex;
       flex-direction: column;
@@ -531,6 +532,34 @@
       opacity: 0.85;
     }
 
+    .doc-link {
+      position: absolute;
+      right: 0;
+      bottom: 6px;
+      display: inline-flex;
+      color: var(--fg-muted);
+      transition: color 0.15s ease;
+    }
+    .doc-link:hover { color: var(--accent-tint); }
+    .doc-link .icon { width: 22px; height: 22px; }
+
+    @keyframes doc-shake {
+      0%, 100% { transform: rotate(0deg); }
+      20% { transform: rotate(-14deg); }
+      40% { transform: rotate(11deg); }
+      60% { transform: rotate(-8deg); }
+      80% { transform: rotate(5deg); }
+    }
+    .exp-card:hover .doc-link .icon,
+    .list-entry:hover .doc-link .icon {
+      animation: doc-shake 0.6s ease-in-out infinite;
+      transform-origin: 50% 85%;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .exp-card:hover .doc-link .icon,
+      .list-entry:hover .doc-link .icon { animation: none; }
+    }
+
     /* ---------- Patent card ---------- */
     .patent-card { padding: 24px; display: flex; flex-direction: column; gap: 12px; transition: border-color 0.2s ease, box-shadow 0.4s ease; }
     .patent-card h3 { font-size: 16px; font-weight: 700; color: #fff; line-height: 1.4; }
@@ -558,12 +587,14 @@
     .skill-other b { color: var(--fg-tertiary); font-weight: 600; }
 
     .list-entry {
+      position: relative;
       padding-top: 14px;
       border-top: 1px solid var(--hairline);
       display: flex;
       flex-direction: column;
       gap: 4px;
     }
+    .list-entry:has(.doc-link) { padding-bottom: 30px; }
     .list-entry:first-child { padding-top: 0; border-top: none; }
     .list-entry h4 { font-size: 14px; font-weight: 600; color: #fff; line-height: 1.4; }
     .list-entry .sub { font-size: 13px; color: var(--fg-tertiary); }
@@ -826,6 +857,9 @@
                   <li>Architected and deployed sovereign AI systems for regulated industries, ensuring compliance and data residency.</li>
                   <li>Built agentic workflows and LLM-powered pipelines, collaborating with product and engineering stakeholders.</li>
                 </ul>
+                <a class="doc-link" href="https://drive.google.com/file/d/1p9AlOxZbZW9fiTRdX3qTNt4j0HFeoaMN/view?usp=sharing" target="_blank" rel="noopener" aria-label="View supporting document" title="View supporting document">
+                  <svg class="icon" viewBox="0 0 24 24"><path d="M7 3.5h7l4 4V19a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 6 19V5A1.5 1.5 0 0 1 7 3.5z"/><path d="M14 3.5V8h4"/><path d="M9 12.5h6M9 15.5h6M9.5 9.5h1"/></svg>
+                </a>
               </div>
             </div>
           </article>
@@ -860,6 +894,9 @@
                 <ul>
                   <li>Optimized projects, gave context to QA teams &amp; communicated requirements completion timelines to product managers.</li>
                 </ul>
+                <a class="doc-link" href="https://drive.google.com/file/d/1KIRykO8RmUxHE5oxaRqMtcOkoXzup5m6/view?usp=sharing" target="_blank" rel="noopener" aria-label="View supporting document" title="View supporting document">
+                  <svg class="icon" viewBox="0 0 24 24"><path d="M7 3.5h7l4 4V19a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 6 19V5A1.5 1.5 0 0 1 7 3.5z"/><path d="M14 3.5V8h4"/><path d="M9 12.5h6M9 15.5h6M9.5 9.5h1"/></svg>
+                </a>
               </div>
               <div class="exp-role">
                 <div class="exp-role-head">
@@ -869,6 +906,9 @@
                 <ul>
                   <li>Built multiple web portals customer-facing, internal &amp; ERP-SDK, while suggesting relevant design changes.</li>
                 </ul>
+                <a class="doc-link" href="https://drive.google.com/file/d/1kYYR-IMLTrayGWywd1c6lGdNqX0qbA9h/view?usp=sharing" target="_blank" rel="noopener" aria-label="View supporting document" title="View supporting document">
+                  <svg class="icon" viewBox="0 0 24 24"><path d="M7 3.5h7l4 4V19a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 6 19V5A1.5 1.5 0 0 1 7 3.5z"/><path d="M14 3.5V8h4"/><path d="M9 12.5h6M9 15.5h6M9.5 9.5h1"/></svg>
+                </a>
               </div>
             </div>
           </article>
@@ -903,6 +943,9 @@
                 <ul>
                   <li>Managed finance and facilitated income among the employees.</li>
                 </ul>
+                <a class="doc-link" href="https://drive.google.com/file/d/1k1-15d4ggnm87RJMfqpyCOfhMOrMc16t/view?usp=sharing" target="_blank" rel="noopener" aria-label="View supporting document" title="View supporting document">
+                  <svg class="icon" viewBox="0 0 24 24"><path d="M7 3.5h7l4 4V19a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 6 19V5A1.5 1.5 0 0 1 7 3.5z"/><path d="M14 3.5V8h4"/><path d="M9 12.5h6M9 15.5h6M9.5 9.5h1"/></svg>
+                </a>
               </div>
             </div>
           </article>
@@ -982,10 +1025,16 @@
             <div class="list-entry">
               <h4>GrayQuest's AI Hackathon Event</h4>
               <p class="sub">Certificate of participation</p>
+              <a class="doc-link" href="https://drive.google.com/file/d/1LSElvctj8AG_JtfQC6PDHJ_ec-ZjcCUY/view?usp=sharing" target="_blank" rel="noopener" aria-label="View certificate" title="View certificate">
+                <svg class="icon" viewBox="0 0 24 24"><path d="M7 3.5h7l4 4V19a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 6 19V5A1.5 1.5 0 0 1 7 3.5z"/><path d="M14 3.5V8h4"/><path d="M9 12.5h6M9 15.5h6M9.5 9.5h1"/></svg>
+              </a>
             </div>
             <div class="list-entry">
               <h4>National Skill Development Corporation</h4>
               <p class="sub">Certificate in Full-Stack Web Development</p>
+              <a class="doc-link" href="https://drive.google.com/file/d/1Lsx7CQsYAhegV72b-meW_4kkCMZZHy4N/view?usp=sharing" target="_blank" rel="noopener" aria-label="View certificate" title="View certificate">
+                <svg class="icon" viewBox="0 0 24 24"><path d="M7 3.5h7l4 4V19a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 6 19V5A1.5 1.5 0 0 1 7 3.5z"/><path d="M14 3.5V8h4"/><path d="M9 12.5h6M9 15.5h6M9.5 9.5h1"/></svg>
+              </a>
             </div>
           </div>
         </div>
