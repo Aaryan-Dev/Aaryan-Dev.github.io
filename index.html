@@ -498,7 +498,10 @@
 
     .exp-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
     .exp-head-title { display: flex; align-items: center; gap: 8px; }
-    .exp-head-title h3 { font-size: 18px; font-weight: 700; color: #fff; }
+    /* Company names (Leeloo/GrayQuest/Bajaj) and the patent title share one
+       rule so their size/weight/colour stay identical at every breakpoint. */
+    .exp-head-title h3,
+    .patent-card h3 { font-size: 18px; font-weight: 700; color: #fff; }
     .exp-head-title a { display: inline-flex; align-items: center; gap: 6px; transition: color 0.15s ease; }
     .exp-head-title a:hover { color: var(--accent-tint); }
     .exp-head-title .icon { width: 14px; height: 14px; color: var(--fg-muted); }
@@ -518,7 +521,8 @@
     @media (max-width: 640px) {
       .exp-card,
       .project-card { padding: 18px 18px 40px; }
-      .exp-head-title h3 { font-size: 16px; }
+      .exp-head-title h3,
+      .patent-card h3 { font-size: 16px; }
     }
     .exp-location {
       display: inline-flex; align-items: center; gap: 5px;
@@ -603,7 +607,6 @@
 
     /* ---------- Patent card ---------- */
     .patent-card { padding: 24px; display: flex; flex-direction: column; gap: 12px; transition: border-color 0.2s ease, box-shadow 0.4s ease; }
-    .patent-card h3 { font-size: 16px; font-weight: 700; color: #fff; line-height: 1.4; }
     .patent-link { font-size: 13.5px; font-weight: 600; color: var(--accent-tint); transition: color 0.15s ease; width: fit-content; }
     .patent-link:hover { color: var(--accent); text-decoration: underline; text-underline-offset: 4px; }
     .patent-number { font-size: 12px; color: var(--fg-muted); }
@@ -807,7 +810,7 @@
                 </span>
                 <div>
                   <h4>Semantic search</h4>
-                  <p>Ask by meaning, not keywords — "what did I hear about diffusion models?"</p>
+                  <p>Ask by meaning, not just keywords — "what did I hear about diffusion models?"</p>
                 </div>
               </div>
             </div>
@@ -933,6 +936,7 @@
                 <a class="exp-domain" href="https://grayquest.com" target="_blank" rel="noopener">grayquest.com</a>
               </div>
             </div>
+            <p class="exp-tagline">India's most advanced fee payment platform for educational systems. 6500+ of India's most respected educational institutions use GQ To power fee payments for 5M+ students.</p>
             <div class="exp-roles">
               <div class="exp-role">
                 <div class="exp-role-head">
@@ -986,6 +990,7 @@
                 <a class="exp-domain" href="https://www.bajajfinserv.in" target="_blank" rel="noopener">bajajfinserv.in</a>
               </div>
             </div>
+            <p class="exp-tagline">Largest Indian non-banking financial services company. It is focused on lending, asset management, wealth management and insurance.</p>
             <div class="exp-roles">
               <div class="exp-role">
                 <div class="exp-role-head">
