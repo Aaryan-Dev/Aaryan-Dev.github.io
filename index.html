@@ -9,19 +9,19 @@
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230a0a0a'/%3E%3Ctext x='50' y='67' font-family='Arial, sans-serif' font-size='46' font-weight='700' fill='%23b8926a' text-anchor='middle'%3EAD%3C/text%3E%3C/svg%3E" />
   <link rel="canonical" href="https://aaryan-dev.github.io/" />
 
-  <title>Aryan Dev — Technical AI-Native Product Manager</title>
-  <meta name="description" content="Aryan Dev — Technical AI-Native Product Manager with 3.5+ years architecting production-grade, high-stakes software for millions of users, and 1.5+ years building agentic AI systems with tools like Claude Code." />
+  <title>Aryan Dev — Technical Product Manager</title>
+  <meta name="description" content="Aryan Dev — Technical Product Manager with 3.5+ years architecting production-grade, high-stakes software for millions of users, and 1.5+ years building agentic AI systems with tools like Claude Code." />
   <meta name="author" content="Aryan Dev" />
   <meta name="robots" content="index, follow" />
 
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Aryan Dev" />
-  <meta property="og:title" content="Aryan Dev — Technical AI-Native Product Manager" />
+  <meta property="og:title" content="Aryan Dev — Technical Product Manager" />
   <meta property="og:description" content="Technical Product Engineer with 3.5+ years shipping high-stakes software at scale, 1.5+ years building agentic systems with tools like Claude Code." />
   <meta property="og:url" content="https://aaryan-dev.github.io/" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Aryan Dev — Technical AI-Native Product Manager" />
+  <meta name="twitter:title" content="Aryan Dev — Technical Product Manager" />
   <meta name="twitter:description" content="Technical Product Engineer with 3.5+ years shipping high-stakes software at scale, 1.5+ years building agentic systems with tools like Claude Code." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -33,7 +33,7 @@
       "@context": "https://schema.org",
       "@type": "Person",
       "name": "Aryan Dev",
-      "jobTitle": "Technical AI-Native Product Manager",
+      "jobTitle": "Technical Product Manager",
       "email": "mailto:aryandev1305@gmail.com",
       "telephone": "+91-8409007521",
       "url": "https://aaryan-dev.github.io/",
@@ -473,6 +473,16 @@
     }
 
     .stack { display: flex; flex-direction: column; gap: 40px; }
+    /* Desktop two-column layout only: the left (Experience) and right
+       (Skills/Education/Certifications/Filed Patent) columns hold different
+       amounts of content and will never end at the same natural height on
+       their own. This closes that gap so both columns' bottoms land flush —
+       purely an alignment nudge, not a visible element. Below the 880px
+       collapse breakpoint the columns stack into one, so this is scoped out
+       there to avoid trailing blank space on mobile/tablet. */
+    @media (min-width: 881px) {
+      aside.stack { padding-bottom: 64px; }
+    }
     .block {
       display: flex;
       flex-direction: column;
@@ -701,10 +711,10 @@
   <main>
     <section class="hero section-shell" id="top">
       <div class="hero-main">
-      <p class="role reveal">Technical AI-Native Product Manager</p>
+      <p class="role reveal">Technical Product Manager</p>
 
       <p class="summary reveal">
-        <em>Technical Product Engineer</em> — with 3.5+ years of experience designing and deploying
+        With 3.5+ years of experience designing and deploying
         production-grade, high-stakes applications serving millions of users. Over the past 1.5+
         years, I've gone deep on <em>AI-native architecture</em> — building agentic systems and
         shipping production code with tools like Claude Code to compress the distance between idea
@@ -895,12 +905,12 @@
                 <a class="exp-domain" href="https://leeloo.io" target="_blank" rel="noopener">leeloo.io</a>
               </div>
             </div>
-            <p class="exp-tagline">Sovereign AI implementation. We design, build and deploy AI systems for regulated industries.</p>
+            <p class="exp-tagline">Sovereign AI implementation. We design, build and deploy AI systems for regulated industries. Architected and deployed sovereign AI systems and LLM-powered agentic workflows for regulated industries, ensuring compliance and data residency.</p>
             <div class="exp-roles">
               <div class="exp-role">
                 <div class="exp-role-head">
                   <h4>
-                    AI Systems Engineer SDE - 2
+                    Full stack Engineer
                     <a class="doc-link" href="https://drive.google.com/file/d/1p9AlOxZbZW9fiTRdX3qTNt4j0HFeoaMN/view?usp=sharing" target="_blank" rel="noopener" aria-label="View supporting document" title="View supporting document">
                       <svg class="icon" viewBox="0 0 24 24"><path d="M6.5 2.75h8.5l5 5V19.5a1.75 1.75 0 0 1-1.75 1.75H6.5a1.75 1.75 0 0 1-1.75-1.75V4.5A1.75 1.75 0 0 1 6.5 2.75Z"/><path d="M15 2.75V7a1 1 0 0 0 1 1h4"/><path d="M8.5 12.5h7M8.5 15.5h7M8.5 9.5h3.5"/></svg>
                     </a>
@@ -908,8 +918,10 @@
                   <span class="exp-date">February 2025 – Present</span>
                 </div>
                 <ul>
-                  <li>Architected and deployed sovereign AI systems for regulated industries, ensuring compliance and data residency.</li>
-                  <li>Built agentic workflows and LLM-powered pipelines, collaborating with product and engineering stakeholders.</li>
+                  <li>Built an OCR-powered bill-capture feature for stralevo.com, a financial app, extracting and structuring transaction data from receipts to automate expense entry.</li>
+                  <li>Integrated real-time, voice-driven AI conversational characters into browser and Unreal Engine environments using Convai for natural NPC interactions.</li>
+                  <li>Built AI-first sovereign SaaS products — Liberté, free accounting software launching 2026 (liberte.free), and Vivalto, a sovereign AI-first CRM (vivalto.ai).</li>
+                  <li>Developed Epic1 Academy (epic1academy.org), a game-based learning MMORPG with AI tutors, 12 cognitive BrainMarks, and zero-exam assessment.</li>
                 </ul>
               </div>
             </div>
@@ -1012,15 +1024,6 @@
             </a>
           </article>
         </div>
-
-        <div class="block" id="patent-block">
-          <h2 class="section-label reveal">Filed Patent</h2>
-          <article class="patent-card card-surface reveal">
-            <h3>A Smart Identity Card for Logging Attendance and a Method Thereof</h3>
-            <a class="patent-link" href="https://iprsearch.ipindia.gov.in/PublicSearch/PublicationSearch/ApplicationStatus" target="_blank" rel="noopener">View Patent</a>
-            <p class="patent-number">Application Number - 202431040622</p>
-          </article>
-        </div>
       </div>
 
       <aside class="stack">
@@ -1104,6 +1107,15 @@
               <p class="sub">Certificate in Full-Stack Web Development</p>
             </div>
           </div>
+        </div>
+
+        <div class="block" id="patent-block">
+          <h2 class="section-label reveal">Filed Patent</h2>
+          <article class="patent-card card-surface reveal">
+            <h3>A Smart Identity Card for Logging Attendance and a Method Thereof</h3>
+            <a class="patent-link" href="https://iprsearch.ipindia.gov.in/PublicSearch/PublicationSearch/ApplicationStatus" target="_blank" rel="noopener">View Patent</a>
+            <p class="patent-number">Application Number - 202431040622</p>
+          </article>
         </div>
       </aside>
     </section>
@@ -1395,30 +1407,6 @@
         window.open(tag.dataset.href, '_blank', 'noopener');
       });
     });
-
-    (function () {
-      // Below the tablet/phone collapse breakpoint (single-column layout),
-      // "Filed Patent" moves to the very end, after Skills/Education/
-      // Certifications — on desktop's two-column layout it stays in its
-      // normal spot right under Experience.
-      var patentBlock = document.getElementById('patent-block');
-      var mainStack = patentBlock ? patentBlock.parentElement : null;
-      var asideStack = document.querySelector('aside.stack');
-      if (!patentBlock || !mainStack || !asideStack) return;
-
-      function reflow() {
-        var narrow = window.matchMedia('(max-width: 880px)').matches;
-        var target = narrow ? asideStack : mainStack;
-        if (patentBlock.parentElement !== target) target.appendChild(patentBlock);
-      }
-
-      reflow();
-      var resizeTimer;
-      window.addEventListener('resize', function () {
-        clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(reflow, 120);
-      });
-    })();
   </script>
 </body>
 </html>
