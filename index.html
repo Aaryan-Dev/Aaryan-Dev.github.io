@@ -463,6 +463,14 @@
       flex-direction: column;
       gap: 16px;
     }
+    /* Desktop two-column layout only: nudges the "Experience" label down to
+       start at the same height as "Technical Skills" on the right (which
+       sits lower, below the taller Latest Solo Project card). Scoped to
+       desktop since the single-column mobile/tablet order doesn't have two
+       independent column tops to line up. */
+    @media (min-width: 881px) {
+      #experience { margin-top: 28px; }
+    }
     @media (max-width: 640px) {
       .stack { gap: 28px; }
       .block { gap: 12px; }
