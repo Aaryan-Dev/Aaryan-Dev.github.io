@@ -206,15 +206,6 @@
       padding: 0 var(--shell-pad);
     }
 
-    .hairline-top { position: relative; }
-    .hairline-top::before {
-      content: '';
-      position: absolute;
-      inset: 0 0 auto 0;
-      height: 1px;
-      background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.12) 50%, rgba(255,255,255,0) 100%);
-    }
-
     .card-surface {
       border-radius: 16px;
       border: 1px solid var(--hairline);
@@ -292,17 +283,6 @@
         rgba(184, 146, 106, 0) 72%);
     }
     .project-ambient-canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
-
-    /* ---------- Hero ---------- */
-    .hero {
-      padding-top: 56px;
-      padding-bottom: 44px;
-      display: grid;
-      grid-template-columns: 1.6fr 1fr;
-      gap: 40px;
-      align-items: start;
-    }
-    .hero-side { min-width: 0; }
 
     /* ---------- Latest Personal Project (mirrors earzbook-landing's own
        StoreButtons.tsx / PoweredByOpenClaw.tsx component styling) ---------- */
@@ -384,27 +364,20 @@
     .powered-by:hover .powered-by-logo { opacity: 1; }
     .powered-by-brand { font-size: 12px; font-weight: 600; color: #fff; }
 
-    @media (max-width: 880px) {
-      .hero { grid-template-columns: 1fr; gap: 32px; }
-    }
-    @media (max-width: 640px) {
-      .hero { padding-top: 36px; padding-bottom: 32px; }
-    }
-
-    .hero .role {
+    .role {
       font-size: clamp(1.05rem, 2vw, 1.3rem);
       font-weight: 600;
       color: var(--accent-tint);
     }
 
-    .hero .summary {
+    .summary {
       margin-top: 22px;
       max-width: 66ch;
       font-size: 16px;
       line-height: 1.7;
       color: var(--fg-secondary);
     }
-    .hero .summary em { color: #fff; font-style: normal; font-weight: 600; }
+    .summary em { color: #fff; font-style: normal; font-weight: 600; }
 
     .contact-row {
       margin-top: 26px;
@@ -424,7 +397,7 @@
     /* ---------- Content grid ---------- */
     .content-grid {
       position: relative;
-      padding-top: 12px;
+      padding-top: 56px;
       padding-bottom: 80px;
       display: grid;
       grid-template-columns: 1.6fr 1fr;
@@ -469,19 +442,21 @@
       .content-grid { grid-template-columns: 1fr; gap: 48px; }
     }
     @media (max-width: 640px) {
-      .content-grid { padding-top: 8px; padding-bottom: 56px; }
+      .content-grid { padding-top: 36px; padding-bottom: 56px; }
     }
 
-    .stack { display: flex; flex-direction: column; gap: 40px; }
-    /* Desktop two-column layout only: the left (Experience) and right
-       (Skills/Education/Certifications/Filed Patent) columns hold different
-       amounts of content and will never end at the same natural height on
-       their own. This closes that gap so both columns' bottoms land flush —
-       purely an alignment nudge, not a visible element. Below the 880px
-       collapse breakpoint the columns stack into one, so this is scoped out
-       there to avoid trailing blank space on mobile/tablet. */
+    .stack { display: flex; flex-direction: column; gap: 40px; min-width: 0; }
+    /* Desktop two-column layout only: the left (bio/Experience/Filed Patent)
+       and right (Latest Solo Project/Skills/Education/Certifications)
+       columns hold different amounts of content and will never end at the
+       same natural height on their own. This closes that gap so both
+       columns' bottoms land flush — purely an alignment nudge, not a visible
+       element. Below the 880px collapse breakpoint the columns stack into
+       one, so this is scoped out there to avoid trailing blank space on
+       mobile/tablet. Re-measure if either column's content changes
+       materially. */
     @media (min-width: 881px) {
-      aside.stack { padding-bottom: 64px; }
+      .content-grid > aside.stack { padding-bottom: 346px; }
     }
     .block {
       display: flex;
@@ -511,7 +486,7 @@
     /* Company names (Leeloo/GrayQuest/Bajaj) and the patent title share one
        rule so their size/weight/colour stay identical at every breakpoint. */
     .exp-head-title h3,
-    .patent-card h3 { font-size: 18px; font-weight: 700; color: #fff; }
+    .patent-card h3 { font-size: 14px; font-weight: 600; color: #fff; line-height: 1.4; }
     .exp-head-title a { display: inline-flex; align-items: center; gap: 6px; transition: color 0.15s ease; }
     .exp-head-title a:hover { color: var(--accent-tint); }
     .exp-head-title .icon { width: 14px; height: 14px; color: var(--fg-muted); }
@@ -531,8 +506,7 @@
     @media (max-width: 640px) {
       .exp-card,
       .project-card { padding: 18px 18px 40px; }
-      .exp-head-title h3,
-      .patent-card h3 { font-size: 16px; }
+      .exp-head-title h3 { font-size: 16px; }
     }
     .exp-location {
       display: inline-flex; align-items: center; gap: 5px;
@@ -624,27 +598,9 @@
     /* ---------- Sidebar ---------- */
     .aside-card { padding: 22px; display: flex; flex-direction: column; gap: 16px; transition: border-color 0.2s ease, box-shadow 0.4s ease; }
 
-    .skill-pills { display: flex; flex-wrap: wrap; gap: 8px; }
-    .skill-break { flex-basis: 100%; height: 0; }
-    .skill-pill {
-      padding: 6px 12px;
-      font-size: 13px;
-      font-weight: 500;
-      color: var(--accent-soft);
-      background: rgba(184,146,106,0.08);
-      border: 1px solid rgba(184,146,106,0.22);
-      border-radius: 22px;
-      overflow-wrap: break-word;
-      transition: all 0.15s ease;
-    }
-    .skill-pill:hover { background: rgba(184,146,106,0.14); border-color: rgba(184,146,106,0.4); }
     @media (max-width: 640px) {
       .aside-card { padding: 18px; }
-      .skill-pill { padding: 5px 10px; font-size: 12.5px; }
     }
-
-    .skill-other { font-size: 13px; line-height: 1.6; color: var(--fg-muted); }
-    .skill-other b { color: var(--fg-tertiary); font-weight: 600; }
 
     .list-entry {
       position: relative;
@@ -709,8 +665,20 @@
   </header>
 
   <main>
-    <section class="hero section-shell" id="top">
-      <div class="hero-main">
+    <section class="content-grid section-shell" id="top">
+      <svg class="timeline-svg" id="timeline-svg" aria-hidden="true" focusable="false">
+        <defs>
+          <linearGradient id="timeline-gradient" x1="0" y1="1" x2="0" y2="0">
+            <stop offset="0%" stop-color="#b8926a" stop-opacity="0.1" />
+            <stop offset="100%" stop-color="#d4b48c" stop-opacity="0.95" />
+          </linearGradient>
+          <marker id="timeline-arrowhead" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+            <path d="M0,0 L10,5 L0,10 z" fill="#d4b48c" />
+          </marker>
+        </defs>
+        <path id="timeline-path" class="timeline-path" marker-end="url(#timeline-arrowhead)" />
+      </svg>
+      <div class="stack">
       <p class="role reveal">Technical Product Manager</p>
 
       <p class="summary reveal">
@@ -761,129 +729,6 @@
           Email
         </a>
       </div>
-      </div>
-      <div class="hero-side">
-        <div class="block">
-          <h2 class="section-label reveal">Latest Solo Project</h2>
-          <div class="project-card card-surface reveal">
-            <div class="project-ambient" aria-hidden="true">
-              <div class="project-ambient-glow"></div>
-              <div class="project-ambient-glow-bottom"></div>
-              <canvas class="project-ambient-canvas" id="project-ambient-canvas"></canvas>
-            </div>
-
-            <div class="exp-head">
-              <a class="project-brand" href="https://earzbook.com/" target="_blank" rel="noopener">
-                Earzbook
-                <svg class="icon" viewBox="0 0 24 24"><path d="M9.5 14.5 14.5 9.5"></path><path d="M11 7.5 13 5.5a3.5 3.5 0 0 1 5 5l-2 2M13 16.5l-2 2a3.5 3.5 0 0 1-5-5l2-2"></path></svg>
-              </a>
-              <div class="exp-head-right">
-                <a class="exp-domain" href="https://earzbook.com/" target="_blank" rel="noopener">earzbook.com</a>
-              </div>
-            </div>
-
-            <p class="project-desc">Earzbook transcribes everything you watch and listen to — live — and hands it to your own <strong>OpenClaw</strong> agent to search, summarize, and act on.</p>
-
-            <div class="project-features">
-              <div class="project-feature">
-                <span class="project-feature-icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <rect x="4.5" y="10.5" width="15" height="10" rx="2"></rect>
-                    <path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"></path>
-                    <path d="M12 14.5v2.5"></path>
-                  </svg>
-                </span>
-                <div>
-                  <h4>Encrypted by design</h4>
-                  <p>Per-user envelope encryption means a database breach reads nothing of yours.</p>
-                </div>
-              </div>
-              <div class="project-feature">
-                <span class="project-feature-icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <rect x="6" y="6" width="12" height="12" rx="2"></rect>
-                    <rect x="9.5" y="9.5" width="5" height="5" rx="1"></rect>
-                    <path d="M9 3v2M15 3v2M9 19v2M15 19v2M3 9h2M3 15h2M19 9h2M19 15h2"></path>
-                  </svg>
-                </span>
-                <div>
-                  <h4>Your agent, your machine</h4>
-                  <p><strong>OpenClaw</strong> runs on your own AI keys — your data isn't shipped off to be processed.</p>
-                </div>
-              </div>
-              <div class="project-feature">
-                <span class="project-feature-icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <circle cx="11" cy="11" r="6.5"></circle>
-                    <path d="m16 16 4.5 4.5"></path>
-                  </svg>
-                </span>
-                <div>
-                  <h4>Semantic search</h4>
-                  <p>Ask by meaning, not just keywords — "what did I hear about diffusion models?"</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="project-links">
-              <a class="btn btn-primary btn-sm" href="https://play.google.com/store/apps/details?id=com.earzbook" target="_blank" rel="noopener">
-                <svg class="icon-18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M6 15a6 6 0 0 1 12 0z"></path>
-                  <path d="M6 15v3a1.5 1.5 0 0 0 1.5 1.5h9A1.5 1.5 0 0 0 18 18v-3"></path>
-                  <path d="M8 9 6.5 6.5M16 9l1.5-2.5"></path>
-                  <path d="M4.5 15v3.5M19.5 15v3.5M9.5 19.5V22M14.5 19.5V22"></path>
-                  <circle cx="9.5" cy="11.5" r="0.6" fill="currentColor" stroke="none"></circle>
-                  <circle cx="14.5" cy="11.5" r="0.6" fill="currentColor" stroke="none"></circle>
-                </svg>
-                Android app
-              </a>
-              <div class="project-links-row">
-                <a class="btn btn-ghost btn-sm" href="https://chromewebstore.google.com/detail/earzbook-hear-beyond-word/ngafmplnfibagfeailjopndgdpignjjg" target="_blank" rel="noopener">
-                  <svg class="icon-18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <circle cx="12" cy="12" r="9"></circle>
-                    <circle cx="12" cy="12" r="3.4"></circle>
-                    <path d="M12 8.6h8.6M8.9 13.9 4.6 6.5M15.1 13.9l-4.3 7.4"></path>
-                  </svg>
-                  Chrome
-                </a>
-                <a class="btn btn-ghost btn-sm" href="https://www.npmjs.com/package/@earzbook/openclaw" target="_blank" rel="noopener">
-                  <svg class="icon-18 npm-badge" viewBox="0 0 24 24" aria-hidden="true">
-                    <rect width="24" height="24" rx="4" fill="#CB3837" />
-                    <path d="M5.13 5.323l13.837.019-.009 13.836h-3.464l.01-10.382h-3.456L12.04 19.17H5.113z" fill="#ffffff" />
-                  </svg>
-                  NPM
-                </a>
-              </div>
-            </div>
-
-            <a class="powered-by" href="https://openclaw.ai/" target="_blank" rel="noopener">
-              <span class="powered-by-label">Powered by</span>
-              <img class="powered-by-logo" src="assets/openclaw-white.png" alt="OpenClaw" />
-              <span class="powered-by-brand">OpenClaw</span>
-            </a>
-
-            <a class="exp-linkedin" href="https://www.linkedin.com/company/earzbook/about" target="_blank" rel="noopener" aria-label="Earzbook on LinkedIn">
-              <svg class="icon" viewBox="0 0 24 24" stroke-width="1.4"><rect x="3.5" y="3.5" width="17" height="17" rx="2.5"/><path d="M8 10.5v6M8 7.8v.02M12.2 16.5v-3.6c0-1.2.8-2 1.9-2s1.9.9 1.9 2.2v3.4"/></svg>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="content-grid section-shell hairline-top">
-      <svg class="timeline-svg" id="timeline-svg" aria-hidden="true" focusable="false">
-        <defs>
-          <linearGradient id="timeline-gradient" x1="0" y1="1" x2="0" y2="0">
-            <stop offset="0%" stop-color="#b8926a" stop-opacity="0.1" />
-            <stop offset="100%" stop-color="#d4b48c" stop-opacity="0.95" />
-          </linearGradient>
-          <marker id="timeline-arrowhead" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
-            <path d="M0,0 L10,5 L0,10 z" fill="#d4b48c" />
-          </marker>
-        </defs>
-        <path id="timeline-path" class="timeline-path" marker-end="url(#timeline-arrowhead)" />
-      </svg>
-      <div class="stack">
         <div class="block" id="experience">
           <h2 class="section-label reveal">Experience</h2>
 
@@ -1024,24 +869,136 @@
             </a>
           </article>
         </div>
+
+        <div class="block" id="patent-block">
+          <h2 class="section-label reveal">Filed Patent</h2>
+          <article class="patent-card card-surface reveal">
+            <h3>A Smart Identity Card for Logging Attendance and a Method Thereof</h3>
+            <a class="patent-link" href="https://iprsearch.ipindia.gov.in/PublicSearch/PublicationSearch/ApplicationStatus" target="_blank" rel="noopener">View Patent</a>
+            <p class="patent-number">Application Number - 202431040622</p>
+          </article>
+        </div>
       </div>
 
       <aside class="stack">
+        <div class="block">
+          <h2 class="section-label reveal">Latest Solo Project</h2>
+          <div class="project-card card-surface reveal">
+            <div class="project-ambient" aria-hidden="true">
+              <div class="project-ambient-glow"></div>
+              <div class="project-ambient-glow-bottom"></div>
+              <canvas class="project-ambient-canvas" id="project-ambient-canvas"></canvas>
+            </div>
+
+            <div class="exp-head">
+              <a class="project-brand" href="https://earzbook.com/" target="_blank" rel="noopener">
+                Earzbook
+                <svg class="icon" viewBox="0 0 24 24"><path d="M9.5 14.5 14.5 9.5"></path><path d="M11 7.5 13 5.5a3.5 3.5 0 0 1 5 5l-2 2M13 16.5l-2 2a3.5 3.5 0 0 1-5-5l2-2"></path></svg>
+              </a>
+              <div class="exp-head-right">
+                <a class="exp-domain" href="https://earzbook.com/" target="_blank" rel="noopener">earzbook.com</a>
+              </div>
+            </div>
+
+            <p class="project-desc">Earzbook transcribes everything you watch and listen to — live — and hands it to your own <strong>OpenClaw</strong> agent to search, summarize, and act on.</p>
+
+            <div class="project-features">
+              <div class="project-feature">
+                <span class="project-feature-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect x="4.5" y="10.5" width="15" height="10" rx="2"></rect>
+                    <path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"></path>
+                    <path d="M12 14.5v2.5"></path>
+                  </svg>
+                </span>
+                <div>
+                  <h4>Encrypted by design</h4>
+                  <p>Per-user envelope encryption means a database breach reads nothing of yours.</p>
+                </div>
+              </div>
+              <div class="project-feature">
+                <span class="project-feature-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect x="6" y="6" width="12" height="12" rx="2"></rect>
+                    <rect x="9.5" y="9.5" width="5" height="5" rx="1"></rect>
+                    <path d="M9 3v2M15 3v2M9 19v2M15 19v2M3 9h2M3 15h2M19 9h2M19 15h2"></path>
+                  </svg>
+                </span>
+                <div>
+                  <h4>Your agent, your machine</h4>
+                  <p><strong>OpenClaw</strong> runs on your own AI keys — your data isn't shipped off to be processed.</p>
+                </div>
+              </div>
+              <div class="project-feature">
+                <span class="project-feature-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <circle cx="11" cy="11" r="6.5"></circle>
+                    <path d="m16 16 4.5 4.5"></path>
+                  </svg>
+                </span>
+                <div>
+                  <h4>Semantic search</h4>
+                  <p>Ask by meaning, not just keywords — "what did I hear about diffusion models?"</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-links">
+              <a class="btn btn-primary btn-sm" href="https://play.google.com/store/apps/details?id=com.earzbook" target="_blank" rel="noopener">
+                <svg class="icon-18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M6 15a6 6 0 0 1 12 0z"></path>
+                  <path d="M6 15v3a1.5 1.5 0 0 0 1.5 1.5h9A1.5 1.5 0 0 0 18 18v-3"></path>
+                  <path d="M8 9 6.5 6.5M16 9l1.5-2.5"></path>
+                  <path d="M4.5 15v3.5M19.5 15v3.5M9.5 19.5V22M14.5 19.5V22"></path>
+                  <circle cx="9.5" cy="11.5" r="0.6" fill="currentColor" stroke="none"></circle>
+                  <circle cx="14.5" cy="11.5" r="0.6" fill="currentColor" stroke="none"></circle>
+                </svg>
+                Android app
+              </a>
+              <div class="project-links-row">
+                <a class="btn btn-ghost btn-sm" href="https://chromewebstore.google.com/detail/earzbook-hear-beyond-word/ngafmplnfibagfeailjopndgdpignjjg" target="_blank" rel="noopener">
+                  <svg class="icon-18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <circle cx="12" cy="12" r="9"></circle>
+                    <circle cx="12" cy="12" r="3.4"></circle>
+                    <path d="M12 8.6h8.6M8.9 13.9 4.6 6.5M15.1 13.9l-4.3 7.4"></path>
+                  </svg>
+                  Chrome
+                </a>
+                <a class="btn btn-ghost btn-sm" href="https://www.npmjs.com/package/@earzbook/openclaw" target="_blank" rel="noopener">
+                  <svg class="icon-18 npm-badge" viewBox="0 0 24 24" aria-hidden="true">
+                    <rect width="24" height="24" rx="4" fill="#CB3837" />
+                    <path d="M5.13 5.323l13.837.019-.009 13.836h-3.464l.01-10.382h-3.456L12.04 19.17H5.113z" fill="#ffffff" />
+                  </svg>
+                  NPM
+                </a>
+              </div>
+            </div>
+
+            <a class="powered-by" href="https://openclaw.ai/" target="_blank" rel="noopener">
+              <span class="powered-by-label">Powered by</span>
+              <img class="powered-by-logo" src="assets/openclaw-white.png" alt="OpenClaw" />
+              <span class="powered-by-brand">OpenClaw</span>
+            </a>
+
+            <a class="exp-linkedin" href="https://www.linkedin.com/company/earzbook/about" target="_blank" rel="noopener" aria-label="Earzbook on LinkedIn">
+              <svg class="icon" viewBox="0 0 24 24" stroke-width="1.4"><rect x="3.5" y="3.5" width="17" height="17" rx="2.5"/><path d="M8 10.5v6M8 7.8v.02M12.2 16.5v-3.6c0-1.2.8-2 1.9-2s1.9.9 1.9 2.2v3.4"/></svg>
+            </a>
+          </div>
+        </div>
         <div class="block" id="skills">
           <h2 class="section-label reveal">Technical Skills</h2>
           <div class="aside-card card-surface reveal">
-            <p class="skill-other">Anything possible with</p>
-            <div class="skill-pills">
-              <span class="skill-pill">Claude Code</span>
-              <span class="skill-pill">CodeX</span>
-              <span class="skill-pill">Cursor</span>
-              <div class="skill-break"></div>
-              <span class="skill-pill">Kimi K3</span>
-              <span class="skill-pill">GLM 5.2</span>
-              <span class="skill-pill">DeepSeek V4 Pro</span>
-              <span class="skill-pill">Gemma 4 26B-A4B</span>
-              <span class="skill-pill">Qwen3 Coder 480B-A35B</span>
-              <span class="skill-pill">+ Others</span>
+            <div class="list-entry">
+              <h4>AI Systems &amp; Orchestration</h4>
+              <p class="sub">Agentic workflows, LLM pipelines, evaluation and model selection, OCR-based data extraction, real-time voice-driven conversational AI. Fluent with Claude Code, Codex, and Cursor as build tooling.</p>
+            </div>
+            <div class="list-entry">
+              <h4>Product</h4>
+              <p class="sub">Requirements definition, scoping and prioritization, build-vs-buy decisions, privacy and compliance tradeoffs, 0-to-1 SaaS product builds, cross-functional delivery with QA and engineering, shipping to production.</p>
+            </div>
+            <div class="list-entry">
+              <h4>Domains</h4>
+              <p class="sub">Regulated industries, fintech and accounting, CRM, edtech and gamified learning, NBFC lending and insurance, payments infrastructure, consumer mobile and browser distribution.</p>
             </div>
           </div>
         </div>
@@ -1107,15 +1064,6 @@
               <p class="sub">Certificate in Full-Stack Web Development</p>
             </div>
           </div>
-        </div>
-
-        <div class="block" id="patent-block">
-          <h2 class="section-label reveal">Filed Patent</h2>
-          <article class="patent-card card-surface reveal">
-            <h3>A Smart Identity Card for Logging Attendance and a Method Thereof</h3>
-            <a class="patent-link" href="https://iprsearch.ipindia.gov.in/PublicSearch/PublicationSearch/ApplicationStatus" target="_blank" rel="noopener">View Patent</a>
-            <p class="patent-number">Application Number - 202431040622</p>
-          </article>
         </div>
       </aside>
     </section>
