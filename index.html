@@ -768,7 +768,7 @@
                       <svg class="icon" viewBox="0 0 24 24"><path d="M6.5 2.75h8.5l5 5V19.5a1.75 1.75 0 0 1-1.75 1.75H6.5a1.75 1.75 0 0 1-1.75-1.75V4.5A1.75 1.75 0 0 1 6.5 2.75Z"/><path d="M15 2.75V7a1 1 0 0 0 1 1h4"/><path d="M8.5 12.5h7M8.5 15.5h7M8.5 9.5h3.5"/></svg>
                     </a>
                   </h4>
-                  <span class="exp-date">February 2025 – Present</span>
+                  <span class="exp-date">February 2025 – September 2026</span>
                 </div>
                 <ul>
                   <li>Built an OCR-powered bill-capture feature for stralevo.com, a financial app, extracting and structuring transaction data from receipts to automate expense entry.</li>
@@ -891,7 +891,7 @@
       <aside class="stack">
         <div class="block">
           <h2 class="section-label reveal">Latest Solo Project</h2>
-          <div class="project-card card-surface reveal">
+          <div class="project-card card-surface reveal" id="tl-latest-project">
             <div class="project-ambient" aria-hidden="true">
               <div class="project-ambient-glow"></div>
               <div class="project-ambient-glow-bottom"></div>
@@ -1096,7 +1096,8 @@
 
     (function () {
       // Single curve through the real career timeline, oldest to newest,
-      // independent of card order (cards stay newest-first). Positions are
+      // independent of card order (cards stay newest-first), then continues
+      // one more hop to end at the Latest Solo Project card. Positions are
       // measured live since the path has to cross the two-column grid gap.
       var container = document.querySelector('.content-grid');
       var svg = document.getElementById('timeline-svg');
@@ -1104,7 +1105,7 @@
       if (!container || !svg || !pathEl) return;
 
       var SVG_NS = 'http://www.w3.org/2000/svg';
-      var ORDER = ['tl-bajaj', 'tl-btech', 'tl-masai', 'tl-grayquest', 'tl-bachelor', 'tl-leeloo'];
+      var ORDER = ['tl-bajaj', 'tl-btech', 'tl-masai', 'tl-grayquest', 'tl-bachelor', 'tl-leeloo', 'tl-latest-project'];
       var GUTTER = 14;
       var nodes = [];
 
